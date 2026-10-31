@@ -67,6 +67,13 @@ export interface YouTubeVideoRef {
   description: string;
 }
 
+export interface IndustryApplication {
+  itAndSoftware: string[];
+  graphicsAndMultimedia: string[];
+  ecommerceAndMarketing: string[];
+  otherTechIndustries: string[];
+}
+
 export interface CourseSubsection {
   id: string;
   code: string;
@@ -79,19 +86,26 @@ export interface CourseSubsection {
     validity: string;
     examFormat: string;
     targetAudience: string;
+    passingScore?: string;
+    costEstimate?: string;
   };
+  keyFormulasOrRules?: string[];
+  examTrap?: string;
   theorySummary: string[];
+  industryApplications: IndustryApplication;
   useCase: {
     scenarioTitle: string;
     clientSituation: string;
     actionTaken: string;
     aiAdvantage: string;
+    clientResult?: string;
   };
   beyondCertification: {
     title: string;
     keyTakeaway: string;
     practicalAiTip: string;
   };
+  kurakBriefcaseTip?: string;
   youtubeVideos: YouTubeVideoRef[];
   practiceQuestions: Question[];
 }

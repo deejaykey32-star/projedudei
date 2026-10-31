@@ -1,0 +1,8 @@
+/kurs/:section        /kurs/:section/        301
+/kurs/:section/:sub   /kurs/:section/:sub/   301
+/quiz/:category       /quiz/:category/       301
+/simulator            /simulator/            301
+/exam                 /exam/                 301
+/playbook             /playbook/             301
+/pobierz              /pobierz/              301
+

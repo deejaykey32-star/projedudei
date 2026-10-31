@@ -100,21 +100,21 @@ export default function HomeView({
             </p>
             <div className="mt-1 flex flex-wrap justify-center sm:justify-start gap-2">
               <Link
-                href="/pobierz"
+                href="/pobierz/"
                 className="flex items-center gap-1.5 rounded-xl bg-emerald-500 px-3.5 py-2 text-xs font-extrabold text-slate-950 shadow-md shadow-emerald-500/20 hover:bg-emerald-400 active:scale-95 transition"
               >
                 <Download className="h-4 w-4" />
                 <span>Pobierz APK / iOS / PWA</span>
               </Link>
               <Link
-                href="/simulator"
+                href="/simulator/"
                 className="flex items-center gap-1.5 rounded-xl bg-amber-400 px-3.5 py-2 text-xs font-extrabold text-slate-950 shadow-md shadow-amber-400/20 hover:bg-amber-300 active:scale-95 transition"
               >
                 <MessageSquareCode className="h-4 w-4" />
                 <span>Symulator Klienta</span>
               </Link>
               <Link
-                href="/exam"
+                href="/exam/"
                 className="flex items-center gap-1.5 rounded-xl bg-slate-800 px-3.5 py-2 text-xs font-bold text-slate-200 border border-slate-700 hover:bg-slate-750 active:scale-95 transition"
               >
                 <Award className="h-4 w-4 text-amber-400" />
@@ -132,7 +132,7 @@ export default function HomeView({
       {/* Szybkie Kafelki Praktyczne */}
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Link
-          href="/simulator"
+          href="/simulator/"
           className="group flex items-center gap-4 rounded-2xl border-2 border-slate-700/80 bg-slate-800/80 p-4 transition-all hover:border-amber-400/70 hover:bg-slate-800 active:scale-98 shadow-md"
         >
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky-500/15 text-sky-400 group-hover:scale-105 transition">
@@ -150,7 +150,7 @@ export default function HomeView({
         </Link>
 
         <Link
-          href="/playbook"
+          href="/playbook/"
           className="group flex items-center gap-4 rounded-2xl border-2 border-slate-700/80 bg-slate-800/80 p-4 transition-all hover:border-amber-400/70 hover:bg-slate-800 active:scale-98 shadow-md"
         >
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-400/15 text-amber-400 group-hover:scale-105 transition">
@@ -191,7 +191,7 @@ export default function HomeView({
         </div>
 
         <Link
-          href="/pobierz"
+          href="/pobierz/"
           className="flex items-center gap-1.5 shrink-0 rounded-2xl bg-emerald-500 px-4 py-2.5 text-xs font-extrabold text-slate-950 shadow-md shadow-emerald-500/20 hover:bg-emerald-400 active:scale-95 transition"
         >
           <span>Pobierz pakiety</span>
@@ -247,23 +247,26 @@ export default function HomeView({
                   {section.description}
                 </p>
 
-                {/* Lista podsekcji / certyfikacji w pigułkach */}
+                {/* Lista podsekcji / certyfikacji w klikalnych pigułkach */}
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {section.subsections.map((sub) => (
-                    <span
+                    <Link
                       key={sub.id}
-                      className="rounded-lg bg-slate-900/90 border border-slate-700/60 px-2.5 py-1 text-xs font-semibold text-slate-200"
+                      href={`/kurs/${section.id}/${sub.id}/`}
+                      className="group/pill inline-flex items-center gap-1.5 rounded-lg bg-slate-900/90 border border-slate-700/70 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-amber-400 hover:bg-slate-850 hover:text-white transition active:scale-95 shadow-sm"
+                      title={`Przejdź do pełnego modułu: ${sub.title}`}
                     >
-                      <strong className="text-amber-400">{sub.code}: </strong>
-                      {sub.title.split("(")[0].trim()}
-                    </span>
+                      <strong className="text-amber-400 group-hover/pill:text-amber-300">{sub.code}</strong>
+                      <span className="text-slate-400 group-hover/pill:text-slate-200">({sub.title.split("(")[0].trim()})</span>
+                      <ChevronRight className="h-3 w-3 text-slate-500 group-hover/pill:text-amber-400" />
+                    </Link>
                   ))}
                 </div>
 
                 {/* Przyciski akcji: Teoria & Use Cases vs Quiz */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-2 border-t border-slate-700/60">
                   <Link
-                    href={`/kurs/${section.id}`}
+                    href={`/kurs/${section.id}/`}
                     className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-sky-500/20 border border-sky-400/40 px-4 py-2.5 text-xs font-bold text-sky-200 hover:bg-sky-500/30 transition active:scale-95"
                   >
                     <BookOpen className="h-4 w-4 text-sky-400" />
@@ -272,7 +275,7 @@ export default function HomeView({
                   </Link>
 
                   <Link
-                    href={`/quiz/${section.id}`}
+                    href={`/quiz/${section.id}/`}
                     className="flex items-center justify-center gap-1.5 rounded-xl bg-amber-400 px-4 py-2.5 text-xs font-extrabold text-slate-950 hover:bg-amber-300 shadow-md shadow-amber-400/10 transition active:scale-95"
                   >
                     <HelpCircle className="h-4 w-4" />

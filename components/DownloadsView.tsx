@@ -128,7 +128,7 @@ export default function DownloadsView() {
                 </div>
               </div>
               <span className="rounded-lg bg-emerald-950/80 border border-emerald-700/60 px-2 py-0.5 text-xs font-mono font-bold text-emerald-300">
-                7.1 MB
+                7.7 MB
               </span>
             </div>
 
@@ -169,7 +169,7 @@ export default function DownloadsView() {
                 </div>
               </div>
               <span className="rounded-lg bg-sky-950/80 border border-sky-700/60 px-2 py-0.5 text-xs font-mono font-bold text-sky-300">
-                6.9 MB
+                7.5 MB
               </span>
             </div>
 
@@ -209,7 +209,7 @@ export default function DownloadsView() {
                 </div>
               </div>
               <span className="rounded-lg bg-slate-900 border border-slate-700 px-2 py-0.5 text-xs font-mono font-bold text-slate-300">
-                0.6 MB
+                1.3 MB
               </span>
             </div>
 
@@ -298,7 +298,7 @@ export default function DownloadsView() {
             className="flex items-center gap-2 shrink-0 rounded-xl bg-slate-800 border border-slate-700 px-4 py-2.5 text-xs font-bold text-slate-200 hover:bg-slate-700 active:scale-95 transition"
           >
             <Download className="h-4 w-4 text-amber-400" />
-            <span>Pobierz ZIP (0.5 MB)</span>
+            <span>Pobierz ZIP (1.2 MB)</span>
           </a>
         </div>
       </div>

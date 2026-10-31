@@ -36,11 +36,22 @@ export function getAllPlaybookTopics(): PlaybookTopic[] {
 }
 
 export function getAllCourseSections(): CourseSection[] {
-  return curriculumData.sections as CourseSection[];
+  return curriculumData.sections as unknown as CourseSection[];
 }
 
 export function getCourseSectionById(id: string): CourseSection | undefined {
-  return (curriculumData.sections as CourseSection[]).find((s) => s.id === id);
+  return (curriculumData.sections as unknown as CourseSection[]).find((s) => s.id === id);
+}
+
+export function getAllSubsections(): { section: CourseSection; subsection: CourseSubsection }[] {
+  const sections = getAllCourseSections();
+  const result: { section: CourseSection; subsection: CourseSubsection }[] = [];
+  for (const section of sections) {
+    for (const subsection of section.subsections) {
+      result.push({ section, subsection });
+    }
+  }
+  return result;
 }
 
 export function getSubsectionById(
@@ -49,7 +60,25 @@ export function getSubsectionById(
 ): { section: CourseSection; subsection: CourseSubsection } | undefined {
   const section = getCourseSectionById(sectionId);
   if (!section) return undefined;
-  const subsection = section.subsections.find((sub) => sub.id === subId);
+  const subsection = section.subsections.find(
+    (sub) => sub.id === subId || sub.code.toLowerCase() === subId.toLowerCase()
+  );
   if (!subsection) return undefined;
   return { section, subsection };
+}
+
+export function findSubsectionByAnyId(
+  idOrCode: string
+): { section: CourseSection; subsection: CourseSubsection } | undefined {
+  const clean = idOrCode.toLowerCase().trim();
+  const sections = getAllCourseSections();
+  for (const section of sections) {
+    const sub = section.subsections.find(
+      (s) => s.id.toLowerCase() === clean || s.code.toLowerCase() === clean
+    );
+    if (sub) {
+      return { section, subsection: sub };
+    }
+  }
+  return undefined;
 }

@@ -1,5 +1,5 @@
 // Projedudei PWA Service Worker
-const CACHE_NAME = "projedudei-v2";
+const CACHE_NAME = "projedudei-v3";
 const STATIC_ASSETS = [
   "/",
   "/manifest.json",
@@ -11,10 +11,25 @@ const STATIC_ASSETS = [
   "/playbook/",
   "/pobierz/",
   "/kurs/project-manager/",
+  "/kurs/project-manager/pmp/",
+  "/kurs/project-manager/prince2/",
+  "/kurs/project-manager/ipma/",
+  "/kurs/project-manager/capm/",
   "/kurs/scrum-master/",
+  "/kurs/scrum-master/psm/",
+  "/kurs/scrum-master/csm/",
+  "/kurs/scrum-master/dassm/",
   "/kurs/product-owner/",
+  "/kurs/product-owner/pspo/",
+  "/kurs/product-owner/cspo/",
+  "/kurs/product-owner/spoc/",
   "/kurs/product-manager/",
-  "/kurs/agile-analysis/"
+  "/kurs/product-manager/cpm/",
+  "/kurs/product-manager/pragmatic-pmc/",
+  "/kurs/product-manager/pm-po-it/",
+  "/kurs/agile-analysis/",
+  "/kurs/agile-analysis/pmi-acp/",
+  "/kurs/agile-analysis/pmi-pba/"
 ];
 
 self.addEventListener("install", (event) => {
@@ -48,7 +63,7 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const url = new URL(event.request.url);
-  // Nie cache'uj samych pakietów pobierania APK / AAB / IPA / ZIP w SW
+  // Nie cache'uj samych pakietów instalacyjnych APK / AAB / IPA / ZIP w SW
   if (url.pathname.startsWith("/downloads/")) {
     return;
   }
