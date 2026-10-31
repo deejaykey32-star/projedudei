@@ -101,17 +101,10 @@ export default function HomeView({
             <div className="mt-1 flex flex-wrap justify-center sm:justify-start gap-2">
               <Link
                 href="/lekcje/"
-                className="flex items-center gap-1.5 rounded-xl bg-sky-500 px-3.5 py-2 text-xs font-extrabold text-slate-950 shadow-md shadow-sky-500/20 hover:bg-sky-400 active:scale-95 transition"
+                className="flex items-center gap-1.5 rounded-xl bg-amber-400 px-3.5 py-2 text-xs font-extrabold text-slate-950 shadow-md shadow-amber-400/20 hover:bg-amber-300 active:scale-95 transition"
               >
                 <BookOpen className="h-4 w-4" />
                 <span>10 Lekcji Krok po Kroku</span>
-              </Link>
-              <Link
-                href="/lekcje/lekcja-2-wywiad-z-klientem-zakres/"
-                className="flex items-center gap-1.5 rounded-xl bg-amber-400 px-3.5 py-2 text-xs font-extrabold text-slate-950 shadow-md shadow-amber-400/20 hover:bg-amber-300 active:scale-95 transition"
-              >
-                <Briefcase className="h-4 w-4" />
-                <span>Wywiad z Klientem (25 Pytań)</span>
               </Link>
               <Link
                 href="/pobierz/"
@@ -119,6 +112,13 @@ export default function HomeView({
               >
                 <Download className="h-4 w-4" />
                 <span>Pobierz APK / iOS / PWA</span>
+              </Link>
+              <Link
+                href="/simulator/"
+                className="flex items-center gap-1.5 rounded-xl bg-slate-800 px-3.5 py-2 text-xs font-bold text-slate-200 border border-slate-700 hover:bg-slate-750 active:scale-95 transition"
+              >
+                <MessageSquareCode className="h-4 w-4 text-sky-400" />
+                <span>Symulator Klienta</span>
               </Link>
             </div>
           </div>
@@ -215,20 +215,14 @@ export default function HomeView({
             </p>
           </div>
 
-          <div className="flex flex-wrap sm:flex-nowrap gap-2.5 w-full md:w-auto">
+          <div className="w-full md:w-auto flex justify-start md:justify-end shrink-0">
             <Link
               href="/lekcje/"
-              className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-4 py-3 text-xs sm:text-sm font-extrabold text-slate-950 hover:bg-amber-400 active:scale-95 transition shadow-lg shadow-amber-500/20"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-5 py-3 text-xs sm:text-sm font-extrabold text-slate-950 hover:bg-amber-400 active:scale-95 transition shadow-lg shadow-amber-500/20 shrink-0"
             >
               <BookOpen className="h-4 w-4" />
-              <span>Otwórz 10 Lekcji</span>
-            </Link>
-            <Link
-              href="/lekcje/lekcja-2-wywiad-z-klientem-zakres/"
-              className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 rounded-xl border border-sky-400/40 bg-sky-500/10 px-4 py-3 text-xs sm:text-sm font-bold text-sky-200 hover:bg-sky-500/20 active:scale-95 transition"
-            >
-              <Briefcase className="h-4 w-4 text-sky-400" />
-              <span>Lekcja 2: Wywiad</span>
+              <span>Otwórz 10 Lekcji Krok po Kroku</span>
+              <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
