@@ -223,3 +223,4 @@ export default function HomeView({ categories }: { categories: Category[] }) {
     </main>
   );
 }
+

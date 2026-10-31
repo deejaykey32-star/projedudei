@@ -5,3 +5,4 @@ export default function PlaybookPage() {
   const topics = getAllPlaybookTopics();
   return <PlaybookView topics={topics} />;
 }
+

@@ -5,3 +5,4 @@ export default function SimulatorPage() {
   const scenarios = getAllScenarios();
   return <ScenarioSimulator scenarios={scenarios} />;
 }
+

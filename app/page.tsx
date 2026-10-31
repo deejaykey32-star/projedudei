@@ -5,3 +5,4 @@ export default function HomePage() {
   const categories = getAllCategories();
   return <HomeView categories={categories} />;
 }
+

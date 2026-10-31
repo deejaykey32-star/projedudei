@@ -156,3 +156,4 @@ export default function QuizEngine({ category }: { category: Category }) {
     </main>
   );
 }
+

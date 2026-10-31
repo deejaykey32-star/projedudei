@@ -57,3 +57,4 @@ export interface PlaybookTopic {
   promptTemplate?: string;
   kurakSecretTip: string;
 }
+

@@ -5,3 +5,4 @@ export default function ExamPage() {
   const allQuestions = getAllQuestions();
   return <ExamEngine allQuestions={allQuestions} />;
 }
+

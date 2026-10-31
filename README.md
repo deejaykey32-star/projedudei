@@ -65,3 +65,4 @@ npm run build
 # Deploy na Cloudflare Pages
 npm run deploy
 ```
+

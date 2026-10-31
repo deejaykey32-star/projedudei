@@ -26,3 +26,4 @@ export function getScenarioById(id: string): ClientScenario | undefined {
 export function getAllPlaybookTopics(): PlaybookTopic[] {
   return playbookData.topics as PlaybookTopic[];
 }
+
