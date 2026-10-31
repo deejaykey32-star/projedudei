@@ -119,3 +119,46 @@ export interface CourseSection {
   description: string;
   subsections: CourseSubsection[];
 }
+
+export interface ClientInterviewDialogue {
+  category: string;
+  pmQuestion: string;
+  clientAnswerRaw: string;
+  pmFollowUp: string;
+  finalScopeSpec: string;
+  kurakTip: string;
+}
+
+export interface LessonStep {
+  title: string;
+  explanation: string[];
+  practicalRule?: string;
+  aiPromptExample?: string;
+  clientDialogue?: ClientInterviewDialogue[];
+}
+
+export interface Lesson {
+  id: string;
+  number: number;
+  title: string;
+  shortDesc: string;
+  durationMinutes: number;
+  badge: string;
+  category: string;
+  iconName: string;
+  objective: string;
+  steps: LessonStep[];
+  clientInterviewSuite?: {
+    overview: string;
+    phases: {
+      phaseName: string;
+      phaseDescription: string;
+      dialogues: ClientInterviewDialogue[];
+    }[];
+    ironcladScopeTemplate: string;
+  };
+  summaryTakeaways: string[];
+  kurakLessonTip: string;
+  quizQuestion: Question;
+}
+

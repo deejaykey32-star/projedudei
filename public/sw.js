@@ -1,5 +1,5 @@
 // Projedudei PWA Service Worker
-const CACHE_NAME = "projedudei-v3";
+const CACHE_NAME = "projedudei-v4";
 const STATIC_ASSETS = [
   "/",
   "/manifest.json",
@@ -10,6 +10,17 @@ const STATIC_ASSETS = [
   "/exam/",
   "/playbook/",
   "/pobierz/",
+  "/lekcje/",
+  "/lekcje/lekcja-1-era-ai-pm/",
+  "/lekcje/lekcja-2-wywiad-z-klientem-zakres/",
+  "/lekcje/lekcja-3-spec-driven-development-ai/",
+  "/lekcje/lekcja-4-pmp-capm-hybrydowe-zarzadzanie/",
+  "/lekcje/lekcja-5-prince2-ipma-kontrola-i-ludzie/",
+  "/lekcje/lekcja-6-scrum-master-psm-csm-dassm/",
+  "/lekcje/lekcja-7-product-owner-pspo-cspo-spoc/",
+  "/lekcje/lekcja-8-product-manager-cpm-pragmatic/",
+  "/lekcje/lekcja-9-pmi-acp-i-pmi-pba-wymagania-i-agile/",
+  "/lekcje/lekcja-10-wdrozenie-cloudflare-testy-i-odbior/",
   "/kurs/project-manager/",
   "/kurs/project-manager/pmp/",
   "/kurs/project-manager/prince2/",

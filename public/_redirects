@@ -5,4 +5,6 @@
 /exam                 /exam/                 301
 /playbook             /playbook/             301
 /pobierz              /pobierz/              301
+/lekcje               /lekcje/               301
+/lekcje/:id           /lekcje/:id/           301
 

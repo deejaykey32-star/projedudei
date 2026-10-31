@@ -2,6 +2,7 @@ import questionsData from "@/data/questions.json";
 import scenariosData from "@/data/scenarios.json";
 import playbookData from "@/data/playbook.json";
 import curriculumData from "@/data/curriculum.json";
+import lessonsData from "@/data/lessons.json";
 import type {
   Category,
   Question,
@@ -9,6 +10,7 @@ import type {
   PlaybookTopic,
   CourseSection,
   CourseSubsection,
+  Lesson,
 } from "./types";
 
 export function getAllCategories(): Category[] {
@@ -82,3 +84,18 @@ export function findSubsectionByAnyId(
   }
   return undefined;
 }
+
+export function getAllLessons(): Lesson[] {
+  return lessonsData.lessons as unknown as Lesson[];
+}
+
+export function getLessonById(id: string): Lesson | undefined {
+  return (lessonsData.lessons as unknown as Lesson[]).find(
+    (l) => l.id.toLowerCase() === id.toLowerCase() || String(l.number) === id
+  );
+}
+
+export function getLessonsOverview() {
+  return lessonsData.overview;
+}
+
