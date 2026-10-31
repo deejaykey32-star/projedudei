@@ -1,0 +1,231 @@
+{
+  "categories": [
+    {
+      "id": "scrum-ai",
+      "name": "Scrum Master w erze AI (PSM I / II)",
+      "shortDesc": "Zwinne zarządzanie projektami i rola Scrum Mastera, gdy deweloperami są modele AI.",
+      "badge": "Agile & Scrum",
+      "questions": [
+        {
+          "id": 101,
+          "text": "Jak zmienia się rola Scrum Mastera w zespole, w którym tworzenie kodu wykonuje AI Agent (vibe coding) pod nadzorem Product Ownera?",
+          "options": [
+            "Scrum Master staje się niepotrzebny i należy go natychmiast zwolnić.",
+            "Scrum Master skupia się na usuwaniu barier w promptowaniu, jakości kontekstu, przepływie wartości i przestrzeganiu Definition of Done zamiast ręcznego estymowania zadań.",
+            "Scrum Master musi ręcznie przepisywać każdy prompt na język C++ i zatwierdzać go na papierze.",
+            "Scrum Master przejmuje rolę jedynego programisty i sam pisze cały kod bez użycia AI."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "W podejściu AI-first tradycyjne wąskie gardła (np. powolne kodowanie w starym stylu) znikają. Scrum Master dba o płynny przepływ (Flow), optymalizację środowiska agentów, eliminację długu technologicznego i rygorystyczne Definition of Done (testy, linter, bezpieczeństwo).",
+          "kurakTip": "Pamiętaj: AI eliminuje mechaniczne klepanie kodu, ale nie eliminuje chaosu organizacyjnego! Scrum Master to strażnik wartości i procesów."
+        },
+        {
+          "id": 102,
+          "text": "Co powinno wchodzić w skład 'Definition of Done' (DoD) dla modułu wygenerowanego przez AI w aplikacji dla klienta?",
+          "options": [
+            "Wyłącznie fakt, że model AI nie zgłosił błędu w oknie czatu.",
+            "Przejście testów jednostkowych i E2E, brak podatności bezpieczeństwa (SAST), zgodność z wymaganiami klienta oraz weryfikacja kodu przez człowieka.",
+            "Wystarczy, że kod kompiluje się na maszynie dewelopera.",
+            "Kod musi mieć co najmniej 1000 linii komentarzy wygenerowanych w języku łacińskim."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Kod generowany przez AI jest dostarczany błyskawicznie, lecz wymaga surowej kontroli jakości. Definition of Done musi zawierać automatyczne testy regresyjne, audyt bezpieczeństwa promptów/sekretów, walidację typów (TypeScript) oraz akceptację funkcjonalną.",
+          "kurakTip": "Klient płaci za działający i bezpieczny produkt. 'Działa w oknie prompta' to NIE jest Definition of Done!"
+        },
+        {
+          "id": 103,
+          "text": "Podczas Daily Scrum twórca aplikacji (AI Builder) zgłasza, że model LLM zapętla się i halucynuje w logice wyliczeń podatkowych. Jaka jest właściwa reakcja Scrum Mastera?",
+          "options": [
+            "Ukarać AI Buildera i kazać mu przepisać aplikację ręcznie w czystym assemblerze.",
+            "Pomóc w identyfikacji przeszkody: zaproponować wydzielenie problemu do czystej funkcji matematycznej bez LLM lub zastosowanie wzorca Chain-of-Thought z testami parametrycznymi.",
+            "Zignorować problem i wdrożyć kod na produkcję do klienta, licząc, że nikt nie zauważy błędów.",
+            "Przerwać cały Sprint i anulować kontrakt z klientem."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Scrum Master usuwa impedimenta (przeszkody). W projektach z AI typowym błędem jest zmuszanie modelu językowego do wykonywania skomplikowanej arytmetyki w tekście zamiast użycia zdeterminowanego kodu lub narzędzi kalkulacyjnych.",
+          "kurakTip": "Modele językowe świetnie piszą kod, ale są słabymi kalkulatorami! Prawdziwy PM wie, kiedy użyć LLM, a kiedy klasycznej funkcji w TypeScript."
+        },
+        {
+          "id": 104,
+          "text": "Jak w metodyce Scrum realizowany jest 'Sprint Review' (Przegląd Sprintu) przy tworzeniu aplikacji z użyciem AI?",
+          "options": [
+            "Prezentacją slajdów w PowerPoint i obietnicami, co zostanie zakodowane za pół roku.",
+            "Prezentacją działającego, interaktywnego przyrostu produktu (Working Software) wdrożonego np. w Cloudflare Pages, z którego klient może od razu poklikać i dać feedback.",
+            "Odczytaniem 200 stron wygenerowanego kodu źródłowego przed klientem.",
+            "Sprint Review zostaje całkowicie pominięty, bo AI wie lepiej od klienta, czego mu potrzeba."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Manifest Agile mówi: 'Działające oprogramowanie ponad szczegółową dokumentację'. Dzięki AI i Cloudflare Pages klient na każdym Sprint Review otrzymuje klikalną, wdrożoną wersję i weryfikuje swoje hipotezy biznesowe w czasie rzeczywistym.",
+          "kurakTip": "Pokazanie klientowi działającego prototypu pod dedykowanym adresem URL .pages.dev buduje 10x większe zaufanie niż najpiękniejszy slajd!"
+        },
+        {
+          "id": 105,
+          "text": "Czym różni się estymacja 'Story Points' w tradycyjnym zespole 10 koderów od pracy z AI Product Builderem?",
+          "options": [
+            "W projektach AI nie ma znaczenia czas dostarczenia, więc estymacje robi się w rzutach monetą.",
+            "W projektach z AI tradycyjne 'godziny kodowania' przestają być miarą; estymuje się raczej złożoność architektury, integracje API i liczbę iteracji promptów.",
+            "Trzeba pomnożyć czas tradycyjny przez 10, bo AI wolno myśli.",
+            "Story points są zastępowane przez liczbę zużytych watów energii procesora."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "AI wykonuje zadanie kodowania w minuty, a nie tygodnie. Złożoność przesuwa się na integracje zewnętrzne (bazy danych, bramki płatności, uprawnienia, bezpieczeństwo) i walidację założeń biznesowych z klientem.",
+          "kurakTip": "Dla klienta nie ma znaczenia, czy kod pisało 5 seniorów przez miesiąc, czy jeden zwinny PM z Claude/Gemini w 2 dni. Liczy się rozwiązany problem!"
+        }
+      ]
+    },
+    {
+      "id": "product-owner",
+      "name": "Product Owner & Kontakt z Klientem (PSPO)",
+      "shortDesc": "Prowadzenie warsztatów, badanie potrzeb, zbieranie wymagań i zamiana ich w specyfikację dla AI.",
+      "badge": "Product Management",
+      "questions": [
+        {
+          "id": 201,
+          "text": "Klient przychodzi z luźnym pomysłem: 'Chcę aplikację jak Uber, ale dla hydraulików'. Co robi profesjonalny Product Owner w pierwszym kroku?",
+          "options": [
+            "Natychmiast otwiera generator kodu i pisze kod losowej aplikacji.",
+            "Prowadzi warsztat Discovery: zadaje pytania o model biznesowy, profil użytkownika końcowego, główne bolączki i definiuje Minimal Viable Product (MVP).",
+            "Mówi klientowi, że to niemożliwe i odsyła go z kwitkiem.",
+            "Wycenia projekt na 500 tysięcy złotych i podpisuje umowę bez pytań."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Skuteczny Product Owner nie zaczyna od kodowania. Najpierw odkrywa prawdziwy cel biznesowy klienta, identyfikuje kluczowe ścieżki użytkownika (Happy Path) i wspólnie ustala zakres MVP, który AI może postawić w kilka dni.",
+          "kurakTip": "Zawsze pytaj klienta: 'Jaki jeden główny problem ta aplikacja ma rozwiązać w pierwszym tygodniu?' Skupienie to Twoja supermoc."
+        },
+        {
+          "id": 202,
+          "text": "Jak najlepiej przygotować specyfikację (PRD) dla narzędzi AI (np. Cursor, Bolt, Antigravity), aby uniknąć halucynacji i błędnego kodu?",
+          "options": [
+            "Wpisać jedno zdanie: 'Zrób mi fajny system CRM'.",
+            "Przygotować precyzyjny dokument ze schematem danych (TypeScript types / Prisma schema), regułami biznesowymi, architekturą komponentów i kryteriami akceptacji.",
+            "Wgrać książkę telefoniczną jako kontekst.",
+            "Pisać specyfikację wierszem i rymami, żeby model miał lepszą wenę."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Spec-Driven Development to klucz do sukcesu z AI. Modele językowe generują bezbłędny kod produkcyjny wtedy, gdy otrzymają ścisłe kontrakty interfejsów (TypeScript interfaces), jasny przepływ danych i zdefiniowane stany brzegowe.",
+          "kurakTip": "Jasny schemat typów danych w TypeScript to 80% sukcesu! Jeśli model zna strukturę danych, kod generuje się jak z klocków LEGO."
+        },
+        {
+          "id": 203,
+          "text": "Klient w połowie projektu dzwoni i żąda: 'Dojdźmy jeszcze do systemu obsługę płatności w kryptowalutach i moduł VR'. Jak zarządzać tym 'Scope Creep'?",
+          "options": [
+            "Zgodzić się za darmo i pracować 24 godziny na dobę bez snu.",
+            "Zastosować technikę Agile: docenić pomysł, wpisać go na górę Product Backlogu jako pozycję do kolejnej fazy po wdrożeniu MVP i przedstawić wpływ na budżet/czas.",
+            "Nawymyślać klientowi i zerwać kontakt.",
+            "Skasować cały dotychczasowy kod i zacząć pisać moduł VR."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "W zarządzaniu zakresem (Scope Creep) Product Owner nie mówi agresywnego 'nie', lecz 'tak, możemy to zrobić w kolejnej wersji, po zebraniu danych z wdrożenia MVP'. Chroni to datę uruchomienia i budżet projektu.",
+          "kurakTip": "Scope Creep to wróg numer jeden każdego wdrożenia! MVP musi ujrzeć światło dzienne i zacząć zarabiać na siebie, nowe ficzery dodasz w sprincie v2."
+        },
+        {
+          "id": 204,
+          "text": "W jaki sposób Product Owner weryfikuje 'wartość biznesową' (Business Value) dostarczaną przez aplikację tworzoną z AI?",
+          "options": [
+            "Mierzy liczbę linijek kodu wygenerowanych przez sztuczną inteligencję w minutę.",
+            "Mierzy realne metryki użytkowników: konwersję, czas wykonania zadania, retencję klientów i zwrot z inwestycji (ROI).",
+            "Ocenia, ile kaw wypił podczas promptowania.",
+            "Pyta model AI, czy czuje się spełniony zawodowo."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Wartość produktu nie leży w ilości kodu ani wielkości repozytorium. W erze AI mniej kodu często oznacza lepszą aplikację. Liczą się wskaźniki biznesowe klienta: sprzedaż, oszczędność czasu i zadowolenie użytkowników.",
+          "kurakTip": "Dla Twojego klienta liczy się wynik finansowy i zadowoleni użytkownicy. Mierz twarde KPI, a nie megabajty w repozytorium!"
+        }
+      ]
+    },
+    {
+      "id": "client-negotiations",
+      "name": "Wyceny, Umowy i Zastępowanie Software House'ów",
+      "shortDesc": "Jak sprzedawać aplikacje tworzone z AI, konkurować z tradycyjnymi agencjami i chronić marżę.",
+      "badge": "Biznes & Sprzedaż",
+      "questions": [
+        {
+          "id": 301,
+          "text": "Tradycyjny Software House wycenił klientowi aplikację na 120 000 PLN i 6 miesięcy realizacji. Ty potrafisz dowieźć ją z AI w 10 dni. Jak powinieneś wycenić projekt?",
+          "options": [
+            "Wycenić na 500 PLN, bo pracowałeś tylko kilka godzin.",
+            "Wycenić w oparciu o wartość (Value-Based Pricing), np. 25 000 - 40 000 PLN, oferując klientowi 3-krotnie niższy koszt, natychmiastowe wejście na rynek i zachowując znakomitą marżę.",
+            "Podać stawkę godzinową 15 PLN za godzinę promptowania.",
+            "Odmówić, bo aplikacje wolno robić tylko w zespołach 10-osobowych."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Nigdy nie rozliczaj się z klientem według godzin (Time & Material), gdy używasz AI, ponieważ karzesz się za swoją niesamowitą efektywność! Value-Based Pricing sprawia, że klient oszczędza 80 000 PLN i 5 miesięcy, a Ty zarabiasz godziwie za ekspertyzę i dowóz.",
+          "kurakTip": "Zapamiętaj zasadę Kuraka: Klient płaci za to, że jego biznes rusza za 10 dni, a nie za 6 miesięcy! Sprzedawaj prędkość i rezultat, nie roboczogodziny."
+        },
+        {
+          "id": 302,
+          "text": "Klient pyta: 'Czy jeśli aplikację pomaga pisać AI, to czy konkurencja nie skopiuje mojego pomysłu i czy kod jest bezpieczny?' Jaka jest najlepsza odpowiedź PM-a?",
+          "options": [
+            "Przyznać, że cały kod natychmiast wycieka do internetu i każdy może go ukraść.",
+            "Wyjaśnić, że korzysta się z profesjonalnych API korporacyjnych z klauzulą Zero Data Retention (dane nie służą do trenowania modeli), kod jest objęty pełnymi prawami autorskimi klienta, a logika biznesowa jest chroniona.",
+            "Powiedzieć klientowi, że za dużo pyta i powinien zmienić branżę.",
+            "Zapewnić, że AI pisze kod w niewidzialnym atramencie."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Zarządzanie obawami klienta o bezpieczeństwo to kluczowa kompetencja. Korzystając z certyfikowanych API (np. OpenAI Enterprise, Google Cloud Vertex, Anthropic Commercial), dane klienta nie trafiają do zbiorów treningowych, a prawa majątkowe do kodu przysługują zamawiającemu.",
+          "kurakTip": "Spokój klienta to podpisana umowa. Pokaż mu zapisy o poufności (NDA) oraz politykę bezpieczeństwa dostawców AI."
+        },
+        {
+          "id": 303,
+          "text": "Jaki model wdrożenia i hostingu jest najbardziej opłacalny dla klienta biznesowego w nowoczesnym AI-first developmencie?",
+          "options": [
+            "Zakup własnego fizycznego serwera w piwnicy za 50 000 PLN i zatrudnienie 2 administratorów.",
+            "Nowoczesne architektury Serverless / Edge (np. Cloudflare Pages, Cloudflare Workers, Supabase / Neon), które mają darmowy lub groszowy tier startowy, globalny CDN i skalują się automatycznie bez kosztów stałych.",
+            "Hosting współdzielony na starym serwerze FTP z PHP 5.4.",
+            "Wydrukowanie kodu źródłowego na papierze perforowanym."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Cloudflare Pages i nowoczesne bazy serverless sprawiają, że małe i średnie aplikacje dla klienta kosztują 0 zł lub ułamki centów miesięcznie w utrzymaniu, mając przy tym prędkość ładowania na poziomie ułamków sekundy na całym świecie.",
+          "kurakTip": "Klienci uwielbiają, gdy mówisz im: 'Koszty hostingu na start wyniosą 0 zł, bo wykorzystamy nowoczesną chmurę Cloudflare!'."
+        }
+      ]
+    },
+    {
+      "id": "ai-building",
+      "name": "Vibe Coding, Architektura & Jakość AI",
+      "shortDesc": "Praktyczne techniki budowy aplikacji: dobór technologii, unikanie błędów i automatyzacja.",
+      "badge": "Technologie & Praktyka",
+      "questions": [
+        {
+          "id": 401,
+          "text": "Czym jest zjawisko 'Vibe Codingu' w praktyce współczesnego Project Managera?",
+          "options": [
+            "Słuchaniem muzyki techno podczas ręcznego wpisywania kodu w Notatniku.",
+            "Pracą na wysokim poziomie abstrakcji architektonicznej i biznesowej, gdzie PM steruje generowaniem, łączeniem i weryfikacją kodu przez asystentów AI przy użyciu naturalnego języka i ścisłych promptów.",
+            "Zatrudnieniem 50 programistów z różnych stref czasowych.",
+            "Wprowadzaniem losowych zmian w kodzie, aż aplikacja zacznie działać."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Termin spopularyzowany przez liderów AI (np. Andrej Karpathy): programista/manager nie pisze każdej linijki ręcznie, lecz komunikuje intencję, strukturę i logikę modelowi AI, który wykonuje implementację, podczas gdy człowiek weryfikuje rezultaty.",
+          "kurakTip": "Jako AI PM nie musisz pamiętać składni pętli 'for' w dziesięciu językach. Musisz rozumieć architekturę, bazy danych i potrzeby klienta!"
+        },
+        {
+          "id": 402,
+          "text": "Jak zabezpieczyć aplikację budowaną z użyciem AI przed kosztownymi atakami 'Prompt Injection' i wyciągnięciem kluczy API?",
+          "options": [
+            "Wpisać klucz API na stałe w kodzie JavaScript we frontendzie strony.",
+            "Nigdy nie umieszczać kluczy API w kodzie klienta; wywołania modeli realizować wyłącznie przez backend/Worker po stronie serwera z walidacją wejścia i rate-limitingiem.",
+            "Poprosić użytkowników w regulaminie, by nie próbowali hakować strony.",
+            "Wyłączyć całkowicie internet na serwerze."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Klucze API muszą zawsze pozostawać bezpieczne w zmiennych środowiskowych backendu (np. Cloudflare Secrets / Environment Variables). Wejście od użytkownika musi być sanityzowane przed przekazaniem do modelu LLM.",
+          "kurakTip": "Nigdy, przenigdy nie ujawniaj klucza API w kodzie przeglądarki! To kardynalny błąd początkujących."
+        },
+        {
+          "id": 403,
+          "text": "Dlaczego Next.js z eksportem statycznym (output: 'export') połączony z Cloudflare Pages jest idealnym wyborem na aplikacje zamawiane przez klientów?",
+          "options": [
+            "Bo wymaga skomplikowanego serwera z bazą Oracle za miliony euro.",
+            "Bo generuje czysty, ultraszybki kod HTML/JS/CSS serwowany z setek centrów danych na świecie, z zerowym ryzykiem awarii serwera Node.js i zerowymi kosztami utrzymania dla klienta.",
+            "Bo zakazuje używania stylów graficznych.",
+            "Bo działa wyłącznie na kalkulatorach biurowych."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Static export na Cloudflare Pages łączy najlepszą responsywność (brak cold startów), maksymalne bezpieczeństwo (brak podatnego serwera aplikacji) i odporność na ogromny ruch użytkowników bez dodatkowych opłat.",
+          "kurakTip": "To dokładnie ten sam stos technologiczny, na którym stoi aplikacja Projedudei! Błyskawiczny, niezawodny i bezobsługowy."
+        }
+      ]
+    }
+  ]
+}

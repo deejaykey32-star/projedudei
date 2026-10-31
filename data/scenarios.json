@@ -1,0 +1,118 @@
+{
+  "scenarios": [
+    {
+      "id": "scenario-1",
+      "title": "Błyskawiczne MVP zamiast rocznego projektu",
+      "clientName": "Janusz Kowalski",
+      "clientRole": "Właściciel sieci hurtowni instalacyjnych (4 oddziały)",
+      "clientAvatar": "👨‍💼",
+      "brief": "Dostałem wycenę od agencji na 140 000 zł i 7 miesięcy kodowania za system B2B do składania zamówień przez hydraulików. Dla mnie to za drogo i za wolno! Wiosną ruszają duże budowy i muszę mieć system za 3 tygodnie. Budżet mam ograniczony do 25 000 zł. Czy Pan/Pani jako AI Project Manager jest w stanie mi pomóc bez 10-osobowego zespołu deweloperów?",
+      "budget": "25 000 PLN",
+      "timeline": "3 tygodnie",
+      "aiChallenge": "Jak zamienić wielomiesięczny projekt w zwinne MVP AI-first i przekonać klienta?",
+      "learningOutcome": "Zasada 80/20 w tworzeniu aplikacji na zamówienie oraz sprzedaż wartości zamiast roboczogodzin.",
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Odrzucić projekt mówiąc, że 25 000 zł i 3 tygodnie to za mało nawet na kawę dla programistów.",
+          "isOptimal": false,
+          "scoreDelta": { "clientSatisfaction": -50, "projectMargin": 0, "speed": 0 },
+          "feedback": "Błąd myślenia w starym stylu! Tracisz klienta, który miał realny budżet i natychmiastową potrzebę biznesową.",
+          "kurakComment": "Gdaaa! Tak myślały tradycyjne software house'y i dlatego tracą rynek na rzecz AI Builderów! Mamy narzędzia AI, by dowieźć to w 5 dni roboczych!"
+        },
+        {
+          "id": "opt-2",
+          "text": "Zaakceptować zlecenie, wyciąć zbędne 'wodotryski' na warsztacie i zaproponować MVP na Next.js + Supabase + Cloudflare zintegrowane w 10 dni za 22 000 zł.",
+          "isOptimal": true,
+          "scoreDelta": { "clientSatisfaction": 100, "projectMargin": 90, "speed": 95 },
+          "feedback": "Doskonały wybór! Klient dostaje działający system przed sezonem, Ty zachowujesz ogromną marżę (zamiast płacić armii programistów), a baza jest gotowa na rozwój.",
+          "kurakComment": "Brawo, Mistrzu! Właśnie tak działa nowoczesny AI Project Manager! Skupiasz się na rdzeniu biznesowym, generujesz architekturę z AI i dajesz klientowi sukces!"
+        },
+        {
+          "id": "opt-3",
+          "text": "Obiecać klientowi, że za 25 000 zł zrobisz absolutnie wszystkie funkcje ze 140-tysięcznej wyceny w 48 godzin bez żadnych testów.",
+          "isOptimal": false,
+          "scoreDelta": { "clientSatisfaction": 20, "projectMargin": -30, "speed": 60 },
+          "feedback": "Przesadzone obietnice bez określenia granic MVP doprowadzą do frustracji klienta przy pierwszym napotkanym błędzie.",
+          "kurakComment": "Ostrożnie z obietnicami! AI pozwala tworzyć kod 10x szybciej, ale wciąż potrzebujesz czasu na rzetelne testy i weryfikację integracji płatności."
+        }
+      ]
+    },
+    {
+      "id": "scenario-2",
+      "title": "Atak lawiny wymagań (Scope Creep)",
+      "clientName": "Marta Lewandowska",
+      "clientRole": "Dyrektor sieci klinik medycyny estetycznej",
+      "clientAvatar": "👩‍⚕️",
+      "brief": "Dzień dobry! Wasza aplikacja do rezerwacji wizyt działa świetnie i pacjenci ją uwielbiają. Ale wymyśliłam, że do jutra musicie dorobić: analizator cery ze zdjęć z diagnozą AI, integrację z 4 bankami, automatyczne faktury i wielojęzyczną wersję w języku arabskim! Przecież macie AI, to pewnie jedno kliknięcie?",
+      "budget": "Negocjowalny",
+      "timeline": "Na jutro (nierealne)",
+      "aiChallenge": "Jak postawić zdrowe granice, uświadomić klientowi złożoność integracji i zamienić to w kolejny płatny etap?",
+      "learningOutcome": "Zarządzanie oczekiwaniami wokół AI i strukturyzowanie kolejnych wydań (Releases).",
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Zgodzić się na wszystko za darmo na jutro i siedzieć całą noc, generując losowy kod bez testów medycznych.",
+          "isOptimal": false,
+          "scoreDelta": { "clientSatisfaction": -20, "projectMargin": -50, "speed": 10 },
+          "feedback": "Katastrofa! Moduł medyczny wymaga certyfikacji i surowych testów. Wypuszczenie niesprawdzonego kodu zagraża zdrowiu pacjentów i reputacji firmy.",
+          "kurakComment": "Nie, nie, nie! Diagnoza medyczna to nie zabawka na jedno kliknięcie! Przepisy unijne AI Act nakładają tu surowe wymagania wysokiego ryzyka!"
+        },
+        {
+          "id": "opt-2",
+          "text": "Pogratulować świetnych pomysłów biznesowych, wyjaśnić różnicę między prostym UI a integracjami bankowymi/medycznymi, po czym rozpisać propozycję Etapu 2 z osobnym budżetem i harmonogramem 2-tygodniowym.",
+          "isOptimal": true,
+          "scoreDelta": { "clientSatisfaction": 95, "projectMargin": 85, "speed": 80 },
+          "feedback": "Perfekcyjna postawa Product Ownera! Klient czuje się wysłuchany i doceniony, a Ty zabezpieczasz dodatkowy kontrakt na rozwój systemu.",
+          "kurakComment": "Aktówka pęka z dumy! Zamieniłeś potencjalny chaos w kolejny lukratywny kontrakt! Klientka zyskuje poukładany harmonogram, a Ty stabilny przychód."
+        },
+        {
+          "id": "opt-3",
+          "text": "Wysłać klientce oschłego maila z cytatem z kodeksu cywilnego i zagrozić zerwaniem współpracy.",
+          "isOptimal": false,
+          "scoreDelta": { "clientSatisfaction": -80, "projectMargin": -40, "speed": 0 },
+          "feedback": "Niepotrzebna eskalacja i zniszczenie relacji z kluczowym klientem.",
+          "kurakComment": "Kurak łapie się za głowę! PM nie walczy z klientem, PM zarządza jego oczekiwaniami i edukuje!"
+        }
+      ]
+    },
+    {
+      "id": "scenario-3",
+      "title": "Lęk przed wyciekiem danych i RODO",
+      "clientName": "Tomasz Adamski",
+      "clientRole": "Dyrektor Finansowy i Oficer Bezpieczeństwa w kancelarii prawnej",
+      "clientAvatar": "👨‍⚖️",
+      "brief": "Projekt brzmi obiecująco, ale nasz dział compliance ma wielkie obawy. Jeżeli ta aplikacja ma przetwarzać wrażliwe umowy naszych klientów, skąd mam pewność, że modele sztucznej inteligencji nie wykorzystają tych danych do publicznego szkolenia? Czy to w ogóle zgodne z RODO i tajemnicą zawodową?",
+      "budget": "Wysoki",
+      "timeline": "Zależny od audytu bezpieczeństwa",
+      "aiChallenge": "Jak profesjonalnie zaadresować kwestie privacy, zero data retention i RAG?",
+      "learningOutcome": "Bezpieczeństwo danych w AI: architektura Zero Retention, self-hosted vs enterprise API.",
+      "options": [
+        {
+          "id": "opt-1",
+          "text": "Odpowiedzieć: 'Panie dyrektorze, nikt teraz nie patrzy na RODO, wszyscy używają ChatGPT i nic się nie stało'.",
+          "isOptimal": false,
+          "scoreDelta": { "clientSatisfaction": -100, "projectMargin": -100, "speed": 0 },
+          "feedback": "Natychmiastowa dyskwalifikacja u klienta korporacyjnego i prawniczego.",
+          "kurakComment": "Koko-tragedia! Dyrektor ds. bezpieczeństwa właśnie wpisał Cię na czarną listę dostawców. Compliance to świętość w sektorze B2B!"
+        },
+        {
+          "id": "opt-2",
+          "text": "Przedstawić precyzyjną architekturę: wykorzystanie certyfikowanych API z gwarancją Zero Data Retention (np. Azure OpenAI / Vertex AI w regionie UE), szyfrowanie danych w spoczynku i w locie (AES-256) oraz umowę powierzenia przetwarzania danych (DPA).",
+          "isOptimal": true,
+          "scoreDelta": { "clientSatisfaction": 100, "projectMargin": 95, "speed": 85 },
+          "feedback": "Wzorcowa odpowiedź! Kancelaria otrzymuje pełne udokumentowanie zgodności prawnej, a Ty zyskujesz prestiżowego klienta z wysokim budżetem.",
+          "kurakComment": "To był mistrzowski ruch! Właśnie po to trzymam w ręku tę aktówkę – by pokazać, że AI Project Manager ma w małym palcu procedury korporacyjne i RODO!"
+        },
+        {
+          "id": "opt-3",
+          "text": "Zaproponować, by zrezygnować z AI i przepisać wszystko na papierowe teczki.",
+          "isOptimal": false,
+          "scoreDelta": { "clientSatisfaction": -30, "projectMargin": -80, "speed": -50 },
+          "feedback": "Cofasz klienta do średniowiecza zamiast rozwiązać problem nowoczesnymi metodami.",
+          "kurakComment": "Nie po to żyjemy w erze sztucznej inteligencji, by wracać do maszyn do pisania!"
+        }
+      ]
+    }
+  ]
+}

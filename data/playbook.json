@@ -1,0 +1,44 @@
+{
+  "topics": [
+    {
+      "id": "spec-driven-ai",
+      "title": "Spec-Driven Development dla modeli AI",
+      "category": "Metodyka Tworzenia",
+      "summary": "Jak zastąpić zespół 5 programistów jednym zwięzłym dokumentem PRD i schematem TypeScript.",
+      "content": [
+        "Modele językowe nie potrafią czytać w myślach klienta. Jeśli podasz ogólny prompt, otrzymasz losowy kod z wieloma błędami.",
+        "Kluczem jest podejście 'Spec-Driven': najpierw definiujesz interfejsy TypeScript (User, Project, Order, Status), następnie reguły biznesowe, a dopiero na końcu prosisz AI o implementację komponentów.",
+        "Dzięki temu AI generuje spójny kod, który natychmiast przechodzi walidację typów bez żmudnego debugowania."
+      ],
+      "recommendedTools": ["Cursor", "Claude 3.7 Sonnet", "Antigravity", "TypeScript"],
+      "promptTemplate": "Działasz jako Senior Full-Stack Architect. Na podstawie poniższego schematu interfejsów TypeScript zaimplementuj komponent formularza zamówienia z walidacją i obsługą błędów. Zadbaj o dostępność (a11y) oraz responsywność w Tailwind CSS.",
+      "kurakSecretTip": "Najpierw typy, potem kod! Jeśli AI zna strukturę danych, reszta idzie jak z płatka."
+    },
+    {
+      "id": "pricing-value",
+      "title": "Wycena Projektów AI: Value-Based Pricing",
+      "category": "Negocjacje & Sprzedaż",
+      "summary": "Dlaczego wycena roboczogodzinowa (Time & Material) jest samobójstwem w erze sztucznej inteligencji.",
+      "content": [
+        "W tradycyjnym IT agencje sprzedawały godziny: 200 zł/h x 500 godzin = 100 000 zł. Praca szła wolno, bo im dłużej trwała, tym więcej zarabiali.",
+        "Gdy używasz AI, tworzysz aplikację w 15 godzin zamiast 500. Gdybyś policzył za godziny, zarobiłbyś 3 000 zł zamiast 100 000 zł – to absurd!",
+        "Stosuj wycenę opartą na wartości (Value-Based): Jeśli aplikacja oszczędza klientowi 200 000 zł rocznie, wyceń ją na 30 000 - 50 000 zł za efekt wdrożony w 10 dni. Klient jest zachwycony tempem i oszczędnością, a Ty zarabiasz 3000 zł na godzinę swojej wiedzy architektonicznej!"
+      ],
+      "recommendedTools": ["Kalkulator ROI", "Umowa ramowa z sukcesem (Success Fee)", "Cloudflare Pages"],
+      "kurakSecretTip": "Sprzedawaj działający biznes klienta w 10 dni, a nie czas klikania w klawiaturę!"
+    },
+    {
+      "id": "modern-stack-cloudflare",
+      "title": "Architektura: Next.js + Cloudflare Pages",
+      "category": "Infrastruktura & Chmura",
+      "summary": "Jak wdrażać aplikacje z zerowym kosztem stałym i światowej klasy szybkością.",
+      "content": [
+        "Klienci boją się skomplikowanych serwerów i wysokich faktur za chmurę AWS/GCP.",
+        "Złoty standard dla aplikacji zamawianych przez klientów: statyczny eksport Next.js (output: 'export') hostowany na Cloudflare Pages.",
+        "Zalety: darmowy SSL, globalna sieć Edge, brak podatności backendowych na awarie, zerowy rachunek za serwery na starcie oraz błyskawiczny deploy za pomocą jednej komendy 'wrangler pages deploy'."
+      ],
+      "recommendedTools": ["Cloudflare Pages", "Wrangler CLI", "Tailwind CSS v4", "Supabase"],
+      "kurakSecretTip": "Darmowy hosting z globalnym CDN to as w rękawie podczas prezentacji oferty dla klienta!"
+    }
+  ]
+}
