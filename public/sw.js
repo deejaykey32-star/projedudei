@@ -1,5 +1,5 @@
 // Projedudei PWA Service Worker
-const CACHE_NAME = "projedudei-v1";
+const CACHE_NAME = "projedudei-v2";
 const STATIC_ASSETS = [
   "/",
   "/manifest.json",
@@ -9,6 +9,7 @@ const STATIC_ASSETS = [
   "/simulator/",
   "/exam/",
   "/playbook/",
+  "/pobierz/",
   "/kurs/project-manager/",
   "/kurs/scrum-master/",
   "/kurs/product-owner/",
@@ -33,6 +34,7 @@ self.addEventListener("activate", (event) => {
       return Promise.all(
         keys.map((key) => {
           if (key !== CACHE_NAME) {
+            console.log("[ServiceWorker] Usuwanie starego cache:", key);
             return caches.delete(key);
           }
         })
@@ -45,18 +47,31 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
+  const url = new URL(event.request.url);
+  // Nie cache'uj samych pakietów pobierania APK / AAB / IPA / ZIP w SW
+  if (url.pathname.startsWith("/downloads/")) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
+        // Zwróć cache i odśwież w tle (stale-while-revalidate)
+        fetch(event.request)
+          .then((networkResponse) => {
+            if (networkResponse && networkResponse.status === 200) {
+              caches.open(CACHE_NAME).then((cache) => {
+                cache.put(event.request, networkResponse);
+              });
+            }
+          })
+          .catch(() => {});
         return cachedResponse;
       }
+
       return fetch(event.request)
         .then((networkResponse) => {
-          if (
-            !networkResponse ||
-            networkResponse.status !== 200 ||
-            networkResponse.type !== "basic"
-          ) {
+          if (!networkResponse || networkResponse.status !== 200) {
             return networkResponse;
           }
           const responseToCache = networkResponse.clone();
@@ -66,9 +81,10 @@ self.addEventListener("fetch", (event) => {
           return networkResponse;
         })
         .catch(() => {
-          return caches.match("/");
+          if (event.request.headers.get("accept")?.includes("text/html")) {
+            return caches.match("/");
+          }
         });
     })
   );
 });
-

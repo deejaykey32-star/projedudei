@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Projedudei</string>
+    <string name="title_activity_main">Projedudei</string>
+    <string name="package_name">com.projedudei.app</string>
+    <string name="custom_url_scheme">com.projedudei.app</string>
+</resources>

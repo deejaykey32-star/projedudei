@@ -4,4 +4,9 @@ out/
 .wrangler/
 .env*.local
 *.log
+native/android/.gradle/
+native/android/build/
+native/android/app/build/
+native/node_modules/
+native/android-keys/*.jks
 

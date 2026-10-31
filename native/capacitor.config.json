@@ -1,0 +1,13 @@
+{
+  "appId": "com.projedudei.app",
+  "appName": "Projedudei",
+  "webDir": "www",
+  "backgroundColor": "#0f172a",
+  "android": {
+    "allowMixedContent": false
+  },
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#0f172a"
+  }
+}

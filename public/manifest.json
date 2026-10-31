@@ -1,13 +1,13 @@
 {
-  "id": "projedudei-ai-pm-scrum",
-  "name": "Projedudei - AI Project Master & Scrum Academy",
+  "id": "projedudei-ai-pm-pwa",
+  "name": "Projedudei",
   "short_name": "Projedudei",
-  "description": "Aplikacja edukacyjna dla Project Managerów, Scrum Masterów i Product Ownerów: nauka kontaktu z klientami i tworzenia aplikacji z AI z niebieskim Kurakiem.",
+  "description": "Akademia AI Project Managera i Scrum Mastera z Kurakiem",
   "lang": "pl",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
   "categories": ["education", "business", "productivity"],
@@ -38,4 +38,3 @@
     }
   ]
 }
-

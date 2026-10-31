@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   description:
     "Aplikacja edukacyjna dla Project Managerów, Scrum Masterów i Product Ownerów: nauka kontaktu z klientami, tworzenia aplikacji z AI bez zespołów koderów oraz przygotowanie do certyfikacji z mentorem Kurakiem trzymającym aktówkę.",
   manifest: "/manifest.json",
+  applicationName: "Projedudei",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Projedudei",
+  },
   icons: {
     icon: "/icon-192.png",
     apple: "/apple-touch-icon.png",
@@ -41,6 +47,8 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Projedudei" />
+        <meta name="application-name" content="Projedudei" />
       </head>
       <body className="bg-slate-900 font-sans text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-900">
         <KurakSpeechProvider>
