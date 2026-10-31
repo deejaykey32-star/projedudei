@@ -23,3 +23,4 @@ export default async function CourseSectionPage({
 
   return <CourseSectionView section={section} />;
 }
+

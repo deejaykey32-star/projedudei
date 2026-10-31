@@ -18,6 +18,7 @@ import {
   ExternalLink,
   CheckCircle,
   HelpCircle,
+  Download,
   type LucideIcon,
 } from "lucide-react";
 import type { Category, CourseSection } from "@/lib/types";
@@ -99,6 +100,13 @@ export default function HomeView({
             </p>
             <div className="mt-1 flex flex-wrap justify-center sm:justify-start gap-2">
               <Link
+                href="/pobierz"
+                className="flex items-center gap-1.5 rounded-xl bg-emerald-500 px-3.5 py-2 text-xs font-extrabold text-slate-950 shadow-md shadow-emerald-500/20 hover:bg-emerald-400 active:scale-95 transition"
+              >
+                <Download className="h-4 w-4" />
+                <span>Pobierz APK / iOS / PWA</span>
+              </Link>
+              <Link
                 href="/simulator"
                 className="flex items-center gap-1.5 rounded-xl bg-amber-400 px-3.5 py-2 text-xs font-extrabold text-slate-950 shadow-md shadow-amber-400/20 hover:bg-amber-300 active:scale-95 transition"
               >
@@ -157,6 +165,37 @@ export default function HomeView({
             </p>
           </div>
           <ChevronRight className="h-5 w-5 text-slate-500 group-hover:text-amber-400 transition" />
+        </Link>
+      </section>
+
+      {/* Baner pobierania wersji mobilnych */}
+      <section className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-3xl border-2 border-emerald-500/50 bg-gradient-to-r from-emerald-950/40 via-slate-850 to-slate-900 p-5 shadow-lg backdrop-blur">
+        <div className="flex items-center gap-3.5">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400">
+            <Download className="h-6 w-6" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-xs font-bold text-emerald-300">
+                Wersja Mobilna
+              </span>
+              <span className="text-xs text-slate-400">Android • iOS • PWA</span>
+            </div>
+            <h3 className="text-base sm:text-lg font-bold text-slate-100 mt-0.5">
+              Pobierz aplikację na telefon lub tablet
+            </h3>
+            <p className="text-xs text-slate-400">
+              Pakiety APK, AAB (Google Play), iOS IPA, PWA i ZIP do nauki offline z Kurakiem.
+            </p>
+          </div>
+        </div>
+
+        <Link
+          href="/pobierz"
+          className="flex items-center gap-1.5 shrink-0 rounded-2xl bg-emerald-500 px-4 py-2.5 text-xs font-extrabold text-slate-950 shadow-md shadow-emerald-500/20 hover:bg-emerald-400 active:scale-95 transition"
+        >
+          <span>Pobierz pakiety</span>
+          <ChevronRight className="h-4 w-4" />
         </Link>
       </section>
 
