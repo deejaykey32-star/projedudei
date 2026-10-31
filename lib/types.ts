@@ -62,6 +62,7 @@ export interface YouTubeVideoRef {
   title: string;
   channel: string;
   url: string;
+  videoId?: string;
   searchQuery: string;
   durationEstimate: string;
   description: string;
