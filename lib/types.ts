@@ -58,3 +58,50 @@ export interface PlaybookTopic {
   kurakSecretTip: string;
 }
 
+export interface YouTubeVideoRef {
+  title: string;
+  channel: string;
+  url: string;
+  searchQuery: string;
+  durationEstimate: string;
+  description: string;
+}
+
+export interface CourseSubsection {
+  id: string;
+  code: string;
+  title: string;
+  badge: string;
+  description: string;
+  certificationDetails: {
+    issuer: string;
+    difficulty: string;
+    validity: string;
+    examFormat: string;
+    targetAudience: string;
+  };
+  theorySummary: string[];
+  useCase: {
+    scenarioTitle: string;
+    clientSituation: string;
+    actionTaken: string;
+    aiAdvantage: string;
+  };
+  beyondCertification: {
+    title: string;
+    keyTakeaway: string;
+    practicalAiTip: string;
+  };
+  youtubeVideos: YouTubeVideoRef[];
+  practiceQuestions: Question[];
+}
+
+export interface CourseSection {
+  id: string;
+  number: number;
+  title: string;
+  subtitle: string;
+  iconName: string;
+  description: string;
+  subsections: CourseSubsection[];
+}

@@ -1,8 +1,8 @@
-import { getAllCategories } from "@/lib/data";
+import { getAllCategories, getAllCourseSections } from "@/lib/data";
 import HomeView from "@/components/HomeView";
 
 export default function HomePage() {
   const categories = getAllCategories();
-  return <HomeView categories={categories} />;
+  const sections = getAllCourseSections();
+  return <HomeView categories={categories} sections={sections} />;
 }
-

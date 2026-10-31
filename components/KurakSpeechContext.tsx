@@ -39,7 +39,7 @@ export function KurakSpeechProvider({ children }: { children: React.ReactNode })
   const [voiceOn, setVoiceOn] = useState(true);
   const [rate, setRateState] = useState(1.05);
   const [currentText, setCurrentText] = useState(
-    "Cześć! Jestem Kurak – Twój mentor AI Project Managera i Scrum Mastera. Trzymam aktówkę pełną wiedzy, by nauczyć Cię kontaktu z klientami i tworzenia apek z AI!"
+    "Cześć! Jestem niebieski Kurak – Twój mentor AI Project Managera i Scrum Mastera. Trzymam aktówkę pełną wiedzy, by nauczyć Cię kontaktu z klientami, przygotować do certyfikacji i tworzyć aplikacje z AI!"
   );
   const [bubbleVisible, setBubbleVisible] = useState(false);
 

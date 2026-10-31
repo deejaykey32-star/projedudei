@@ -1,232 +1,239 @@
 {
   "categories": [
     {
-      "id": "scrum-ai",
-      "name": "Scrum Master w erze AI (PSM I / II)",
-      "shortDesc": "Zwinne zarządzanie projektami i rola Scrum Mastera, gdy deweloperami są modele AI.",
-      "badge": "Agile & Scrum",
+      "id": "project-manager",
+      "name": "1. Project Manager (Kierownik Projektu)",
+      "shortDesc": "PMP, PRINCE2, IPMA (D do A), CAPM – dostarczenie projektu w czasie, budżecie i zakresie.",
+      "badge": "PMP • PRINCE2 • IPMA • CAPM",
       "questions": [
         {
-          "id": 101,
-          "text": "Jak zmienia się rola Scrum Mastera w zespole, w którym tworzenie kodu wykonuje AI Agent (vibe coding) pod nadzorem Product Ownera?",
+          "id": 1101,
+          "text": "Jakie wymagania wstępne musi spełnić kandydat z wyższym wykształceniem (studia licencjackie/magisterskie), aby przystąpić do egzaminu PMP (PMI)?",
           "options": [
-            "Scrum Master staje się niepotrzebny i należy go natychmiast zwolnić.",
-            "Scrum Master skupia się na usuwaniu barier w promptowaniu, jakości kontekstu, przepływie wartości i przestrzeganiu Definition of Done zamiast ręcznego estymowania zadań.",
-            "Scrum Master musi ręcznie przepisywać każdy prompt na język C++ i zatwierdzać go na papierze.",
-            "Scrum Master przejmuje rolę jedynego programisty i sam pisze cały kod bez użycia AI."
+            "Brak wymagań wstępnych – każdy może zapłacić i pisać egzamin.",
+            "Minimum 36 miesięcy (3 lata) udokumentowanego doświadczenia w prowadzeniu projektów oraz 35 godzin formalnej edukacji PM.",
+            "Minimum 60 miesięcy (5 lat) pracy wyłącznie jako programista w języku Java.",
+            "Zdany egzamin na prawo jazdy kat. C."
           ],
           "correctAnswerIndex": 1,
-          "explanation": "W podejściu AI-first tradycyjne wąskie gardła (np. powolne kodowanie w starym stylu) znikają. Scrum Master dba o płynny przepływ (Flow), optymalizację środowiska agentów, eliminację długu technologicznego i rygorystyczne Definition of Done (testy, linter, bezpieczeństwo).",
-          "kurakTip": "Pamiętaj: AI eliminuje mechaniczne klepanie kodu, ale nie eliminuje chaosu organizacyjnego! Scrum Master to strażnik wartości i procesów."
+          "explanation": "Dla osób z dyplomem 4-letnich studiów PMI wymaga minimum 36 miesięcy (4500h) prowadzenia projektów oraz 35 godzin edukacji. Dla osób bez dyplomu wymóg wynosi 60 miesięcy.",
+          "kurakTip": "PMP to złoty standard – PMI weryfikuje Twoje realne miesiące dowodzenia projektami!"
         },
         {
-          "id": 102,
-          "text": "Co powinno wchodzić w skład 'Definition of Done' (DoD) dla modułu wygenerowanego przez AI w aplikacji dla klienta?",
+          "id": 1102,
+          "text": "Która zasada w metodyce PRINCE2 (AXELOS) nakazuje natychmiastowe przerwanie projektu, jeśli przestanie on przynosić korzyści finansowe lub strategiczne?",
           "options": [
-            "Wyłącznie fakt, że model AI nie zgłosił błędu w oknie czatu.",
-            "Przejście testów jednostkowych i E2E, brak podatności bezpieczeństwa (SAST), zgodność z wymaganiami klienta oraz weryfikacja kodu przez człowieka.",
-            "Wystarczy, że kod kompiluje się na maszynie dewelopera.",
-            "Kod musi mieć co najmniej 1000 linii komentarzy wygenerowanych w języku łacińskim."
+            "Zarządzanie z wykorzystaniem tolerancji (Manage by Exception)",
+            "Ciągła zasadność biznesowa (Continued Business Justification)",
+            "Koncentracja na produktach (Focus on Products)",
+            "Dostosowanie do środowiska projektu (Tailor to suit the Project)"
           ],
           "correctAnswerIndex": 1,
-          "explanation": "Kod generowany przez AI jest dostarczany błyskawicznie, lecz wymaga surowej kontroli jakości. Definition of Done musi zawierać automatyczne testy regresyjne, audyt bezpieczeństwa promptów/sekretów, walidację typów (TypeScript) oraz akceptację funkcjonalną.",
-          "kurakTip": "Klient płaci za działający i bezpieczny produkt. 'Działa w oknie prompta' to NIE jest Definition of Done!"
+          "explanation": "Ciągła zasadność biznesowa to fundament PRINCE2. Jeśli na dowolnym etapie (Stage Gate) Business Case wykaże brak opłacalności, Komitet Sterujący ma obowiązek zamknąć projekt.",
+          "kurakTip": "Nigdy nie ciągnij projektu tylko dlatego, że już wydałeś pieniądze (unikanie Sunk Cost Fallacy)!"
         },
         {
-          "id": 103,
-          "text": "Podczas Daily Scrum twórca aplikacji (AI Builder) zgłasza, że model LLM zapętla się i halucynuje w logice wyliczeń podatkowych. Jaka jest właściwa reakcja Scrum Mastera?",
+          "id": 1103,
+          "text": "Który poziom certyfikacji w 4-poziomowym systemie IPMA jest przeznaczony dla początkujących (Associate) i nie wymaga wcześniejszego doświadczenia?",
           "options": [
-            "Ukarać AI Buildera i kazać mu przepisać aplikację ręcznie w czystym assemblerze.",
-            "Pomóc w identyfikacji przeszkody: zaproponować wydzielenie problemu do czystej funkcji matematycznej bez LLM lub zastosowanie wzorca Chain-of-Thought z testami parametrycznymi.",
-            "Zignorować problem i wdrożyć kod na produkcję do klienta, licząc, że nikt nie zauważy błędów.",
-            "Przerwać cały Sprint i anulować kontrakt z klientem."
+            "Poziom A (Certified Projects Director)",
+            "Poziom B (Certified Senior Project Manager)",
+            "Poziom C (Certified Project Manager)",
+            "Poziom D (Certified Project Management Associate)"
           ],
-          "correctAnswerIndex": 1,
-          "explanation": "Scrum Master usuwa impedimenta (przeszkody). W projektach z AI typowym błędem jest zmuszanie modelu językowego do wykonywania skomplikowanej arytmetyki w tekście zamiast użycia zdeterminowanego kodu lub narzędzi kalkulacyjnych.",
-          "kurakTip": "Modele językowe świetnie piszą kod, ale są słabymi kalkulatorami! Prawdziwy PM wie, kiedy użyć LLM, a kiedy klasycznej funkcji w TypeScript."
+          "correctAnswerIndex": 3,
+          "explanation": "Poziom D weryfikuje znajomość wiedzy i terminologii ICB4 i nie wymaga od kandydata lat praktyki, w przeciwieństwie do poziomów C, B i A.",
+          "kurakTip": "IPMA D to świetny pierwszy krok do udowodnienia klientom, że znasz profesjonalny język zarządzania projektami!"
         },
         {
-          "id": 104,
-          "text": "Jak w metodyce Scrum realizowany jest 'Sprint Review' (Przegląd Sprintu) przy tworzeniu aplikacji z użyciem AI?",
+          "id": 1104,
+          "text": "Czym głównie różni się certyfikat CAPM (Certified Associate in Project Management) od PMP oferowanego przez PMI?",
           "options": [
-            "Prezentacją slajdów w PowerPoint i obietnicami, co zostanie zakodowane za pół roku.",
-            "Prezentacją działającego, interaktywnego przyrostu produktu (Working Software) wdrożonego np. w Cloudflare Pages, z którego klient może od razu poklikać i dać feedback.",
-            "Odczytaniem 200 stron wygenerowanego kodu źródłowego przed klientem.",
-            "Sprint Review zostaje całkowicie pominięty, bo AI wie lepiej od klienta, czego mu potrzeba."
+            "CAPM wymaga zdania egzaminu z programowania w C++, a PMP nie.",
+            "CAPM jest certyfikatem dla osób rozpoczynających karierę (Junior PM) i bazuje na terminologii z PMP, lecz nie wymaga lat praktyki w prowadzeniu projektów.",
+            "CAPM można pisać tylko w języku łacińskim.",
+            "PMP jest bezpłatny, a CAPM kosztuje milion dolarów."
           ],
           "correctAnswerIndex": 1,
-          "explanation": "Manifest Agile mówi: 'Działające oprogramowanie ponad szczegółową dokumentację'. Dzięki AI i Cloudflare Pages klient na każdym Sprint Review otrzymuje klikalną, wdrożoną wersję i weryfikuje swoje hipotezy biznesowe w czasie rzeczywistym.",
-          "kurakTip": "Pokazanie klientowi działającego prototypu pod dedykowanym adresem URL .pages.dev buduje 10x większe zaufanie niż najpiękniejszy slajd!"
+          "explanation": "Główną zaletą CAPM jest brak wymogu wcześniejszego wieloletniego doświadczenia w prowadzeniu projektów, co czyni go idealnym startem dla Junior PM-ów.",
+          "kurakTip": "Jeśli dopiero zaczynasz, CAPM to Twoja przepustka do profesjonalnej ligi PMI!"
+        }
+      ]
+    },
+    {
+      "id": "scrum-master",
+      "name": "2. Scrum Master",
+      "shortDesc": "PSM (I, II, III), CSM, DASSM – poprawność procesu, edukacja zespołu i usuwanie przeszkód.",
+      "badge": "PSM • CSM • DASSM",
+      "questions": [
+        {
+          "id": 1201,
+          "text": "Jaki jest wymagany próg punktowy, aby zdać egzamin Professional Scrum Master I (PSM I) na Scrum.org?",
+          "options": [
+            "50% poprawnych odpowiedzi",
+            "65% poprawnych odpowiedzi",
+            "85% poprawnych odpowiedzi",
+            "100% poprawnych odpowiedzi"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Scrum.org stawia wysoką poprzeczkę – zdanie testu PSM I wymaga uzyskania co najmniej 85% punktów w 60 minut. W zamian certyfikat jest dożywotni i nie wymaga odnawiania.",
+          "kurakTip": "85% to surowy próg! Każde pytanie o Definition of Done czy rolę Scrum Mastera musi być opanowane na pamięć."
         },
         {
-          "id": 105,
-          "text": "Czym różni się estymacja 'Story Points' w tradycyjnym zespole 10 koderów od pracy z AI Product Builderem?",
+          "id": 1202,
+          "text": "Jaki jest kluczowy warunek formalny przystąpienia do egzaminu CSM (Certified ScrumMaster) w Scrum Alliance?",
           "options": [
-            "W projektach AI nie ma znaczenia czas dostarczenia, więc estymacje robi się w rzutach monetą.",
-            "W projektach z AI tradycyjne 'godziny kodowania' przestają być miarą; estymuje się raczej złożoność architektury, integracje API i liczbę iteracji promptów.",
-            "Trzeba pomnożyć czas tradycyjny przez 10, bo AI wolno myśli.",
-            "Story points są zastępowane przez liczbę zużytych watów energii procesora."
+            "Minimum 10 lat doświadczenia w programowaniu w Pythonie.",
+            "Ukończenie akredytowanego, 2-dniowego szkolenia prowadzonego przez Certified Scrum Trainer (CST).",
+            "Wpłacenie 100 000 dolarów kaucji.",
+            "Napisanie pracy magisterskiej o Scrumie."
           ],
           "correctAnswerIndex": 1,
-          "explanation": "AI wykonuje zadanie kodowania w minuty, a nie tygodnie. Złożoność przesuwa się na integracje zewnętrzne (bazy danych, bramki płatności, uprawnienia, bezpieczeństwo) i walidację założeń biznesowych z klientem.",
-          "kurakTip": "Dla klienta nie ma znaczenia, czy kod pisało 5 seniorów przez miesiąc, czy jeden zwinny PM z Claude/Gemini w 2 dni. Liczy się rozwiązany problem!"
+          "explanation": "Scrum Alliance bezwzględnie wymaga ukończenia akredytowanego kursu z certyfikowanym trenerem (CST) przed podejściem do testu CSM.",
+          "kurakTip": "To główna różnica między PSM (możesz uczyć się sam za darmo) a CSM (musisz zapłacić za szkolenie)!"
+        },
+        {
+          "id": 1203,
+          "text": "Jaka jest główna zasada podejścia Disciplined Agile Senior Scrum Master (DASSM) promowanego przez PMI?",
+          "options": [
+            "Każdy zespół bezwzględnie musi stosować wyłącznie podręcznikowy Scrum bez żadnych modyfikacji.",
+            "Kontekst ma znaczenie (Context Counts) – zespoły powinny dobrać i dostosować swój unikalny sposób pracy (Choose Your WoW) zależnie od specyfiki projektu.",
+            "Zabronione jest korzystanie z narzędzi komputerowych.",
+            "Projekty wolno rozliczać wyłącznie w bitcoinach."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Disciplined Agile odrzuca dogmatyzm jednej metodyki. Kluczem jest dobór technik (Scrum, Kanban, Lean) pasujących do realiów organizacji.",
+          "kurakTip": "Jako AI PM bądź elastyczny jak woda – dobieraj narzędzia do klienta, a nie na odwrót!"
         }
       ]
     },
     {
       "id": "product-owner",
-      "name": "Product Owner & Kontakt z Klientem (PSPO)",
-      "shortDesc": "Prowadzenie warsztatów, badanie potrzeb, zbieranie wymagań i zamiana ich w specyfikację dla AI.",
-      "badge": "Product Management",
+      "name": "3. Product Owner (Właściciel Produktu)",
+      "shortDesc": "PSPO (I, II, III), CSPO, SPOC – maksymalizacja wartości i zarządzanie Product Backlogiem.",
+      "badge": "PSPO • CSPO • SPOC",
       "questions": [
         {
-          "id": 201,
-          "text": "Klient przychodzi z luźnym pomysłem: 'Chcę aplikację jak Uber, ale dla hydraulików'. Co robi profesjonalny Product Owner w pierwszym kroku?",
+          "id": 1301,
+          "text": "Kto w zespole Scrumowym ponosi wyłączną odpowiedzialność za zarządzanie Product Backlogiem i określanie kolejności zadań (PSPO)?",
           "options": [
-            "Natychmiast otwiera generator kodu i pisze kod losowej aplikacji.",
-            "Prowadzi warsztat Discovery: zadaje pytania o model biznesowy, profil użytkownika końcowego, główne bolączki i definiuje Minimal Viable Product (MVP).",
-            "Mówi klientowi, że to niemożliwe i odsyła go z kwitkiem.",
-            "Wycenia projekt na 500 tysięcy złotych i podpisuje umowę bez pytań."
+            "Scrum Master",
+            "Product Owner",
+            "Główny Programista",
+            "Prezes Zarządu Klienta"
           ],
           "correctAnswerIndex": 1,
-          "explanation": "Skuteczny Product Owner nie zaczyna od kodowania. Najpierw odkrywa prawdziwy cel biznesowy klienta, identyfikuje kluczowe ścieżki użytkownika (Happy Path) i wspólnie ustala zakres MVP, który AI może postawić w kilka dni.",
-          "kurakTip": "Zawsze pytaj klienta: 'Jaki jeden główny problem ta aplikacja ma rozwiązać w pierwszym tygodniu?' Skupienie to Twoja supermoc."
+          "explanation": "Zgodnie ze Scrum Guide tylko jedna osoba – Product Owner – odpowiada za Product Backlog i decyduje, które elementy przynoszą największą wartość.",
+          "kurakTip": "Klient może sugerować, ale to PO podejmuje ostateczną decyzję o kolejności wdrożeń!"
         },
         {
-          "id": 202,
-          "text": "Jak najlepiej przygotować specyfikację (PRD) dla narzędzi AI (np. Cursor, Bolt, Antigravity), aby uniknąć halucynacji i błędnego kodu?",
+          "id": 1302,
+          "text": "Jaki jest główny cel tworzenia 'Persony' (User Persona) przez Product Ownera (CSPO)?",
           "options": [
-            "Wpisać jedno zdanie: 'Zrób mi fajny system CRM'.",
-            "Przygotować precyzyjny dokument ze schematem danych (TypeScript types / Prisma schema), regułami biznesowymi, architekturą komponentów i kryteriami akceptacji.",
-            "Wgrać książkę telefoniczną jako kontekst.",
-            "Pisać specyfikację wierszem i rymami, żeby model miał lepszą wenę."
+            "Ukrycie prawdziwych danych klientów przed urzędem skarbowym.",
+            "Zbudowanie archetypu użytkownika z jego celami i bolączkami, aby podejmować decyzje projektowe odpowiadające realnym potrzebom odbiorców.",
+            "Zastąpienie testów automatycznych rysunkami postaci.",
+            "Stworzenie maskotki dla marketingu na TikToku."
           ],
           "correctAnswerIndex": 1,
-          "explanation": "Spec-Driven Development to klucz do sukcesu z AI. Modele językowe generują bezbłędny kod produkcyjny wtedy, gdy otrzymają ścisłe kontrakty interfejsów (TypeScript interfaces), jasny przepływ danych i zdefiniowane stany brzegowe.",
-          "kurakTip": "Jasny schemat typów danych w TypeScript to 80% sukcesu! Jeśli model zna strukturę danych, kod generuje się jak z klocków LEGO."
+          "explanation": "Persona pozwala zespołowi skupić się na rozwiązaniu konkretnych problemów prawdziwych ludzi, zamiast tworzenia abstrakcyjnych funkcji nikomu niepotrzebnych.",
+          "kurakTip": "Gdy klient mówi 'wszyscy będą tego używać', natychmiast zapytaj: 'A kto konkretnie skorzysta z tego we wtorek o 9:00 rano?'"
         },
         {
-          "id": 203,
-          "text": "Klient w połowie projektu dzwoni i żąda: 'Dojdźmy jeszcze do systemu obsługę płatności w kryptowalutach i moduł VR'. Jak zarządzać tym 'Scope Creep'?",
+          "id": 1303,
+          "text": "W jakiej fazie według podręcznika SBOK Guide (certyfikacja SPOC - SCRUMstudy) następuje stworzenie wizji projektu i identyfikacja interesariuszy?",
           "options": [
-            "Zgodzić się za darmo i pracować 24 godziny na dobę bez snu.",
-            "Zastosować technikę Agile: docenić pomysł, wpisać go na górę Product Backlogu jako pozycję do kolejnej fazy po wdrożeniu MVP i przedstawić wpływ na budżet/czas.",
-            "Nawymyślać klientowi i zerwać kontakt.",
-            "Skasować cały dotychczasowy kod i zacząć pisać moduł VR."
+            "Faza Implement (Wdrażanie)",
+            "Faza Initiate (Inicjowanie)",
+            "Faza Release (Wydanie)",
+            "Faza Review and Retrospect"
           ],
           "correctAnswerIndex": 1,
-          "explanation": "W zarządzaniu zakresem (Scope Creep) Product Owner nie mówi agresywnego 'nie', lecz 'tak, możemy to zrobić w kolejnej wersji, po zebraniu danych z wdrożenia MVP'. Chroni to datę uruchomienia i budżet projektu.",
-          "kurakTip": "Scope Creep to wróg numer jeden każdego wdrożenia! MVP musi ujrzeć światło dzienne i zacząć zarabiać na siebie, nowe ficzery dodasz w sprincie v2."
-        },
-        {
-          "id": 204,
-          "text": "W jaki sposób Product Owner weryfikuje 'wartość biznesową' (Business Value) dostarczaną przez aplikację tworzoną z AI?",
-          "options": [
-            "Mierzy liczbę linijek kodu wygenerowanych przez sztuczną inteligencję w minutę.",
-            "Mierzy realne metryki użytkowników: konwersję, czas wykonania zadania, retencję klientów i zwrot z inwestycji (ROI).",
-            "Ocenia, ile kaw wypił podczas promptowania.",
-            "Pyta model AI, czy czuje się spełniony zawodowo."
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Wartość produktu nie leży w ilości kodu ani wielkości repozytorium. W erze AI mniej kodu często oznacza lepszą aplikację. Liczą się wskaźniki biznesowe klienta: sprzedaż, oszczędność czasu i zadowolenie użytkowników.",
-          "kurakTip": "Dla Twojego klienta liczy się wynik finansowy i zadowoleni użytkownicy. Mierz twarde KPI, a nie megabajty w repozytorium!"
+          "explanation": "W SBOK Guide faza Initiate obejmuje zdefiniowanie wizji projektu, identyfikację Scrum Mastera i interesariuszy oraz stworzenie wstępnego rejestru produktu.",
+          "kurakTip": "SBOK kładzie duży nacisk na fazę inicjacji, zanim zespół rozpocznie pierwszy sprint!"
         }
       ]
     },
     {
-      "id": "client-negotiations",
-      "name": "Wyceny, Umowy i Zastępowanie Software House'ów",
-      "shortDesc": "Jak sprzedawać aplikacje tworzone z AI, konkurować z tradycyjnymi agencjami i chronić marżę.",
-      "badge": "Biznes & Sprzedaż",
+      "id": "product-manager",
+      "name": "4. Product Manager (Menedżer Produktu)",
+      "shortDesc": "CPM (AIPMM), Pragmatic Institute (PMC), Rola PM/PO w środowiskach IT.",
+      "badge": "CPM • Pragmatic • PM/PO w IT",
       "questions": [
         {
-          "id": 301,
-          "text": "Tradycyjny Software House wycenił klientowi aplikację na 120 000 PLN i 6 miesięcy realizacji. Ty potrafisz dowieźć ją z AI w 10 dni. Jak powinieneś wycenić projekt?",
+          "id": 1401,
+          "text": "Czym głównie różni się rola Product Managera (PM) od roli Product Ownera (PO)?",
           "options": [
-            "Wycenić na 500 PLN, bo pracowałeś tylko kilka godzin.",
-            "Wycenić w oparciu o wartość (Value-Based Pricing), np. 25 000 - 40 000 PLN, oferując klientowi 3-krotnie niższy koszt, natychmiastowe wejście na rynek i zachowując znakomitą marżę.",
-            "Podać stawkę godzinową 15 PLN za godzinę promptowania.",
-            "Odmówić, bo aplikacje wolno robić tylko w zespołach 10-osobowych."
+            "Product Manager odpowiada za parzenie kawy, a Product Owner za sprzątanie sali.",
+            "Product Manager skupia się na strategii rynkowej, modelu biznesowym i cyklu życia produktu (zewnętrzne 'Dlaczego?'), a Product Owner na optymalizacji pracy zespołu deweloperskiego i Backlogu (wewnętrzne 'Co i Jak?').",
+            "Product Manager to dawna nazwa Scrum Mastera.",
+            "Nie ma żadnej różnicy, to dokładnie to samo stanowisko w każdym calu."
           ],
           "correctAnswerIndex": 1,
-          "explanation": "Nigdy nie rozliczaj się z klientem według godzin (Time & Material), gdy używasz AI, ponieważ karzesz się za swoją niesamowitą efektywność! Value-Based Pricing sprawia, że klient oszczędza 80 000 PLN i 5 miesięcy, a Ty zarabiasz godziwie za ekspertyzę i dowóz.",
-          "kurakTip": "Zapamiętaj zasadę Kuraka: Klient płaci za to, że jego biznes rusza za 10 dni, a nie za 6 miesięcy! Sprzedawaj prędkość i rezultat, nie roboczogodziny."
+          "explanation": "Product Manager patrzy na rynek, konkurencję i zyskowność (Outbound), podczas gdy Product Owner ściśle współpracuje z inżynierami nad realizacją wymagań (Inbound).",
+          "kurakTip": "Jako AI Builder bardzo często łączysz w sobie obie te role – jesteś strategiem rynkowym i bezpośrednim twórcą!"
         },
         {
-          "id": 302,
-          "text": "Klient pyta: 'Czy jeśli aplikację pomaga pisać AI, to czy konkurencja nie skopiuje mojego pomysłu i czy kod jest bezpieczny?' Jaka jest najlepsza odpowiedź PM-a?",
+          "id": 1402,
+          "text": "Co oznacza słynny akronim 'NIHITO' w metodyce Pragmatic Institute (PMC)?",
           "options": [
-            "Przyznać, że cały kod natychmiast wycieka do internetu i każdy może go ukraść.",
-            "Wyjaśnić, że korzysta się z profesjonalnych API korporacyjnych z klauzulą Zero Data Retention (dane nie służą do trenowania modeli), kod jest objęty pełnymi prawami autorskimi klienta, a logika biznesowa jest chroniona.",
-            "Powiedzieć klientowi, że za dużo pyta i powinien zmienić branżę.",
-            "Zapewnić, że AI pisze kod w niewidzialnym atramencie."
+            "New Innovations Have International Trade Opportunities",
+            "Nothing Important Happens In The Office (Nic ważnego nie dzieje się w biurze – wyjdź do klientów)",
+            "Never Invest Heavily In Technological Operations",
+            "Next Iteration Has Interrupted Testing Operations"
           ],
           "correctAnswerIndex": 1,
-          "explanation": "Zarządzanie obawami klienta o bezpieczeństwo to kluczowa kompetencja. Korzystając z certyfikowanych API (np. OpenAI Enterprise, Google Cloud Vertex, Anthropic Commercial), dane klienta nie trafiają do zbiorów treningowych, a prawa majątkowe do kodu przysługują zamawiającemu.",
-          "kurakTip": "Spokój klienta to podpisana umowa. Pokaż mu zapisy o poufności (NDA) oraz politykę bezpieczeństwa dostawców AI."
+          "explanation": "NIHITO przypomina Product Managerom, że siedzenie w gabinecie rodzi halucynacje biznesowe. Prawdziwa wiedza o produkcie pochodzi z bezpośrednich rozmów z klientami na rynku.",
+          "kurakTip": "Wyjdź do klienta! Zadzwoń, porozmawiaj, zobacz jego codzienną pracę, a stworzysz aplikację, którą natychmiast kupi."
         },
         {
-          "id": 303,
-          "text": "Jaki model wdrożenia i hostingu jest najbardziej opłacalny dla klienta biznesowego w nowoczesnym AI-first developmencie?",
+          "id": 1403,
+          "text": "Dlaczego w środowiskach IT Product Managerowie masowo zdobywają certyfikacje zwinne (PSPO/CSPO)?",
           "options": [
-            "Zakup własnego fizycznego serwera w piwnicy za 50 000 PLN i zatrudnienie 2 administratorów.",
-            "Nowoczesne architektury Serverless / Edge (np. Cloudflare Pages, Cloudflare Workers, Supabase / Neon), które mają darmowy lub groszowy tier startowy, globalny CDN i skalują się automatycznie bez kosztów stałych.",
-            "Hosting współdzielony na starym serwerze FTP z PHP 5.4.",
-            "Wydrukowanie kodu źródłowego na papierze perforowanym."
+            "Bo w praktyce pełnią funkcję Product Ownera dla zespołów tworzących oprogramowanie, łącząc strategię z realizacją.",
+            "Bo certyfikat PSPO pozwala na darmowe obiady w korporacji.",
+            "Bo prawo międzynarodowe zakazuje zarządzania produktami bez pieczątki Scrum.org.",
+            "Bo komputery odmawiają działania bez certyfikatu."
           ],
-          "correctAnswerIndex": 1,
-          "explanation": "Cloudflare Pages i nowoczesne bazy serverless sprawiają, że małe i średnie aplikacje dla klienta kosztują 0 zł lub ułamki centów miesięcznie w utrzymaniu, mając przy tym prędkość ładowania na poziomie ułamków sekundy na całym świecie.",
-          "kurakTip": "Klienci uwielbiają, gdy mówisz im: 'Koszty hostingu na start wyniosą 0 zł, bo wykorzystamy nowoczesną chmurę Cloudflare!'."
+          "correctAnswerIndex": 0,
+          "explanation": "W firmach technologicznych Product Manager bardzo często bezpośrednio zarządza Backlogiem deweloperskim, dlatego wiedza PSPO/CSPO jest dla niego niezbędnym narzędziem operacyjnym.",
+          "kurakTip": "Łącząc wizję rynkową z biegłością w zarządzaniu Backlogiem, stajesz się kompletnym AI Product Builderem!"
         }
       ]
     },
     {
-      "id": "ai-building",
-      "name": "Vibe Coding, Architektura & Jakość AI",
-      "shortDesc": "Praktyczne techniki budowy aplikacji: dobór technologii, unikanie błędów i automatyzacja.",
-      "badge": "Technologie & Praktyka",
+      "id": "agile-analysis",
+      "name": "5. Podobne stanowiska zwinne i analityczne",
+      "shortDesc": "PMI-ACP (Agile Certified Practitioner) oraz PMI-PBA (Professional in Business Analysis).",
+      "badge": "PMI-ACP • PMI-PBA",
       "questions": [
         {
-          "id": 401,
-          "text": "Czym jest zjawisko 'Vibe Codingu' w praktyce współczesnego Project Managera?",
+          "id": 1501,
+          "text": "Czym charakteryzuje się certyfikat PMI-ACP na tle certyfikatów skupionych wyłącznie na Scrumie (np. PSM)?",
           "options": [
-            "Słuchaniem muzyki techno podczas ręcznego wpisywania kodu w Notatniku.",
-            "Pracą na wysokim poziomie abstrakcji architektonicznej i biznesowej, gdzie PM steruje generowaniem, łączeniem i weryfikacją kodu przez asystentów AI przy użyciu naturalnego języka i ścisłych promptów.",
-            "Zatrudnieniem 50 programistów z różnych stref czasowych.",
-            "Wprowadzaniem losowych zmian w kodzie, aż aplikacja zacznie działać."
+            "Skupia się wyłącznie na ceremoniałach Scruma i zabrania używania Kanbana.",
+            "Jest certyfikatem przekrojowym, weryfikującym wiedzę z wielu metodyk zwinnych: Scrum, Kanban, Lean, XP, TDD i DSDM.",
+            "Wymaga posiadania doktoratu z informatyki.",
+            "Jest ważny tylko przez 24 godziny od zdania."
           ],
           "correctAnswerIndex": 1,
-          "explanation": "Termin spopularyzowany przez liderów AI (np. Andrej Karpathy): programista/manager nie pisze każdej linijki ręcznie, lecz komunikuje intencję, strukturę i logikę modelowi AI, który wykonuje implementację, podczas gdy człowiek weryfikuje rezultaty.",
-          "kurakTip": "Jako AI PM nie musisz pamiętać składni pętli 'for' w dziesięciu językach. Musisz rozumieć architekturę, bazy danych i potrzeby klienta!"
+          "explanation": "PMI-ACP to certyfikat multi-metodyczny – uczy elastycznego łączenia Scruma z technikami inżynierskimi XP i optymalizacją przepływu Kanban.",
+          "kurakTip": "Prawdziwy mistrz zwinności nie ogranicza się do jednego podręcznika – korzysta ze wszystkich narzędzi Agile!"
         },
         {
-          "id": 402,
-          "text": "Jak zabezpieczyć aplikację budowaną z użyciem AI przed kosztownymi atakami 'Prompt Injection' i wyciągnięciem kluczy API?",
+          "id": 1502,
+          "text": "Na czym polega pierwsza domena analizy biznesowej w standardzie PMI-PBA (Needs Assessment)?",
           "options": [
-            "Wpisać klucz API na stałe w kodzie JavaScript we frontendzie strony.",
-            "Nigdy nie umieszczać kluczy API w kodzie klienta; wywołania modeli realizować wyłącznie przez backend/Worker po stronie serwera z walidacją wejścia i rate-limitingiem.",
-            "Poprosić użytkowników w regulaminie, by nie próbowali hakować strony.",
-            "Wyłączyć całkowicie internet na serwerze."
+            "Na natychmiastowym rozpoczęciu pisania kodu bez rozmawiania z klientem.",
+            "Na zidentyfikowaniu rzeczywistego problemu lub szansy biznesowej, określeniu stanu obecnego i pożądanego oraz uzasadnieniu wartości inwestycji przed zdefiniowaniem rozwiązania.",
+            "Na losowym testowaniu przycisków w aplikacji.",
+            "Na zamawianiu mebli biurowych dla zespołu analityków."
           ],
           "correctAnswerIndex": 1,
-          "explanation": "Klucze API muszą zawsze pozostawać bezpieczne w zmiennych środowiskowych backendu (np. Cloudflare Secrets / Environment Variables). Wejście od użytkownika musi być sanityzowane przed przekazaniem do modelu LLM.",
-          "kurakTip": "Nigdy, przenigdy nie ujawniaj klucza API w kodzie przeglądarki! To kardynalny błąd początkujących."
-        },
-        {
-          "id": 403,
-          "text": "Dlaczego Next.js z eksportem statycznym (output: 'export') połączony z Cloudflare Pages jest idealnym wyborem na aplikacje zamawiane przez klientów?",
-          "options": [
-            "Bo wymaga skomplikowanego serwera z bazą Oracle za miliony euro.",
-            "Bo generuje czysty, ultraszybki kod HTML/JS/CSS serwowany z setek centrów danych na świecie, z zerowym ryzykiem awarii serwera Node.js i zerowymi kosztami utrzymania dla klienta.",
-            "Bo zakazuje używania stylów graficznych.",
-            "Bo działa wyłącznie na kalkulatorach biurowych."
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Static export na Cloudflare Pages łączy najlepszą responsywność (brak cold startów), maksymalne bezpieczeństwo (brak podatnego serwera aplikacji) i odporność na ogromny ruch użytkowników bez dodatkowych opłat.",
-          "kurakTip": "To dokładnie ten sam stos technologiczny, na którym stoi aplikacja Projedudei! Błyskawiczny, niezawodny i bezobsługowy."
+          "explanation": "Needs Assessment to badanie 'Dlaczego w ogóle mamy cokolwiek robić?'. Pozwala uniknąć budowania drogich aplikacji, które nie rozwiązują żadnego realnego problemu klienta.",
+          "kurakTip": "Zanim napiszesz choćby jeden prompt, zrozum prawdziwy ból biznesowy klienta!"
         }
       ]
     }
   ]
 }
-

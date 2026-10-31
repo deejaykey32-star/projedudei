@@ -34,3 +34,4 @@ jobs:
       - name: Deploy with Wrangler
         if: env.CLOUDFLARE_API_TOKEN != ''
         run: npx wrangler pages deploy out --project-name projedudei --branch "${{ github.head_ref || github.ref_name }}" --commit-hash "${{ github.sha }}" --commit-dirty=true
+

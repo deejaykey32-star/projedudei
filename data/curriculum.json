@@ -1,0 +1,888 @@
+{
+  "sections": [
+    {
+      "id": "project-manager",
+      "number": 1,
+      "title": "Project Manager (Kierownik Projektu)",
+      "subtitle": "Dostarczenie projektu w określonym czasie, budżecie i zakresie",
+      "iconName": "Briefcase",
+      "description": "Role skupiające się na całościowej odpowiedzialności za projekt: od karty projektu (Project Charter), przez harmonogram, budżet, zarządzanie ryzykiem, po odbiór przez klienta.",
+      "subsections": [
+        {
+          "id": "pmp",
+          "code": "PMP",
+          "title": "PMP (Project Management Professional)",
+          "badge": "Złoty Standard PMI (USA)",
+          "description": "Wydawany przez Project Management Institute (PMI, USA). Uważany za złoty standard na świecie, szczególnie w korporacjach w USA, Azji i Europie. Weryfikuje wiedzę z zakresu People, Process oraz Business Environment (zgodnie z PMBOK Guide i Agile Practice Guide).",
+          "certificationDetails": {
+            "issuer": "Project Management Institute (PMI, USA)",
+            "difficulty": "Bardzo wysoka (36-60 miesięcy udokumentowanego doświadczenia + 35 godzin edukacji PM)",
+            "validity": "3 lata (wymaga zdobycia 60 punktów PDU na odnowienie)",
+            "examFormat": "180 pytań, 230 minut (pytania sytuacyjne, hybrydowe, predictive i agile)",
+            "targetAudience": "Doświadczeni kierownicy projektów, liderzy zespołów i managerowie programów"
+          },
+          "theorySummary": [
+            "Obejmuje trzy domeny: People (42%), Process (50%) oraz Business Environment (8%).",
+            "Łączy podejście tradycyjne (Waterfall) z podejściem zwinnym (Agile) i hybrydowym.",
+            "Kluczowe pojęcia: WBS (Work Breakdown Structure), Ścieżka Krytyczna (CPM), Zarządzanie Wartością Wypracowaną (EVM - Earned Value Management), Rejestr Ryzyk i Stakeholder Engagement."
+          ],
+          "useCase": {
+            "scenarioTitle": "Wdrożenie systemu zamówień z ograniczonym budżetem i terminem",
+            "clientSituation": "Klient korporacyjny wymaga wdrożenia portalu zakupowego w 30 dni z rygorystycznymi procedurami odbiorczymi i zarządzaniem ryzykiem prawnym, zamiast rocznego projektu oferowanego przez klasyczną agencję.",
+            "actionTaken": "PM posiadający wiedzę PMP przygotowuje kartę projektu (Project Charter) i rejestr interesariuszy, ale zamiast wielomiesięcznej fazy kodowania przez 10 programistów, stosuje dekompozycję WBS na moduły generowane przez AI i weryfikowane automatycznymi testami.",
+            "aiAdvantage": "Dzięki AI PM dostarcza działający prototyp (Working Software) w 48h, a ramy PMP dają klientowi poczucie bezpieczeństwa, ładu korporacyjnego i kontroli budżetowej."
+          },
+          "beyondCertification": {
+            "title": "Hybrydowy PM: Standard PMI + Narzędzia AI Agents",
+            "keyTakeaway": "Podczas gdy tradycyjny PMP uczy zarządzania wieloosobowym zespołem koderów, nowoczesny AI PM zarządza orkiestracją agentów AI (np. Claude, Gemini, Cursor) realizujących zadania w ułamku czasu.",
+            "practicalAiTip": "Generuj WBS i Macierz Odpowiedzialności (RACI) przy pomocy LLM w 15 minut, a zaoszczędzony czas przeznacz na bezpośrednie negocjacje z klientem."
+          },
+          "youtubeVideos": [
+            {
+              "title": "PMBOK 7th Edition Explained with Ricardo Vargas",
+              "channel": "Ricardo Vargas",
+              "url": "https://www.youtube.com/watch?v=GC7fnM3Z49c",
+              "searchQuery": "PMBOK 7th Edition Ricardo Vargas summary",
+              "durationEstimate": "53 min",
+              "description": "Legendarne, całościowe omówienie zasad i domen PMI przez byłego przewodniczącego PMI."
+            },
+            {
+              "title": "PMP Exam Prep: Complete Overview and Strategy",
+              "channel": "Andrew Ramdayal",
+              "url": "https://www.youtube.com/watch?v=0k5G_4XwX-Q",
+              "searchQuery": "Andrew Ramdayal PMP Exam mindset",
+              "durationEstimate": "25 min",
+              "description": "Złote zasady myślenia sytuacyjnego PMP (Exam Mindset) i struktura egzaminu."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1101,
+              "text": "Jakie wymagania wstępne musi spełnić kandydat z wyższym wykształceniem (studia licencjackie/magisterskie), aby przystąpić do egzaminu PMP?",
+              "options": [
+                "Brak wymagań wstępnych – każdy może zapłacić i pisać egzamin.",
+                "Minimum 36 miesięcy (3 lata) udokumentowanego doświadczenia w prowadzeniu projektów oraz 35 godzin formalnej edukacji PM.",
+                "Minimum 60 miesięcy (5 lat) pracy wyłącznie jako programista w języku Java.",
+                "Zdany egzamin na prawo jazdy kat. C."
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Dla osób z dyplomem 4-letnich studiów PMI wymaga minimum 36 miesięcy (4500h) prowadzenia projektów oraz 35 godzin edukacji. Dla osób bez dyplomu wymóg wynosi 60 miesięcy.",
+              "kurakTip": "PMP to nie teoria z książki – PMI weryfikuje Twoje realne miesiące dowodzenia projektami!"
+            }
+          ]
+        },
+        {
+          "id": "prince2",
+          "code": "PRINCE2",
+          "title": "PRINCE2 (Foundation / Practitioner)",
+          "badge": "Standard AXELOS / Wielka Brytania & Europa",
+          "description": "Projects IN Controlled Environments – metodyka oparta na procesach i ścisłej kontroli, niezwykle popularna w Wielkiej Brytanii, Europie oraz w sektorze publicznym i zamówieniach rządowych. Wydawana przez AXELOS / PeopleCert.",
+          "certificationDetails": {
+            "issuer": "AXELOS / PeopleCert (UK)",
+            "difficulty": "Foundation: Umiarkowana (brak wymagań wstępnych). Practitioner: Wysoka (wymaga zdanego Foundation, egzamin z książką otwartą).",
+            "validity": "Practitioner ważny 3 lata (wymaga recertyfikacji lub punktów CPD)",
+            "examFormat": "Foundation: 60 pytań testowych (60 min). Practitioner: 68 pytań scenariuszowych (150 min).",
+            "targetAudience": "Kierownicy projektów w Europie, administracji publicznej, korporacjach międzynarodowych"
+          },
+          "theorySummary": [
+            "Opiera się na 7 Zasadach (Principles), 7 Motywach (Themes / Practices) i 7 Procesach (Processes).",
+            "Zasada nr 1: Ciągła zasadność biznesowa (Continued Business Justification) – projekt bez uzasadnienia biznesowego (Business Case) musi zostać natychmiast przerwany.",
+            "Jasny podział ról w Komitecie Sterującym (Project Board): Przewodniczący (Executive), Główny Użytkownik (Senior User), Główny Dostawca (Senior Supplier)."
+          ],
+          "useCase": {
+            "scenarioTitle": "Obrona Business Case w przetargu z użyciem architektury serverless",
+            "clientSituation": "Klient z sektora publicznego wymaga metodyki PRINCE2 i uzasadnienia opłacalności (Business Case) dla nowej platformy e-usług.",
+            "actionTaken": "AI PM tworzy formalny Business Case oparty na PRINCE2, wykazując oszczędności dzięki wdrożeniu na Cloudflare Pages zamiast wielotysięcznych licencji na serwery aplikacyjne.",
+            "aiAdvantage": "Procesy PRINCE2 gwarantują kontrolę etapów (Managing Stage Boundaries), a AI eliminuje wielomiesięczną pracę zespołu programistów, redukując koszty o 70%."
+          },
+          "beyondCertification": {
+            "title": "Zwinny PRINCE2 (PRINCE2 Agile) z narzędziami generatywnymi",
+            "keyTakeaway": "Połączenie rygoru zarządczego PRINCE2 (raporty punktów kontrolnych, tolerancje na czas i koszt) ze zwinnością budowy aplikacji z AI.",
+            "practicalAiTip": "Zamiast pisać 40-stronicowy dokument PID (Project Initiation Document) ręcznie, przygotuj prompt w oparciu o szablony PRINCE2 i wygeneruj profesjonalną dokumentację w kilka minut."
+          },
+          "youtubeVideos": [
+            {
+              "title": "PRINCE2 Explained in 100 Seconds",
+              "channel": "Proactive PM",
+              "url": "https://www.youtube.com/watch?v=sUf7Z4ZqV0Y",
+              "searchQuery": "PRINCE2 methodology explained summary",
+              "durationEstimate": "15 min",
+              "description": "Zwięzłe i przejrzyste omówienie 7 zasad, 7 motywów i cyklu życia projektu w PRINCE2."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1102,
+              "text": "Która zasada w metodyce PRINCE2 nakazuje natychmiastowe przerwanie projektu, jeśli przestanie on przynosić korzyści finansowe lub strategiczne?",
+              "options": [
+                "Zarządzanie z wykorzystaniem tolerancji (Manage by Exception)",
+                "Ciągła zasadność biznesowa (Continued Business Justification)",
+                "Koncentracja na produktach (Focus on Products)",
+                "Dostosowanie do środowiska projektu (Tailor to suit the Project)"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Ciągła zasadność biznesowa to fundament PRINCE2. Jeśli na dowolnym etapie (Stage Gate) Business Case wykaże brak opłacalności, Komitet Sterujący ma obowiązek zamknąć projekt.",
+              "kurakTip": "Nigdy nie ciągnij projektu tylko dlatego, że już wydałeś pieniądze (unikanie Sunk Cost Fallacy)!"
+            }
+          ]
+        },
+        {
+          "id": "ipma",
+          "code": "IPMA (D do A)",
+          "title": "IPMA (International Project Management Association)",
+          "badge": "Kompetencje 4-L-C (Europa & Świat)",
+          "description": "Międzynarodowy system 4 poziomów certyfikacji (od D do A), oparty na Wytycznych Kompetencji Indywidualnych (IPMA ICB4). Skupia się w równym stopniu na kompetencjach miękkich (ludzie), technicznych (praktyka) oraz strategicznych (perspektywa).",
+          "certificationDetails": {
+            "issuer": "International Project Management Association (IPMA / oddziały krajowe, np. IPMA Polska)",
+            "difficulty": "Poziom D: Startowy (egzamin pisemny). Poziom C: Doświadczony (egzamin + warsztat). Poziomy B i A: Lider projektów i portfeli (pełny audyt i raport projektu).",
+            "validity": "5 lat (wymaga recertyfikacji)",
+            "examFormat": "Egzamin pisemny, zadania otwarte, studium przypadku, a na wyższych poziomach wywiad z asesorami",
+            "targetAudience": "Managerowie ceniący holistyczne podejście do kompetencji miękkich, negocjacyjnych i przywódczych"
+          },
+          "theorySummary": [
+            "Model ICB4 dzieli kompetencje na trzy grupy: Ludzie (People - umiejętności interpersonalne), Praktyka (Practice - narzędzia PM) oraz Perspektywa (Perspective - otoczenie organizacji).",
+            "Poziom D (Certified Project Management Associate) – wiedza dla osób rozpoczynających karierę.",
+            "Poziom C (Certified Project Manager) – samodzielne prowadzenie projektów o umiarkowanej złożoności.",
+            "Poziom B (Certified Senior PM) i Poziom A (Certified Projects Director) – złożone programy i portfele strategiczne."
+          ],
+          "useCase": {
+            "scenarioTitle": "Zarządzanie konfliktem i oporem zespołu przed automatyzacją AI",
+            "clientSituation": "Wdrażasz w firmie klienta automatyzację obsługi leadów za pomocą AI. Dział sprzedaży obawia się, że 'sztuczna inteligencja zabierze im pracę' i sabotuje testy systemu.",
+            "actionTaken": "Wykorzystując kompetencje IPMA People (komunikacja, empatia, zarządzanie konfliktem), PM organizuje warsztaty z pracownikami i pokazuje, że AI zdejmuje z nich żmudne wklepywanie danych, pozwalając zarobić wyższe prowizje na rozmowach z klientami VIP.",
+            "aiAdvantage": "Żaden kod wygenerowany przez AI nie zadziała, jeśli ludzie odrzucą system. IPMA uczy mistrzostwa w pracy z ludzkimi emocjami."
+          },
+          "beyondCertification": {
+            "title": "Kompetencje miękkie w erze AI: Najważniejsza przewaga PM-a",
+            "keyTakeaway": "Gdy modele językowe generują kod, dokumenty i harmonogramy w sekundy, jedyną rzeczą, której AI nie zastąpi, jest autentyczna empatia, negocjacje twarzą w twarz i budowanie zaufania z klientem.",
+            "practicalAiTip": "Użyj AI do analizy sentymentu notatek ze spotkania z klientem, by zidentyfikować ukryte obawy przed podpisaniem umowy."
+          },
+          "youtubeVideos": [
+            {
+              "title": "IPMA Individual Competence Baseline (ICB4) Explained",
+              "channel": "IPMA International",
+              "url": "https://www.youtube.com/watch?v=Fj2n6LhQOQo",
+              "searchQuery": "IPMA ICB4 competence model overview",
+              "durationEstimate": "12 min",
+              "description": "Oficjalne omówienie standardu kompetencji ICB4: People, Practice, Perspective."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1103,
+              "text": "Który poziom certyfikacji IPMA jest przeznaczony dla osób wkraczających do zawodu PM i nie wymaga udokumentowanego wcześniejszego doświadczenia?",
+              "options": [
+                "Poziom A (Certified Projects Director)",
+                "Poziom B (Certified Senior Project Manager)",
+                "Poziom C (Certified Project Manager)",
+                "Poziom D (Certified Project Management Associate)"
+              ],
+              "correctAnswerIndex": 3,
+              "explanation": "Poziom D weryfikuje znajomość wiedzy i terminologii ICB4 i nie wymaga od kandydata lat praktyki, w przeciwieństwie do poziomów C, B i A.",
+              "kurakTip": "IPMA D to świetny pierwszy krok do udowodnienia klientom, że znasz profesjonalny język zarządzania projektami!"
+            }
+          ]
+        },
+        {
+          "id": "capm",
+          "code": "CAPM",
+          "title": "CAPM (Certified Associate in Project Management)",
+          "badge": "Startowy certyfikat PMI dla Junior PM",
+          "description": "Wydawany przez PMI certyfikat dla osób rozpoczynających karierę (Junior Project Manager, koordynator projektu). Bazuje na tej samej terminologii co prestiżowy PMP, stanowiąc idealny wstęp do globalnej kariery.",
+          "certificationDetails": {
+            "issuer": "Project Management Institute (PMI, USA)",
+            "difficulty": "Średnia (wymaga wykształcenia średniego + 23 godzin edukacji PM, bez wymogu lat praktyki)",
+            "validity": "3 lata (wymaga 15 punktów PDU na odnowienie)",
+            "examFormat": "150 pytań, 180 minut (w tym pytania z podejścia predykcyjnego, zwinnego i analizy biznesowej)",
+            "targetAudience": "Studenci, absolwenci, asystenci projektów, osoby przebranżawiające się na PM"
+          },
+          "theorySummary": [
+            "Od edycji 2023 egzamin CAPM obejmuje nie tylko tradycyjny PMBOK, ale również Agile, Business Analysis oraz ramy hybrydowe.",
+            "Wprowadza ujednolicone słownictwo PMI: czarter projektu, interesariusze, ścieżka krytyczna, zarządzanie zakresem i jakością.",
+            "Eliminuje barierę wejścia do PMI: nie wymaga 3-5 lat udokumentowanego prowadzenia projektów jak PMP."
+          ],
+          "useCase": {
+            "scenarioTitle": "Młody AI PM zdobywa pierwszy komercyjny kontrakt na aplikację",
+            "clientSituation": "Początkujący przedsiębiorca bez wieloletniego stażu chce złożyć ofertę na budowę dedykowanego CRM-a dla lokalnej firmy produkcyjnej.",
+            "actionTaken": "Certyfikat CAPM potwierdza u klienta znajomość profesjonalnego warsztatu zarządzania, a demonstracja prototypu stworzonego za pomocą Cursor + Cloudflare w 24h budzi zachwyt klienta.",
+            "aiAdvantage": "Klient widzi certyfikowanego specjalistę z pieczęcią PMI, który oferuje cenę i tempo nieosiągalne dla powolnych agencji."
+          },
+          "beyondCertification": {
+            "title": "Przyspieszona ścieżka: Od CAPM do samodzielnego AI Buildera",
+            "keyTakeaway": "CAPM daje fundament teoretyczny, a narzędzia AI dają Ci siłę wykonawczą całego działu IT. Z tym zestawem w wieku 22 lat możesz realizować zlecenia warte setki tysięcy złotych.",
+            "practicalAiTip": "Przygotuj portfolio 3 gotowych aplikacji pod domenami .pages.dev i dołącz swój identyfikator cyfrowy CAPM w stopce oferty."
+          },
+          "youtubeVideos": [
+            {
+              "title": "CAPM Exam Prep Overview and Mindset",
+              "channel": "Alvin the PM",
+              "url": "https://www.youtube.com/watch?v=3g8Z9hY2R9c",
+              "searchQuery": "CAPM certification beginner guide Alvin the PM",
+              "durationEstimate": "18 min",
+              "description": "Praktyczny przewodnik po egzaminie CAPM, strukturze pytań i przygotowaniu."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1104,
+              "text": "Czym głównie różni się kwalifikacja do egzaminu CAPM od kwalifikacji do PMP?",
+              "options": [
+                "CAPM wymaga zdania egzaminu z programowania w C++, a PMP nie.",
+                "CAPM nie wymaga udokumentowania 36-60 miesięcy doświadczenia w projektach – wystarczy 23 godziny edukacji projektowej.",
+                "CAPM można pisać tylko w języku łacińskim.",
+                "PMP jest bezpłatny, a CAPM kosztuje milion dolarów."
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Główną zaletą CAPM jest brak wymogu wcześniejszego wieloletniego doświadczenia w prowadzeniu projektów, co czyni go idealnym startem dla Junior PM-ów.",
+              "kurakTip": "Jeśli dopiero zaczynasz, CAPM to Twoja przepustka do profesjonalnej ligi PMI!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scrum-master",
+      "number": 2,
+      "title": "Scrum Master",
+      "subtitle": "Poprawność procesu Scrum, edukacja zespołu i usuwanie przeszkód (Impediments)",
+      "iconName": "ShieldCheck",
+      "description": "Rola służebnego przywódcy (Servant Leader), który chroni zespół, optymalizuje przepływ wartości (Flow), dba o przestrzeganie Scrum Guide i usuwa blokady technologiczne i organizacyjne.",
+      "subsections": [
+        {
+          "id": "psm",
+          "code": "PSM (I, II, III)",
+          "title": "PSM (Professional Scrum Master)",
+          "badge": "Standard Scrum.org (Kena Schwabera)",
+          "description": "Wydawany przez Scrum.org (stworzoną przez współtwórcę Scruma, Kena Schwabera). Uznawany za najbardziej wymagający testowo certyfikat (próg zdawalności aż 85%). Co kluczowe: certyfikat jest dożywotni (bez konieczności płatnych odnowień) i nie wymaga obowiązkowego drogiego szkolenia.",
+          "certificationDetails": {
+            "issuer": "Scrum.org (USA / Global)",
+            "difficulty": "Wysoka (próg zdawalności 85%, rygorystyczny czas 60 minut na 80 pytań w języku angielskim)",
+            "validity": "Dożywotnia (nigdy nie wygasa, brak opłat odnowieniowych)",
+            "examFormat": "80 pytań testowych (jednokrotny/wielokrotny wybór, prawda/fałsz), 60 minut",
+            "targetAudience": "Scrum Masterzy, liderzy transformacji zwinnej, PM-owie pracujący z zespołami hybrydowymi"
+          },
+          "theorySummary": [
+            "Oparty ściśle na Scrum Guide: 3 Role/Odpowiedzialności (Scrum Master, Product Owner, Developers), 5 Wydarzeń (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective), 3 Artefakty (Product Backlog, Sprint Backlog, Increment).",
+            "3 Filary empiryzmu Scruma: Przejrzystość (Transparency), Inspekcja (Inspection), Adaptacja (Adaptation).",
+            "Definicja Ukończenia (Definition of Done) jako formalny opis stanu przyrostu, gdy spełnia on wymogi jakościowe."
+          ],
+          "useCase": {
+            "scenarioTitle": "Ustalenie Definition of Done dla kodu generowanego przez modele AI",
+            "clientSituation": "Klient obawia się, że kod pisany z pomocą AI będzie 'sklejony na taśmę' i niemożliwy w utrzymaniu w kolejnych latach.",
+            "actionTaken": "Scrum Master wprowadza rygorystyczne Definition of Done (DoD): każdy wygenerowany komponent musi przejść linter TypeScript, mieć automatyczne testy jednostkowe (Coverage > 80%), przejść audyt bezpieczeństwa sekretów i być zdeployowany na środowisko preview na Cloudflare Pages przed Sprint Review.",
+            "aiAdvantage": "Klient widzi najwyższą inżynierską kulturę pracy. Zwinność i AI dają prędkość, a ramy Scruma gwarantują stabilność."
+          },
+          "beyondCertification": {
+            "title": "Rola Scrum Mastera w 1-osobowym zespole AI Builder + Agenci",
+            "keyTakeaway": "Gdy programistami są Cursor, Claude i GitHub Copilot, Scrum Master nie 'pilnuje ludzi', lecz pilnuje higieny promptów, unikania długu technologicznego i dba o to, by Product Owner nie wprowadzał chaosu koncepcyjnego w trakcie Sprintu.",
+            "practicalAiTip": "Stosuj technikę 'Timeboxing' dla promptowania: jeśli model LLM nie rozwiąże danego buga w 3 iteracjach promptu, rozbij problem na mniejsze czyste funkcje."
+          },
+          "youtubeVideos": [
+            {
+              "title": "Scrum in 15 Minutes by Ken Schwaber's Organization",
+              "channel": "Scrum.org",
+              "url": "https://www.youtube.com/watch?v=2Vt7Ik8Ublw",
+              "searchQuery": "Scrum org Professional Scrum Master PSM overview",
+              "durationEstimate": "15 min",
+              "description": "Oficjalne omówienie ról, artefaktów i wydarzeń według aktualnego Scrum Guide."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1201,
+              "text": "Jaki jest wymagany próg punktowy, aby zdać egzamin Professional Scrum Master I (PSM I) na Scrum.org?",
+              "options": [
+                "50% poprawnych odpowiedzi",
+                "65% poprawnych odpowiedzi",
+                "85% poprawnych odpowiedzi",
+                "100% poprawnych odpowiedzi"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "Scrum.org stawia wysoką poprzeczkę – zdanie testu PSM I wymaga uzyskania co najmniej 85% punktów w 60 minut.",
+              "kurakTip": "85% to surowy próg! Każde pytanie o Definition of Done czy rolę Scrum Mastera musi być opanowane na pamięć."
+            }
+          ]
+        },
+        {
+          "id": "csm",
+          "code": "CSM",
+          "title": "CSM (Certified ScrumMaster)",
+          "badge": "Standard Scrum Alliance (Jeffa Sutherlanda)",
+          "description": "Wydawany przez Scrum Alliance (organizację założoną przez drugiego współtwórcę Scruma, Jeffa Sutherlanda). W przeciwieństwie do PSM, zdobycie certyfikatu CSM wymaga obowiązkowego 2-dniowego płatnego szkolenia z certyfikowanym trenerem (CST) oraz regularnego odnawiania co 2 lata.",
+          "certificationDetails": {
+            "issuer": "Scrum Alliance (USA / Global)",
+            "difficulty": "Umiarkowana (egzamin po obowiązkowym 2-dniowym akredytowanym warsztacie)",
+            "validity": "2 lata (wymaga opłaty recertyfikacyjnej i punktów SEU)",
+            "examFormat": "50 pytań testowych, 60 minut (próg zdawalności 74%)",
+            "targetAudience": "Osoby preferujące naukę warsztatową pod okiem trenera i networking biznesowy"
+          },
+          "theorySummary": [
+            "Skupia się na praktycznych dynamikach zespołowych, facylitacji spotkań i rozwiązywaniu dysfunkcji zespołowych.",
+            "Podkreśla Scrum Values: Zaangażowanie (Commitment), Odwaga (Courage), Skupienie (Focus), Otwartość (Openness), Szacunek (Respect).",
+            "Scrum Master jako Facilitator, Coach, Mentor i Przewodnik dla całej organizacji."
+          ],
+          "useCase": {
+            "scenarioTitle": "Facylitacja Sprint Retrospective po awarii API zewnętrznego dostawcy",
+            "clientSituation": "W trakcie sprintu padło API płatności u klienta, co spowodowało opóźnienie wdrożenia bramki kartowej. W zespole rośnie frustracja.",
+            "actionTaken": "Scrum Master facylituje Retrospektywę w oparciu o technikę 'Blameless Post-Mortem' (analiza bez obwiniania). Zamiast szukać winnych, zespół z pomocą AI tworzy mocki API i mechanizm fallbacku na wypadek kolejnych awarii dostawców.",
+            "aiAdvantage": "Wartości CSM pomagają utrzymać zaufanie i motywację, chroniąc relację z klientem w trudnych momentach technicznych."
+          },
+          "beyondCertification": {
+            "title": "Porównanie rynkowe: PSM vs CSM",
+            "keyTakeaway": "PSM (Scrum.org) jest ceniony za niezależną, rygorystyczną wiedzę i dożywotnią ważność bez opłat. CSM (Scrum Alliance) jest popularny w wielkich korporacjach posiadających budżety na szkolenia zewnętrzne.",
+            "practicalAiTip": "Zbuduj własnego bota AI w oparciu o Scrum Guide, który symuluje trudne pytania z retrospektyw i testuje Twoje reakcje facylitacyjne."
+          },
+          "youtubeVideos": [
+            {
+              "title": "Certified ScrumMaster (CSM) Exam Overview",
+              "channel": "Scrum Alliance",
+              "url": "https://www.youtube.com/watch?v=0_u6eJ4g4aQ",
+              "searchQuery": "Scrum Alliance Certified ScrumMaster course overview",
+              "durationEstimate": "10 min",
+              "description": "Przegląd ścieżki certyfikacyjnej Scrum Alliance i roli Certified Scrum Trainer."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1202,
+              "text": "Jaki jest kluczowy warunek formalny przystąpienia do egzaminu CSM w Scrum Alliance?",
+              "options": [
+                "Minimum 10 lat doświadczenia w programowaniu w Pythonie.",
+                "Ukończenie akredytowanego, 2-dniowego szkolenia prowadzonego przez Certified Scrum Trainer (CST).",
+                "Wpłacenie 100 000 dolarów kaucji.",
+                "Napisanie pracy magisterskiej o Scrumie."
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Scrum Alliance bezwzględnie wymaga ukończenia akredytowanego kursu z certyfikowanym trenerem (CST) przed podejściem do testu CSM.",
+              "kurakTip": "To główna różnica między PSM (możesz uczyć się sam za darmo) a CSM (musisz zapłacić za szkolenie)!"
+            }
+          ]
+        },
+        {
+          "id": "dassm",
+          "code": "DASSM",
+          "title": "DASSM (Disciplined Agile Senior Scrum Master)",
+          "badge": "Standard PMI Disciplined Agile",
+          "description": "Zaawansowany certyfikat PMI dla Scrum Masterów pracujących w złożonych środowiskach korporacyjnych. Uczy podejścia Disciplined Agile (DA) i elastycznego doboru sposobu pracy (Way of Working - WoW) spośród Scruma, Kanbana, Lean, SAFe i innych metodyk.",
+          "certificationDetails": {
+            "issuer": "Project Management Institute (PMI, USA)",
+            "difficulty": "Wysoka (wymaga 2 lat doświadczenia w rolach zwinnych + ukończenia kursu DASSM)",
+            "validity": "3 lata (wymaga 7 punktów PDU na odnowienie)",
+            "examFormat": "50 pytań sytuacyjnych, 90 minut",
+            "targetAudience": "Senior Scrum Masterzy, Agile Coachowie, architekci transformacji cyfrowej"
+          },
+          "theorySummary": [
+            "Podejście 'Context Counts': Nie ma jednego uniwersalnego procesu dla wszystkich projektów – zespół musi wybrać swój własny sposób pracy (Choose Your WoW).",
+            "Łączy Scrum z technikami Lean (eliminacja marnotrawstwa, ograniczenie WIP - Work in Progress) oraz Kanbanem.",
+            "Skupia się na skalowaniu zwinności na całe przedsiębiorstwo (disciplined agile delivery across the enterprise)."
+          ],
+          "useCase": {
+            "scenarioTitle": "Dobór hybrydowego sposobu pracy (WoW) dla zlecenia z integracją AI",
+            "clientSituation": "Klient ma sztywne terminy audytowe (jak w Waterfall), ale chce zwinnego prototypowania AI (jak w Scrumie/Lean). Tradycyjny Scrum Master nie radzi sobie z pogodzeniem tych dwóch światów.",
+            "actionTaken": "Certyfikowany DASSM stosuje ramy Disciplined Agile: faza Inception jest predykcyjna (architektura, compliance), faza Construction jest zwinna (szybkie iteracje z AI), a faza Transition odpowiada za wdrożenie bez przestojów na Cloudflare.",
+            "aiAdvantage": "DASSM daje elastyczność nieosiągalną dla dogmatyków jednej metodyki. Łączysz to, co najlepsze w PMI, Scrumie i AI."
+          },
+          "beyondCertification": {
+            "title": "Disciplined Agile w świecie orkiestracji AI",
+            "keyTakeaway": "AI zmienia dynamikę pracy: część zadań realizowana jest w sekundowym cyklu Kanban (ciągły przepływ zgłoszeń), a część w 1-tygodniowych sprintach produktowych.",
+            "practicalAiTip": "Projektuj hybrydowy backlog, gdzie agenci AI obsługują zadania serwisowe Kanban w tle, a Ty skupiasz się na celach sprintu."
+          },
+          "youtubeVideos": [
+            {
+              "title": "What is Disciplined Agile? Overview by PMI",
+              "channel": "Project Management Institute",
+              "url": "https://www.youtube.com/watch?v=y3I7Z5fP2Xo",
+              "searchQuery": "PMI Disciplined Agile Senior Scrum Master DASSM overview",
+              "durationEstimate": "14 min",
+              "description": "Wprowadzenie do Disciplined Agile i koncepcji 'Choose Your Way of Working'."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1203,
+              "text": "Jaka jest główna zasada podejścia Disciplined Agile (DA) promowanego przez PMI?",
+              "options": [
+                "Każdy zespół bezwzględnie musi stosować wyłącznie podręcznikowy Scrum bez żadnych modyfikacji.",
+                "Kontekst ma znaczenie (Context Counts) – zespoły powinny dobrać i dostosować swój unikalny sposób pracy (Choose Your WoW) zależnie od specyfiki projektu.",
+                "Zabronione jest korzystanie z narzędzi komputerowych.",
+                "Projekty wolno rozliczać wyłącznie w bitcoinach."
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Disciplined Agile odrzuca dogmatyzm jednej metodyki. Kluczem jest dobór technik (Scrum, Kanban, Lean) pasujących do realiów organizacji.",
+              "kurakTip": "Jako AI PM bądź elastyczny jak woda – dobieraj narzędzia do klienta, a nie na odwrót!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-owner",
+      "number": 3,
+      "title": "Product Owner (Właściciel Produktu)",
+      "subtitle": "Maksymalizacja wartości biznesowej i strategiczne zarządzanie Product Backlogiem",
+      "iconName": "Users",
+      "description": "Jednoosobowy decydent odpowiadający za sukces finansowy i użytkowy produktu. Definiuje wizję, priorytetyzuje zadania według zwrotu z inwestycji (ROI) i przekłada oczekiwania klienta na kryteria akceptacji.",
+      "subsections": [
+        {
+          "id": "pspo",
+          "code": "PSPO (I, II, III)",
+          "title": "PSPO (Professional Scrum Product Owner)",
+          "badge": "Standard Scrum.org (Wartość Biznesowa)",
+          "description": "Prestiżowa certyfikacja Scrum.org skupiająca się na maksymalizacji wartości biznesowej (Business Value). Poziom PSPO I kosztuje 200$, obejmuje 80 pytań testowych (próg 85%) i jest ważny bezterminowo. Weryfikuje umiejętność zarządzania Product Backlogiem, wyceny wartości, prognozowania wydań i współpracy z interesariuszami.",
+          "certificationDetails": {
+            "issuer": "Scrum.org (USA / Global)",
+            "difficulty": "Wysoka (próg 85%, 80 pytań, 60 minut w języku angielskim)",
+            "validity": "Dożywotnia (nigdy nie wygasa, brak konieczności recertyfikacji)",
+            "examFormat": "80 pytań testowych jednokrotnego i wielokrotnego wyboru",
+            "targetAudience": "Product Ownerzy, przedsiębiorcy, AI PM-owie rozmawiający z klientami o budżetach"
+          },
+          "theorySummary": [
+            "Główny cel Product Ownera: Maksymalizacja wartości produktu wynikającej z pracy Developerów.",
+            "Wyłączna odpowiedzialność za Product Backlog: tworzenie elementów, ich zamawianie/priorytetyzacja, jasne komunikowanie Celu Produktu (Product Goal).",
+            "Zarządzanie interesariuszami: PO to nie 'skryba' zapisujący każde życzenie klienta, lecz partner decyzyjny potrafiący powiedzieć 'nie' pomysłom o niskiej wartości."
+          ],
+          "useCase": {
+            "scenarioTitle": "Priorytetyzacja Backlogu dla aplikacji rezerwacyjnej z AI pod presją budżetową",
+            "clientSituation": "Klient ma 20 000 zł i 30 pomysłów na funkcjonalności. Jeśli spróbujesz zakodować wszystko, budżet skończy się w połowie prac.",
+            "actionTaken": "Certyfikowany PSPO stosuje technikę Value vs Effort oraz metodę MoSCoW. Do MVP kwalifikuje wyłącznie 3 funkcje 'Must Have' przynoszące natychmiastowe zyski, a resztę odkłada do Backlogu na wersję v2.",
+            "aiAdvantage": "Dzięki AI funkcje 'Must Have' są gotowe w 3 dni, klient zaczyna zarabiać w pierwszym tygodniu i z generowanych zysków finansuje kolejne etapy rozwoju!"
+          },
+          "beyondCertification": {
+            "title": "Spec-Driven Backlog dla modeli LLM",
+            "keyTakeaway": "Tradycyjny PO pisze historyjki: 'Jako użytkownik chcę...'. Nowoczesny AI PO dołącza do historyjki precyzyjny schemat TypeScript i przykłady danych JSON, co pozwala modelowi AI wygenerować bezbłędny kod za pierwszym razem.",
+            "practicalAiTip": "Każde User Story w Twoim backlogu powinno mieć 3 elementy: Kryteria Akceptacji Gherkin (Given-When-Then), Schemat Typu Danych i Adres Mockup Preview."
+          },
+          "youtubeVideos": [
+            {
+              "title": "Professional Scrum Product Owner (PSPO) in 20 Minutes",
+              "channel": "Scrum.org",
+              "url": "https://www.youtube.com/watch?v=502ILHjX9EE",
+              "searchQuery": "Scrum org PSPO exam preparation tips",
+              "durationEstimate": "20 min",
+              "description": "Kluczowe pojęcia PSPO: Product Goal, Release Planning, Total Cost of Ownership."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1301,
+              "text": "Kto w zespole Scrumowym ponosi wyłączną odpowiedzialność za zarządzanie Product Backlogiem i określanie kolejności zadań?",
+              "options": [
+                "Scrum Master",
+                "Product Owner",
+                "Główny Programista",
+                "Prezes Zarządu Klienta"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Zgodnie ze Scrum Guide tylko jedna osoba – Product Owner – odpowiada za Product Backlog i decyduje, które elementy przynoszą największą wartość.",
+              "kurakTip": "Klient może sugerować, ale to PO podejmuje ostateczną decyzję o kolejności wdrożeń!"
+            }
+          ]
+        },
+        {
+          "id": "cspo",
+          "code": "CSPO",
+          "title": "CSPO (Certified Scrum Product Owner)",
+          "badge": "Standard Scrum Alliance (Warsztaty Produktowe)",
+          "description": "Certyfikacja oferowana przez Scrum Alliance. Skupia się na praktycznych podstawach roli Product Ownera: tworzeniu person użytkowników, mapowaniu podróży klienta (Customer Journey Mapping) oraz technice User Story Mapping. Wymaga uczestnictwa w 2-dniowym płatnym szkoleniu i podlega recertyfikacji co 2 lata.",
+          "certificationDetails": {
+            "issuer": "Scrum Alliance (USA / Global)",
+            "difficulty": "Umiarkowana (przyznawana po ukończeniu 2-dniowego akredytowanego kursu z trenerem)",
+            "validity": "2 lata (wymaga opłaty i punktów SEU)",
+            "examFormat": "Aktywny udział w warsztatach (w niektórych jurysdykcjach dodatkowy test weryfikacyjny)",
+            "targetAudience": "Product Ownerzy, analitycy biznesowi, managerowie chcący nauczyć się warsztatów Discovery"
+          },
+          "theorySummary": [
+            "Praktyczne techniki odkrywania produktu (Product Discovery): Empathy Maps, Value Proposition Canvas.",
+            "User Story Mapping: wizualna dekompozycja systemu na osi czasu i poziomach wydań (Releases).",
+            "Mierzenie wartości: Metryki piramidy produktowej, NPS (Net Promoter Score) i Retention Rate."
+          ],
+          "useCase": {
+            "scenarioTitle": "Warsztat User Story Mapping z zarządem klienta w 2 godziny",
+            "clientSituation": "Zarząd klienta ma sprzeczne wizje tego, czym ma być nowa aplikacja mobilna i kłóci się na spotkaniach.",
+            "actionTaken": "Product Owner po kursie CSPO organizuje 2-godzinny warsztat z wirtualną tablicą. Mapuje podróż klienta od pierwszego wejścia na stronę do finalizacji zakupu, ujednolicając oczekiwania całego zarządu.",
+            "aiAdvantage": "Po warsztacie PO wrzuca wyniki do asystenta AI, który w 10 minut generuje kompletny spis User Stories i architekturę danych."
+          },
+          "beyondCertification": {
+            "title": "Story Mapping w połączeniu z prototypowaniem v0/Cloudflare",
+            "keyTakeaway": "Zamiast kończyć warsztat na samych karteczkach post-it, pokaż zarządowi klikalny interfejs wygenerowany przez AI na żywo pod koniec spotkania.",
+            "practicalAiTip": "Wykorzystaj AI do natychmiastowego przekształcenia notatek z warsztatu w interaktywny prototyp na Cloudflare Pages przed wyjściem ze spotkania."
+          },
+          "youtubeVideos": [
+            {
+              "title": "User Story Mapping Explained",
+              "channel": "Jeff Patton",
+              "url": "https://www.youtube.com/watch?v=4dZ2AEvzR60",
+              "searchQuery": "User Story Mapping Jeff Patton CSPO",
+              "durationEstimate": "16 min",
+              "description": "Twórca User Story Mappingu tłumaczy, jak układać historyjki użytkownika w sensowne wydania."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1302,
+              "text": "Jaki jest główny cel tworzenia 'Persony' (User Persona) przez Product Ownera?",
+              "options": [
+                "Ukrycie prawdziwych danych klientów przed urzędem skarbowym.",
+                "Zbudowanie archetypu użytkownika z jego celami i bolączkami, aby podejmować decyzje projektowe odpowiadające realnym potrzebom odbiorców.",
+                "Zastąpienie testów automatycznych rysunkami postaci.",
+                "Stworzenie maskotki dla marketingu na TikToku."
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Persona pozwala zespołowi skupić się na rozwiązaniu konkretnych problemów prawdziwych ludzi, zamiast tworzenia abstrakcyjnych funkcji nikomu niepotrzebnych.",
+              "kurakTip": "Gdy klient mówi 'wszyscy będą tego używać', natychmiast zapytaj: 'A kto konkretnie skorzysta z tego we wtorek o 9:00 rano?'"
+            }
+          ]
+        },
+        {
+          "id": "spoc",
+          "code": "SPOC",
+          "title": "SPOC (Scrum Product Owner Certified)",
+          "badge": "Standard SCRUMstudy (SBOK Guide)",
+          "description": "Certyfikacja wydawana przez organizację SCRUMstudy, bazująca na podręczniku SBOK Guide (A Guide to the Scrum Body of Knowledge). Skupia się na wdrożeniu i dostosowaniu roli Product Ownera w środowiskach wielkich korporacji i programów wieloprojektowych. Certyfikat jest ważny przez 3 lata.",
+          "certificationDetails": {
+            "issuer": "SCRUMstudy (USA / Global)",
+            "difficulty": "Średnia/Wysoka (140 pytań testowych, proctored online)",
+            "validity": "3 lata (wymaga zdania egzaminu recertyfikacyjnego lub punktów RCU)",
+            "examFormat": "140 pytań testowych, 180 minut",
+            "targetAudience": "Product Ownerzy w korporacjach realizujących transformacje w oparciu o SBOK"
+          },
+          "theorySummary": [
+            "Struktura SBOK Guide: 19 kluczowych procesów Scruma podzielonych na 5 faz: Initiate, Plan and Estimate, Implement, Review and Retrospect, Release.",
+            "Rola Chief Product Ownera w projektach o dużej skali (Large Scale Scrum).",
+            "Tworzenie i obrona uzasadnienia biznesowego (Business Justification) na każdym etapie cyklu życia produktu."
+          ],
+          "useCase": {
+            "scenarioTitle": "Współpraca wielu właścicieli produktów w ekosystemie korporacyjnym",
+            "clientSituation": "W dużej firmie finansowej powstaje super-aplikacja składająca się z 4 niezależnych modułów (konta, kredyty, inwestycje, AI doradca).",
+            "actionTaken": "W oparciu o standard SPOC/SBOK wdrażany jest komitet Chief Product Ownera, który synchronizuje zależności między modułami i ustala wspólną architekturę danych.",
+            "aiAdvantage": "Moduł AI doradcy powstaje w technologii serverless, nie blokując powolnych systemów mainframe klienta."
+          },
+          "beyondCertification": {
+            "title": "Integracja korporacyjnego ładu SBOK z prędkością AI",
+            "keyTakeaway": "Duże organizacje wymagają formalnych procesów odbiorczych. Znając SBOK, potrafisz dostarczyć korporacji wymaganą dokumentację przy jednoczesnym zachowaniu 10x szybszego kodowania dzięki AI.",
+            "practicalAiTip": "Wykorzystaj AI do automatycznego generowania macierzy śledzenia wymagań (Requirements Traceability Matrix)."
+          },
+          "youtubeVideos": [
+            {
+              "title": "SCRUMstudy SBOK Guide Framework Overview",
+              "channel": "SCRUMstudy",
+              "url": "https://www.youtube.com/watch?v=J8n5bO6lE4k",
+              "searchQuery": "SCRUMstudy SBOK Guide Product Owner overview",
+              "durationEstimate": "15 min",
+              "description": "Przegląd 19 procesów Scruma według oficjalnego podręcznika SBOK Guide."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1303,
+              "text": "W jakiej fazie według podręcznika SBOK Guide (SCRUMstudy) następuje stworzenie wizji projektu i identyfikacja Scrum Mastera oraz Interesariuszy?",
+              "options": [
+                "Faza Implement (Wdrażanie)",
+                "Faza Initiate (Inicjowanie)",
+                "Faza Release (Wydanie)",
+                "Faza Review and Retrospect"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "W SBOK Guide faza Initiate obejmuje zdefiniowanie wizji projektu, identyfikację Scrum Mastera i interesariuszy oraz stworzenie wstępnego rejestru produktu.",
+              "kurakTip": "SBOK kładzie duży nacisk na fazę inicjacji, zanim zespół rozpocznie pierwszy sprint!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-manager",
+      "number": 4,
+      "title": "Product Manager (Menedżer Produktu)",
+      "subtitle": "Wizja rynkowa, strategia biznesowa, analiza konkurencji i pełny cykl życia produktu",
+      "iconName": "TrendingUp",
+      "description": "Rola szersza niż Product Owner. Podczas gdy PO skupia się na 'JAK i CO budować w sprincie', Product Manager odpowiada za 'DLACZEGO to budujemy, DLA KOGO i JAK NA TYM ZAROBIMY NA RYNKU' w całym cyklu życia (GTM, pricing, retencja).",
+      "subsections": [
+        {
+          "id": "cpm",
+          "code": "CPM",
+          "title": "Certified Product Manager (AIPMM)",
+          "badge": "Globalny Standard AIPMM (USA)",
+          "description": "Wydawany przez Association of International Product Marketing and Management (AIPMM) – największą globalną organizację zrzeszającą Product Managerów. Bazuje na Product Management Framework (ProdBOK Guide) i weryfikuje kompetencje od analizy rynkowej, przez strategię biznesową, aż po wycofanie produktu z rynku (End-of-Life).",
+          "certificationDetails": {
+            "issuer": "AIPMM (Association of International Product Marketing & Management)",
+            "difficulty": "Wysoka (egzamin testowy online oparty na ProdBOK Guide)",
+            "validity": "Wymaga członkostwa w AIPMM lub punktów edukacyjnych",
+            "examFormat": "120 pytań testowych, 120 minut",
+            "targetAudience": "Product Managerowie, Dyrektorzy Produktu, przedsiębiorcy budujący produkty SaaS"
+          },
+          "theorySummary": [
+            "Oparty na ProdBOK Guide (Product Management and Marketing Body of Knowledge).",
+            "7 Faz cyklu życia produktu: Conceive (Koncepcja), Plan (Planowanie), Develop (Rozwój), Qualify (Kwalifikacja), Launch (Wprowadzenie na rynek), Maximize (Maksymalizacja), Retire (Wycofanie).",
+            "Strategia Go-To-Market (GTM), analiza konkurencji (Porter 5 Forces), Product-Market Fit oraz struktura cenników (Monetization Models)."
+          ],
+          "useCase": {
+            "scenarioTitle": "Wprowadzenie na rynek niszowego SaaS-a dla gabinetów weterynaryjnych",
+            "clientSituation": "Klient chce stworzyć aplikację do kart pacjentów zwierzęcych, ale nie wie, jak ją wycenić ani jak zdobyć pierwsze 100 płacących lecznic.",
+            "actionTaken": "Product Manager tworzy kompletną strategię GTM: wyznacza model subskrypcyjny (Freemium + 99 zł/miesiąc za moduł SMS), bada luki u konkurencji i projektuje aplikację z AI asystentem dawkowania leków.",
+            "aiAdvantage": "Aplikacja powstaje w 2 tygodnie na Next.js i Cloudflare, a strategia AIPMM zapewnia błyskawiczną monetyzację od pierwszego dnia."
+          },
+          "beyondCertification": {
+            "title": "Product-Led Growth (PLG) w dobie darmowego hostingu",
+            "keyTakeaway": "Dzięki znikomym kosztom infrastruktury Cloudflare możesz zaoferować klientom model Freemium, który sam napędza rejestracje bez armii handlowców.",
+            "practicalAiTip": "Użyj AI do zautomatyzowania onboardingu: inteligentny samouczek w aplikacji zwiększa konwersję na konta płatne o 40%."
+          },
+          "youtubeVideos": [
+            {
+              "title": "What Does a Product Manager Actually Do?",
+              "channel": "AIPMM",
+              "url": "https://www.youtube.com/watch?v=0hK2f3cWlYw",
+              "searchQuery": "AIPMM Certified Product Manager CPM framework",
+              "durationEstimate": "12 min",
+              "description": "Oficjalne omówienie 7 faz cyklu życia produktu według ProdBOK."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1401,
+              "text": "Czym głównie różni się rola Product Managera (PM) od roli Product Ownera (PO)?",
+              "options": [
+                "Product Manager odpowiada za parzenie kawy, a Product Owner za sprzątanie sali.",
+                "Product Manager skupia się na strategii rynkowej, modelu biznesowym i cyklu życia produktu (zewnętrzne 'Dlaczego?'), a Product Owner na optymalizacji pracy zespołu deweloperskiego i Backlogu (wewnętrzne 'Co i Jak?').",
+                "Product Manager to dawna nazwa Scrum Mastera.",
+                "Nie ma żadnej różnicy, to dokładnie to samo stanowisko w każdym calu."
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Product Manager patrzy na rynek, konkurencję i zyskowność (Outbound), podczas gdy Product Owner ściśle współpracuje z inżynierami nad realizacją wymagań (Inbound).",
+              "kurakTip": "Jako AI Builder bardzo często łączysz w sobie obie te role – jesteś strategiem rynkowym i bezpośrednim twórcą!"
+            }
+          ]
+        },
+        {
+          "id": "pragmatic",
+          "code": "Pragmatic (PMC)",
+          "title": "Pragmatic Institute Certifications (PMC)",
+          "badge": "Standard Rynkowy Analizy Biznesowej",
+          "description": "Uznawane na całym świecie szkolenia i certyfikaty firmy Pragmatic Institute (np. Pragmatic Management Certified - PMC). Koncentrują się na bezwzględnej prawdzie rynkowej: 'Twoja opinia, choć ciekawa, jest bez znaczenia – liczy się to, za co rynek zapłaci' (Market-Driven Product Management).",
+          "certificationDetails": {
+            "issuer": "Pragmatic Institute (USA / Global)",
+            "difficulty": "Wysoka (intensywne warsztaty oparte na Pragmatic Framework + egzamin)",
+            "validity": "Dożywotnia z możliwością zdobywania kolejnych poziomów (PMC-I do PMC-VI)",
+            "examFormat": "Egzamin testowy weryfikujący zastosowanie Pragmatic Framework",
+            "targetAudience": "Managerowie produktów technologicznych, dyrektorzy marketingu produktu (PMM)"
+          },
+          "theorySummary": [
+            "Pragmatic Framework: 37 kluczowych aktywności podzielonych na Strategię (Strategy) i Wykonanie (Execution).",
+            "Zasada 'NIHITO' (Nothing Important Happens In The Office) – prawdziwe potrzeby odkrywa się podczas rozmów z klientami w ich środowisku, a nie siedząc w biurze.",
+            "Segmentacja rynku, identyfikacja pilnych i bolesnych problemów (Urgent, Pervasive, Willing to Pay)."
+          ],
+          "useCase": {
+            "scenarioTitle": "Identyfikacja problemu, za który klienci naprawdę chcą zapłacić (Willing to Pay)",
+            "clientSituation": "Klient chce zbudować 'kolejny portal społecznościowy'. Twierdzi, że użytkownicy pokochają jego pomysł.",
+            "actionTaken": "Stosując regułę Pragmatic NIHITO, PM przeprowadza 10 wywiadów z grupą docelową i udowadnia, że nikt nie zapłaci za kolejny portal. Zamiast tego odkrywa bolesny problem: brak prostego narzędzia do fakturowania usług serwisowych na telefonie.",
+            "aiAdvantage": "AI PM tworzy prototyp narzędzia do fakturowania w 48h, a klient zyskuje 15 płacących użytkowników jeszcze przed oficjalnym startem!"
+          },
+          "beyondCertification": {
+            "title": "Generowanie wywiadów rynkowych i testowanie hipotez z AI",
+            "keyTakeaway": "Wykorzystaj modele LLM jako syntetyczne persony rynkowe do przetestowania wstępnych wątpliwości przed wyjściem do prawdziwych klientów.",
+            "practicalAiTip": "Zanim wydasz złotówkę na kod, zrób prosty Landing Page na Cloudflare z formularzem zapisu i zmierz twarde zainteresowanie."
+          },
+          "youtubeVideos": [
+            {
+              "title": "The Pragmatic Institute Framework Explained",
+              "channel": "Pragmatic Institute",
+              "url": "https://www.youtube.com/watch?v=7X5r8w7c1eQ",
+              "searchQuery": "Pragmatic Institute Framework overview product management",
+              "durationEstimate": "11 min",
+              "description": "Zasady rynkowego zarządzania produktem i rola koncepcji NIHITO."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1402,
+              "text": "Co oznacza słynny akronim 'NIHITO' w metodyce Pragmatic Institute?",
+              "options": [
+                "New Innovations Have International Trade Opportunities",
+                "Nothing Important Happens In The Office (Nic ważnego nie dzieje się w biurze – wyjdź do klientów)",
+                "Never Invest Heavily In Technological Operations",
+                "Next Iteration Has Interrupted Testing Operations"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "NIHITO przypomina Product Managerom, że siedzenie w gabinecie rodzi halucynacje biznesowe. Prawdziwa wiedza o produkcie pochodzi z bezpośrednich rozmów z klientami na rynku.",
+              "kurakTip": "Wyjdź do klienta! Zadzwoń, porozmawiaj, zobacz jego codzienną pracę, a stworzysz aplikację, którą natychmiast kupi."
+            }
+          ]
+        },
+        {
+          "id": "pm-po-agile",
+          "code": "Rola PM / PO w IT",
+          "title": "Hybryda Product Managera i Product Ownera w IT",
+          "badge": "Praktyka Rynkowa & Zwinność",
+          "description": "W nowoczesnych firmach technologicznych i software house'ach granica między Product Managerem a Product Ownerem zaciera się. Product Managerowie masowo zdobywają certyfikacje zwinne (PSPO / CSPO), ponieważ w praktyce pełnią podwójną funkcję: odpowiadają za sukces rynkowy i jednocześnie są Product Ownerami dla procesów wdrożeniowych.",
+          "certificationDetails": {
+            "issuer": "Rynek IT / Synergia PSPO, CSPO, CPM",
+            "difficulty": "Wymaga zbalansowania myślenia biznesowego z technicznym",
+            "validity": "Ciągły rozwój kompetencji hybrydowych",
+            "examFormat": "Ścieżki łączone (np. CPM + PSPO I)",
+            "targetAudience": "AI Solutions Architect, jednoosobowi twórcy SaaS, założyciele startupów"
+          },
+          "theorySummary": [
+            "Zjawisko 'Two-in-One': W małych i zwinnych zespołach jedna osoba łączy analizę rynkową (PM) z pisaniem User Stories i zarządzaniem Backlogiem (PO).",
+            "Unikanie tzw. 'Głuchego Telefonu': Gdy PM i PO to dwie różne osoby, często dochodzi do zniekształcenia wizji klienta przy przekazywaniu jej do deweloperów.",
+            "W dobie AI Builderów pojedyncza osoba staje się 'Full-Stack Product Builderem' – prowadzi rozmowę z klientem, projektuje system i steruje jego wygenerowaniem przez AI."
+          ],
+          "useCase": {
+            "scenarioTitle": "Jednoosobowe dostarczenie dedykowanej aplikacji dla kancelarii prawnej",
+            "clientSituation": "Kancelaria potrzebuje systemu do bezpiecznego streszczania akt sądowych i zarządzania terminami rozpraw. Nie chcą rozmawiać z armią 5 pośredników.",
+            "actionTaken": "Jako hybrydowy AI PM/PO prowadzisz spotkanie z mecenasem (badanie potrzeb PM), na żywo tworzysz rejestr funkcji (PO) i za pomocą modeli Claude + Cloudflare wdrażasz działający system w 5 dni.",
+            "aiAdvantage": "Klient ma jednego partnera do rozmowy. Zero szumów komunikacyjnych, natychmiastowe poprawki i 100% dopasowanie do biznesu."
+          },
+          "beyondCertification": {
+            "title": "Przyszłość zawodu: AI Product Builder zamiast działu IT",
+            "keyTakeaway": "Najbardziej pożądanym pracownikiem na rynku staje się osoba o kompetencjach PM/PO, która nie musi zatrudniać koderów, bo sama tworzy oprogramowanie przy użyciu sztucznej inteligencji.",
+            "practicalAiTip": "Buduj swoją markę osobistą jako 'AI Product Builder' – to tytuł, który otwiera drzwi do najlepiej płatnych zleceń B2B."
+          },
+          "youtubeVideos": [
+            {
+              "title": "Product Manager vs Product Owner: What's the Real Difference?",
+              "channel": "Dan Olsen",
+              "url": "https://www.youtube.com/watch?v=F3P_2q6aXyA",
+              "searchQuery": "Dan Olsen Product Manager vs Product Owner in tech",
+              "durationEstimate": "14 min",
+              "description": "Autor Lean Product Playbook wyjaśnia nakładanie się ról w środowiskach technologicznych."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1403,
+              "text": "Dlaczego w nowoczesnych projektach AI-first połączenie ról Product Managera i Product Ownera w jednej osobie jest tak potężną przewagą?",
+              "options": [
+                "Ponieważ pozwala całkowicie zrezygnować z płacenia podatków.",
+                "Ponieważ eliminuje zniekształcenia komunikacyjne (głuchy telefon) między strategią biznesową klienta a bezpośrednim tworzeniem aplikacji przez AI.",
+                "Ponieważ jedna osoba potrzebuje mniej tlenu w biurze.",
+                "Ponieważ zakazuje tego regulamin Unii Europejskiej."
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Brak pośredników oznacza, że ta sama osoba, która zrozumiała ból biznesowy klienta, bezpośrednio nadzoruje promptowanie i architekturę aplikacji z AI.",
+              "kurakTip": "Jesteś mostem między potrzebą klienta a magią sztucznej inteligencji!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agile-analysis",
+      "number": 5,
+      "title": "Podobne stanowiska zwinne i analityczne",
+      "subtitle": "Metodyki przekrojowe (PMI-ACP) oraz analiza biznesowa wymagań (PMI-PBA)",
+      "iconName": "Cpu",
+      "description": "Zaawansowane certyfikacje łączące różne podejścia zwinne (Kanban, Lean, XP, Scrum) oraz precyzyjną analizę wymagań biznesowych, stanowiące fundament dla Spec-Driven Developmentu.",
+      "subsections": [
+        {
+          "id": "pmi-acp",
+          "code": "PMI-ACP",
+          "title": "PMI-ACP (Agile Certified Practitioner)",
+          "badge": "Przekrojowy Certyfikat PMI dla Praktyków Agile",
+          "description": "Najszybciej rosnąca certyfikacja PMI. W przeciwieństwie do PSM czy CSM (skupionych wyłącznie na Scrumie), PMI-ACP weryfikuje znajomość szerokiego spektrum metodyk zwinnych: Scrum, Kanban, Lean, Extreme Programming (XP), Test-Driven Development (TDD) oraz Crystal.",
+          "certificationDetails": {
+            "issuer": "Project Management Institute (PMI, USA)",
+            "difficulty": "Wysoka (wymaga doświadczenia ogólnego PM + doświadczenia w projektach Agile + 21 godzin edukacji Agile)",
+            "validity": "3 lata (wymaga 30 punktów PDU na odnowienie)",
+            "examFormat": "120 pytań sytuacyjnych, 180 minut",
+            "targetAudience": "Praktycy Agile, hybrydowi managerowie projektów, liderzy technologiczni"
+          },
+          "theorySummary": [
+            "7 Domen wiedzy: Agile Principles and Mindset, Value-Driven Delivery, Stakeholder Engagement, Team Performance, Adaptive Planning, Problem Detection and Resolution, Continuous Improvement.",
+            "Kluczowe techniki: Kanban (WIP limits, Cumulative Flow Diagram), XP (Pair Programming, TDD, Refactoring, Continuous Integration), Lean (eliminacja Muda - 7 marnotrawstw).",
+            "Zarządzanie ryzykiem zwinnym: Burn-down i Burn-up charts, Velocity, Parking Lot Charts."
+          ],
+          "useCase": {
+            "scenarioTitle": "Wdrożenie tablicy Kanban z limitem WIP dla zgłoszeń do AI Agenta",
+            "clientSituation": "Klient ma ciągły napływ drobnych zmian i nowych pomysłów, które rozbijają plan sprintu w tradycyjnym Scrumie.",
+            "actionTaken": "Certyfikowany PMI-ACP przełącza obsługę bieżących zmian na model Kanban z twardym limitem WIP (Work In Progress = max 3 zadania w toku). Zespół używa agentów AI do natychmiastowego przepychania zadań przez kolumny.",
+            "aiAdvantage": "Klient widzi płynny przepływ (Flow) bez czekania na koniec 2-tygodniowego sprintu, a czas realizacji pojedynczego zadania (Cycle Time) spada z 5 dni do 2 godzin."
+          },
+          "beyondCertification": {
+            "title": "Metodyki XP w pracy z narzędziami Vibe Coding",
+            "keyTakeaway": "Extreme Programming (XP) od zawsze promował 'Pair Programming' (programowanie w parach). W erze AI Ty i model LLM tworzycie idealną parę programistyczną: AI generuje kod, a Ty w czasie rzeczywistym robisz Code Review i weryfikujesz logikę.",
+            "practicalAiTip": "Stosuj zasadę TDD z AI: najpierw poproś model o wygenerowanie testów jednostkowych dla danej funkcji, a dopiero potem o implementację kodu przechodzącego te testy."
+          },
+          "youtubeVideos": [
+            {
+              "title": "PMI-ACP Exam Prep: Complete Overview",
+              "channel": "David McLachlan",
+              "url": "https://www.youtube.com/watch?v=0b7YgB4W0qg",
+              "searchQuery": "David McLachlan PMI-ACP exam questions overview",
+              "durationEstimate": "35 min",
+              "description": "Znakomite omówienie domen PMI-ACP i myślenia sytuacyjnego przez Davida McLachlana."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1501,
+              "text": "Czym charakteryzuje się certyfikat PMI-ACP na tle innych certyfikatów zwinnych, takich jak PSM czy CSM?",
+              "options": [
+                "Skupia się wyłącznie na ceremoniałach Scruma i zabrania używania Kanbana.",
+                "Jest certyfikatem przekrojowym, weryfikującym wiedzę z wielu metodyk zwinnych: Scrum, Kanban, Lean, XP, TDD i DSDM.",
+                "Wymaga posiadania doktoratu z informatyki.",
+                "Jest ważny tylko przez 24 godziny od zdania."
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "PMI-ACP to certyfikat multi-metodyczny – uczy elastycznego łączenia Scruma z technikami inżynierskimi XP i optymalizacją przepływu Kanban.",
+              "kurakTip": "Prawdziwy mistrz zwinności nie ogranicza się do jednego podręcznika – korzysta ze wszystkich narzędzi Agile!"
+            }
+          ]
+        },
+        {
+          "id": "pmi-pba",
+          "code": "PMI-PBA",
+          "title": "PMI-PBA (Professional in Business Analysis)",
+          "badge": "Standard PMI dla Analityków Biznesowych",
+          "description": "Certyfikat PMI skierowany do Analityków Biznesowych (BA), Project Managerów i Product Ownerów. Weryfikuje umiejętność wydobywania wymagań biznesowych (Requirements Elicitation), zarządzania interesariuszami, modelowania procesów oraz kształtowania wyników biznesowych projektów (Business Outcomes).",
+          "certificationDetails": {
+            "issuer": "Project Management Institute (PMI, USA)",
+            "difficulty": "Bardzo wysoka (36-60 miesięcy doświadczenia w analizie biznesowej + 35 godzin edukacji BA)",
+            "validity": "3 lata (wymaga 60 punktów PDU na odnowienie)",
+            "examFormat": "200 pytań testowych, 240 minut",
+            "targetAudience": "Analitycy biznesowi, Product Ownerzy, Architekci rozwiązań, Konsultanci IT"
+          },
+          "theorySummary": [
+            "5 Domen Analizy Biznesowej: Needs Assessment (Ocena potrzeb), Planning (Planowanie analizy), Analysis (Analiza i modelowanie), Traceability and Monitoring (Śledzenie wymagań), Evaluation (Ocena rozwiązania).",
+            "Różnica między potrzebą biznesową (Business Need) a życzeniem funkcjonalnym (Feature Request): Klient mówi 'Chcę przycisk w kolorze różowym', analityk bada 'Jaki cel biznesowy ma ten proces?'.",
+            "Macierz Śledzenia Wymagań (RTM), mapowanie procesów biznesowych (BPMN), Use Cases i specyfikacje niefunkcjonalne."
+          ],
+          "useCase": {
+            "scenarioTitle": "Wydobycie ukrytych reguł biznesowych przed wygenerowaniem aplikacji z AI",
+            "clientSituation": "Klient prosi o 'prosty kalkulator prowizji', ale nie potrafi sprecyzować wyjątków dla handlowców na różnych umowach.",
+            "actionTaken": "Wykorzystując techniki PMI-PBA (Needs Assessment, tabele decyzyjne, scenariusze brzegowe), analityk wydobywa z klienta 7 nieoczywistych reguł podatkowych i marżowych.",
+            "aiAdvantage": "Dzięki precyzyjnemu schematowi analitycznemu model AI pisze bezbłędną funkcję kalkulacyjną za pierwszym razem. Zero halucynacji, zero poprawek produkcyjnych."
+          },
+          "beyondCertification": {
+            "title": "Analiza Biznesowa jako fundament Prompt Engineeringu",
+            "keyTakeaway": "Modele językowe kodują dokładnie tak dobrze, jak precyzyjnie opiszesz im wymagania. Certyfikowany analityk PMI-PBA jest najlepszym operatorem AI, bo potrafi zdefiniować każdy stan brzegowy systemu w czystym języku naturalnym.",
+            "practicalAiTip": "Zbuduj szablon specyfikacji w formacie Markdown z precyzyjną definicją wejścia, wyjścia i obsługi błędów – to najskuteczniejszy prompt na świecie."
+          },
+          "youtubeVideos": [
+            {
+              "title": "PMI-PBA Certification: What You Need to Know",
+              "channel": "Project Management Institute",
+              "url": "https://www.youtube.com/watch?v=0s5K_9mX1Yw",
+              "searchQuery": "PMI-PBA Business Analysis certification overview",
+              "durationEstimate": "15 min",
+              "description": "Oficjalny przegląd 5 domen analizy biznesowej według standardu PMI-PBA."
+            }
+          ],
+          "practiceQuestions": [
+            {
+              "id": 1502,
+              "text": "Na czym polega pierwsza domena analizy biznesowej w standardzie PMI-PBA (Needs Assessment)?",
+              "options": [
+                "Na natychmiastowym rozpoczęciu pisania kodu bez rozmawiania z klientem.",
+                "Na zidentyfikowaniu rzeczywistego problemu lub szansy biznesowej, określeniu stanu obecnego i pożądanego oraz uzasadnieniu wartości inwestycji przed zdefiniowaniem rozwiązania.",
+                "Na losowym testowaniu przycisków w aplikacji.",
+                "Na zamawianiu mebli biurowych dla zespołu analityków."
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Needs Assessment to badanie 'Dlaczego w ogóle mamy cokolwiek robić?'. Pozwala uniknąć budowania drogich aplikacji, które nie rozwiązują żadnego realnego problemu klienta.",
+              "kurakTip": "Zanim napiszesz choćby jeden prompt, zrozum prawdziwy ból biznesowy klienta!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
