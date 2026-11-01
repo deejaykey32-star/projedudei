@@ -3,6 +3,7 @@ import "./globals.css";
 import { KurakSpeechProvider } from "@/components/KurakSpeechContext";
 import KurakDock from "@/components/KurakDock";
 import PwaRegister from "@/components/PwaRegister";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Projedudei - AI Project & Product Master z Kurakiem",
@@ -53,7 +54,8 @@ export default function RootLayout({
       <body className="bg-slate-900 font-sans text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-900">
         <KurakSpeechProvider>
           <PwaRegister />
-          <div className="mx-auto flex min-h-dvh w-full max-w-6xl flex-col px-3 sm:px-6 pb-28 pt-6">
+          <div className="mx-auto flex min-h-dvh w-full max-w-6xl flex-col px-3 sm:px-6 pb-28 pt-4">
+            <Navbar />
             {children}
           </div>
           <KurakDock />

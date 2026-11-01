@@ -20,9 +20,17 @@ function processDir(currentDir) {
       const indexHtml = path.join(fullPath, 'index.html');
       const targetHtml = `${fullPath}.html`;
 
-      // Jeśli w podkatalogu jest index.html, stwórz plik .html obok podkatalogu
+      // Kopiuj index.html -> folder.html
       if (fs.existsSync(indexHtml) && !fs.existsSync(targetHtml)) {
         fs.copyFileSync(indexHtml, targetHtml);
+        generatedCount++;
+      }
+
+      // Kopiuj index.txt -> folder.txt (dla Next.js RSC payload)
+      const indexTxt = path.join(fullPath, 'index.txt');
+      const targetTxt = `${fullPath}.txt`;
+      if (fs.existsSync(indexTxt) && !fs.existsSync(targetTxt)) {
+        fs.copyFileSync(indexTxt, targetTxt);
         generatedCount++;
       }
 
@@ -34,19 +42,86 @@ function processDir(currentDir) {
 
 processDir(outDir);
 
-// Przydatne aliasy bezpośrednie
+// Przydatne aliasy bezpośrednie (zarówno .html jak i .txt)
 const aliases = [
-  { from: 'exam/index.html', to: 'egzamin.html' },
-  { from: 'simulator/index.html', to: 'symulator.html' },
-  { from: 'pobierz/index.html', to: 'downloads.html' },
+  { from: 'lekcje/index.html', to: '10-lekcji.html' },
+  { from: 'lekcje/index.txt', to: '10-lekcji.txt' },
+  { from: 'lekcje/index.html', to: '10-lekcji-krok-po-kroku.html' },
+  { from: 'lekcje/index.txt', to: '10-lekcji-krok-po-kroku.txt' },
+  { from: 'lekcje/index.html', to: 'lekcje-krok-po-kroku.html' },
+  { from: 'lekcje/index.txt', to: 'lekcje-krok-po-kroku.txt' },
+  { from: 'lekcje/index.html', to: 'akademia.html' },
+  { from: 'lekcje/index.txt', to: 'akademia.txt' },
   { from: 'lekcje/index.html', to: 'lessons.html' },
+  { from: 'lekcje/index.txt', to: 'lessons.txt' },
+  { from: 'exam/index.html', to: 'egzamin.html' },
+  { from: 'exam/index.txt', to: 'egzamin.txt' },
+  { from: 'simulator/index.html', to: 'symulator.html' },
+  { from: 'simulator/index.txt', to: 'symulator.txt' },
+  { from: 'pobierz/index.html', to: 'downloads.html' },
+  { from: 'pobierz/index.txt', to: 'downloads.txt' },
 ];
 
 for (const { from, to } of aliases) {
   const src = path.join(outDir, from);
   const dst = path.join(outDir, to);
-  if (fs.existsSync(src) && !fs.existsSync(dst)) {
+  if (fs.existsSync(src)) {
     fs.copyFileSync(src, dst);
+    generatedCount++;
+  }
+}
+
+// Tworzenie aliasów katalogowych z index.html i index.txt (np. /10-lekcji/, /akademia/)
+const dirAliases = [
+  '10-lekcji',
+  '10-lekcji-krok-po-kroku',
+  'lekcje-krok-po-kroku',
+  'akademia',
+  'lessons',
+  'symulator',
+  'egzamin',
+  'downloads'
+];
+
+const sourceMap = {
+  '10-lekcji': 'lekcje',
+  '10-lekcji-krok-po-kroku': 'lekcje',
+  'lekcje-krok-po-kroku': 'lekcje',
+  'akademia': 'lekcje',
+  'lessons': 'lekcje',
+  'symulator': 'simulator',
+  'egzamin': 'exam',
+  'downloads': 'pobierz'
+};
+
+for (const alias of dirAliases) {
+  const targetDir = path.join(outDir, alias);
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+  const sourceDir = path.join(outDir, sourceMap[alias]);
+  const srcHtml = path.join(sourceDir, 'index.html');
+  const srcTxt = path.join(sourceDir, 'index.txt');
+  if (fs.existsSync(srcHtml)) {
+    fs.copyFileSync(srcHtml, path.join(targetDir, 'index.html'));
+    generatedCount++;
+  }
+  if (fs.existsSync(srcTxt)) {
+    fs.copyFileSync(srcTxt, path.join(targetDir, 'index.txt'));
+    generatedCount++;
+  }
+}
+
+// Kopiowanie downloads z public do out
+const publicDownloads = path.resolve(__dirname, '..', 'public', 'downloads');
+const outDownloads = path.resolve(outDir, 'downloads');
+if (fs.existsSync(publicDownloads)) {
+  if (!fs.existsSync(outDownloads)) {
+    fs.mkdirSync(outDownloads, { recursive: true });
+  }
+  const files = fs.readdirSync(publicDownloads);
+  for (const file of files) {
+    fs.copyFileSync(path.join(publicDownloads, file), path.join(outDownloads, file));
     generatedCount++;
   }
 }
@@ -65,4 +140,4 @@ if (fs.existsSync(redirectsSrc)) {
   fs.copyFileSync(redirectsSrc, redirectsDst);
 }
 
-console.log(`Pomyślnie utworzono ${generatedCount} plików .html w out dla Cloudflare Pages, eliminując ryzyko 404!`);
+console.log(`Pomyślnie utworzono/zaktualizowano ${generatedCount} plików .html/.txt w out dla Cloudflare Pages, eliminując ryzyko 404!`);

@@ -1,55 +1,26 @@
 // Projedudei PWA Service Worker
-const CACHE_NAME = "projedudei-v6";
+const CACHE_NAME = "projedudei-v7";
+
 const STATIC_ASSETS = [
   "/",
   "/manifest.json",
   "/icon-192.png",
   "/icon-512.png",
   "/apple-touch-icon.png",
+  "/lekcje/",
+  "/kurs/",
   "/simulator/",
   "/exam/",
+  "/quiz/",
   "/playbook/",
   "/pobierz/",
-  "/kurs/",
-  "/quiz/",
-  "/lekcje/",
-  "/lekcje/lekcja-1-era-ai-pm/",
-  "/lekcje/lekcja-2-wywiad-z-klientem-zakres/",
-  "/lekcje/lekcja-3-spec-driven-development-prd/",
-  "/lekcje/lekcja-4-wycena-budzet-pert/",
-  "/lekcje/lekcja-5-zwinny-sprint-moscow/",
-  "/lekcje/lekcja-6-architektura-it-cloudflare-supabase/",
-  "/lekcje/lekcja-7-grafika-3d-multimedia-pipeline/",
-  "/lekcje/lekcja-8-ecommerce-marketing-funnels/",
-  "/lekcje/lekcja-9-obrona-scope-creep-psychologia/",
-  "/lekcje/lekcja-10-odbior-uat-deployment-sla/",
-  "/kurs/project-manager/",
-  "/kurs/project-manager/pmp/",
-  "/kurs/project-manager/prince2/",
-  "/kurs/project-manager/ipma/",
-  "/kurs/project-manager/capm/",
-  "/kurs/scrum-master/",
-  "/kurs/scrum-master/psm/",
-  "/kurs/scrum-master/csm/",
-  "/kurs/scrum-master/dassm/",
-  "/kurs/product-owner/",
-  "/kurs/product-owner/pspo/",
-  "/kurs/product-owner/cspo/",
-  "/kurs/product-owner/spoc/",
-  "/kurs/product-manager/",
-  "/kurs/product-manager/cpm/",
-  "/kurs/product-manager/pragmatic-pmc/",
-  "/kurs/product-manager/pm-po-it/",
-  "/kurs/agile-analysis/",
-  "/kurs/agile-analysis/pmi-acp/",
-  "/kurs/agile-analysis/pmi-pba/"
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS).catch(() => {
-        // Fallback for runtime assets
+      return cache.addAll(STATIC_ASSETS).catch((err) => {
+        console.warn("[SW] Błąd pre-cache STATIC_ASSETS:", err);
       });
     })
   );
@@ -62,7 +33,7 @@ self.addEventListener("activate", (event) => {
       return Promise.all(
         keys.map((key) => {
           if (key !== CACHE_NAME) {
-            console.log("[ServiceWorker] Usuwanie starego cache:", key);
+            console.log("[SW] Usuwanie starego cache:", key);
             return caches.delete(key);
           }
         })
@@ -76,15 +47,52 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const url = new URL(event.request.url);
-  // Nie cache'uj samych pakietów instalacyjnych APK / AAB / IPA / ZIP w SW
+
+  // 1. Nigdy nie przechwytuj ani nie cache'uj ciężkich plików pobierania w SW
   if (url.pathname.startsWith("/downloads/")) {
     return;
   }
 
+  const isNavigation =
+    event.request.mode === "navigate" ||
+    (event.request.headers.get("accept") &&
+      event.request.headers.get("accept").includes("text/html"));
+
+  const isRscPayload =
+    url.pathname.endsWith(".txt") ||
+    url.pathname.includes("/_next/data/");
+
+  // 2. Strategia NETWORK-FIRST dla żądań nawigacyjnych i RSC (aby zapobiec 404 i wyświetlaniu starego cache)
+  if (isNavigation || isRscPayload) {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const copy = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, copy);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          // Fallback offline do cache
+          return caches.match(event.request).then((cached) => {
+            if (cached) return cached;
+            if (isNavigation) {
+              return caches.match("/") || caches.match("/lekcje/");
+            }
+            return new Response("", { status: 408, statusText: "Offline" });
+          });
+        })
+    );
+    return;
+  }
+
+  // 3. Strategia CACHE-FIRST z rewalidacją w tle dla zasobów statycznych (_next/static, ikony, obrazy)
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        // Zwróć cache i odśwież w tle (stale-while-revalidate)
         fetch(event.request)
           .then((networkResponse) => {
             if (networkResponse && networkResponse.status === 200) {
@@ -97,22 +105,15 @@ self.addEventListener("fetch", (event) => {
         return cachedResponse;
       }
 
-      return fetch(event.request)
-        .then((networkResponse) => {
-          if (!networkResponse || networkResponse.status !== 200) {
-            return networkResponse;
-          }
+      return fetch(event.request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, responseToCache);
           });
-          return networkResponse;
-        })
-        .catch(() => {
-          if (event.request.headers.get("accept")?.includes("text/html")) {
-            return caches.match("/");
-          }
-        });
+        }
+        return networkResponse;
+      });
     })
   );
 });
