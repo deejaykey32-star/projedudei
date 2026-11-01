@@ -1,5 +1,5 @@
 // Projedudei PWA Service Worker
-const CACHE_NAME = "projedudei-v4";
+const CACHE_NAME = "projedudei-v5";
 const STATIC_ASSETS = [
   "/",
   "/manifest.json",
@@ -10,6 +10,8 @@ const STATIC_ASSETS = [
   "/exam/",
   "/playbook/",
   "/pobierz/",
+  "/kurs/",
+  "/quiz/",
   "/lekcje/",
   "/lekcje/lekcja-1-era-ai-pm/",
   "/lekcje/lekcja-2-wywiad-z-klientem-zakres/",

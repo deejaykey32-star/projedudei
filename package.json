@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "mobile:build": "powershell -ExecutionPolicy Bypass -File scripts/build-mobile-packages.ps1",
-    "build": "next build",
+    "build": "next build && node scripts/cloudflare-pages-postbuild.js",
     "start": "npx serve@latest out",
     "deploy": "next build && powershell -ExecutionPolicy Bypass -File scripts/build-mobile-packages.ps1 && npx wrangler pages deploy out --project-name projedudei --branch main"
   },
