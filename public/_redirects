@@ -1,34 +1,32 @@
-/kurs                 /kurs/                 301
-/kurs/:section        /kurs/:section/        301
-/kurs/:section/:sub   /kurs/:section/:sub/   301
-/quiz                 /quiz/                 301
-/quiz/:category       /quiz/:category/       301
-/simulator            /simulator/            301
-/symulator            /simulator/            301
-/symulator/           /simulator/            301
-/exam                 /exam/                 301
-/egzamin              /exam/                 301
-/egzamin/             /exam/                 301
-/playbook             /playbook/             301
-/pobierz              /pobierz/              301
-/downloads            /pobierz/              301
-/downloads/           /pobierz/              301
-/lekcje               /lekcje/               301
-/lessons              /lekcje/               301
-/lessons/             /lekcje/               301
-/10-lekcji            /lekcje/               301
-/10-lekcji/           /lekcje/               301
-/10-lekcji-krok-po-kroku  /lekcje/           301
-/10-lekcji-krok-po-kroku/ /lekcje/           301
-/lekcje-krok-po-kroku     /lekcje/           301
-/lekcje-krok-po-kroku/    /lekcje/           301
-/akademia             /lekcje/               301
-/akademia/            /lekcje/               301
-/wywiad               /lekcje/2/             301
-/wywiad/              /lekcje/2/             301
-/wywiad-z-klientem    /lekcje/2/             301
-/wywiad-z-klientem/   /lekcje/2/             301
-/lekcje/:id           /lekcje/:id/           301
+# Cloudflare Pages Redirects
+# Uwaga: Nie wolno stosować wildcardów typu /lekcje/:id -> /lekcje/:id/
+# ponieważ psują one żądania plików .txt, .js, .json w Next.js App Routerze.
+
+# Skrócone aliasy językowe i nazewnicze
+/10-lekcji                /lekcje/               301
+/10-lekcji/               /lekcje/               301
+/10-lekcji-krok-po-kroku  /lekcje/               301
+/10-lekcji-krok-po-kroku/ /lekcje/               301
+/lekcje-krok-po-kroku     /lekcje/               301
+/lekcje-krok-po-kroku/    /lekcje/               301
+/akademia                 /lekcje/               301
+/akademia/                /lekcje/               301
+/lessons                  /lekcje/               301
+/lessons/                 /lekcje/               301
+
+/wywiad                   /lekcje/2/             301
+/wywiad/                  /lekcje/2/             301
+/wywiad-z-klientem        /lekcje/2/             301
+/wywiad-z-klientem/       /lekcje/2/             301
+
+/symulator                /simulator/            301
+/symulator/               /simulator/            301
+/egzamin                  /exam/                 301
+/egzamin/                 /exam/                 301
+/downloads                /pobierz/              301
+/downloads/               /pobierz/              301
+
+# Aliasy starych lekcji (jeśli ktoś zapisał link)
 /lekcje/lekcja-3-spec-driven-development-ai/      /lekcje/lekcja-3-spec-driven-development-prd/  301
 /lekcje/lekcja-4-pmp-capm-hybrydowe-zarzadzanie/  /lekcje/lekcja-4-wycena-budzet-pert/          301
 /lekcje/lekcja-5-prince2-ipma-kontrola-i-ludzie/  /lekcje/lekcja-5-zwinny-sprint-moscow/        301

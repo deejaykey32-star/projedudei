@@ -5,10 +5,23 @@ import CourseSubsectionView from "@/components/CourseSubsectionView";
 
 export function generateStaticParams() {
   const all = getAllSubsections();
-  return all.map(({ section, subsection }) => ({
-    sectionId: section.id,
-    subId: subsection.id,
-  }));
+  const params: { sectionId: string; subId: string }[] = [];
+
+  all.forEach(({ section, subsection }) => {
+    // 1. Podstawowe: project-manager / pmp
+    params.push({ sectionId: section.id, subId: subsection.id });
+    // 2. Po numerze: 1 / pmp
+    params.push({ sectionId: String(section.number), subId: subsection.id });
+
+    // 3. Po kodzie (np. PMP -> pmp)
+    const codeLower = subsection.code.toLowerCase();
+    if (codeLower !== subsection.id.toLowerCase()) {
+      params.push({ sectionId: section.id, subId: codeLower });
+      params.push({ sectionId: String(section.number), subId: codeLower });
+    }
+  });
+
+  return params;
 }
 
 export async function generateMetadata({

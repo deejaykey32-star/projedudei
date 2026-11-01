@@ -140,4 +140,11 @@ if (fs.existsSync(redirectsSrc)) {
   fs.copyFileSync(redirectsSrc, redirectsDst);
 }
 
+// Upewnij się, że _headers istnieje w out/
+const headersSrc = path.resolve(__dirname, '..', 'public', '_headers');
+const headersDst = path.resolve(outDir, '_headers');
+if (fs.existsSync(headersSrc)) {
+  fs.copyFileSync(headersSrc, headersDst);
+}
+
 console.log(`Pomyślnie utworzono/zaktualizowano ${generatedCount} plików .html/.txt w out dla Cloudflare Pages, eliminując ryzyko 404!`);

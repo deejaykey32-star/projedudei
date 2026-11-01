@@ -1,5 +1,5 @@
 // Projedudei PWA Service Worker
-const CACHE_NAME = "projedudei-v7";
+const CACHE_NAME = "projedudei-v8";
 
 const STATIC_ASSETS = [
   "/",
@@ -8,6 +8,8 @@ const STATIC_ASSETS = [
   "/icon-512.png",
   "/apple-touch-icon.png",
   "/lekcje/",
+  "/10-lekcji/",
+  "/10-lekcji-krok-po-kroku/",
   "/kurs/",
   "/simulator/",
   "/exam/",
@@ -48,7 +50,7 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(event.request.url);
 
-  // 1. Nigdy nie przechwytuj ani nie cache'uj ciężkich plików pobierania w SW
+  // Nigdy nie przechwytuj ani nie cache'uj ciężkich plików pobierania
   if (url.pathname.startsWith("/downloads/")) {
     return;
   }
@@ -58,12 +60,13 @@ self.addEventListener("fetch", (event) => {
     (event.request.headers.get("accept") &&
       event.request.headers.get("accept").includes("text/html"));
 
-  const isRscPayload =
+  const isDataOrRsc =
     url.pathname.endsWith(".txt") ||
-    url.pathname.includes("/_next/data/");
+    url.pathname.includes("/_next/data/") ||
+    url.searchParams.has("_rsc");
 
-  // 2. Strategia NETWORK-FIRST dla żądań nawigacyjnych i RSC (aby zapobiec 404 i wyświetlaniu starego cache)
-  if (isNavigation || isRscPayload) {
+  // Strategia NETWORK-FIRST dla żądań HTML, RSC oraz .txt
+  if (isNavigation || isDataOrRsc) {
     event.respondWith(
       fetch(event.request)
         .then((networkResponse) => {
@@ -76,11 +79,11 @@ self.addEventListener("fetch", (event) => {
           return networkResponse;
         })
         .catch(() => {
-          // Fallback offline do cache
+          // Fallback offline wyłącznie jeśli zasób w cache istnieje i ma status 200
           return caches.match(event.request).then((cached) => {
-            if (cached) return cached;
+            if (cached && cached.status === 200) return cached;
             if (isNavigation) {
-              return caches.match("/") || caches.match("/lekcje/");
+              return caches.match("/lekcje/") || caches.match("/");
             }
             return new Response("", { status: 408, statusText: "Offline" });
           });
@@ -89,10 +92,11 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // 3. Strategia CACHE-FIRST z rewalidacją w tle dla zasobów statycznych (_next/static, ikony, obrazy)
+  // Strategia CACHE-FIRST dla statycznych assetów (_next/static, ikony)
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
+      if (cachedResponse && cachedResponse.status === 200) {
+        // Rewalidacja w tle
         fetch(event.request)
           .then((networkResponse) => {
             if (networkResponse && networkResponse.status === 200) {
