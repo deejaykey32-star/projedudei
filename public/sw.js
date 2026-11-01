@@ -1,5 +1,5 @@
 // Projedudei PWA Service Worker
-const CACHE_NAME = "projedudei-v5";
+const CACHE_NAME = "projedudei-v6";
 const STATIC_ASSETS = [
   "/",
   "/manifest.json",
@@ -15,14 +15,14 @@ const STATIC_ASSETS = [
   "/lekcje/",
   "/lekcje/lekcja-1-era-ai-pm/",
   "/lekcje/lekcja-2-wywiad-z-klientem-zakres/",
-  "/lekcje/lekcja-3-spec-driven-development-ai/",
-  "/lekcje/lekcja-4-pmp-capm-hybrydowe-zarzadzanie/",
-  "/lekcje/lekcja-5-prince2-ipma-kontrola-i-ludzie/",
-  "/lekcje/lekcja-6-scrum-master-psm-csm-dassm/",
-  "/lekcje/lekcja-7-product-owner-pspo-cspo-spoc/",
-  "/lekcje/lekcja-8-product-manager-cpm-pragmatic/",
-  "/lekcje/lekcja-9-pmi-acp-i-pmi-pba-wymagania-i-agile/",
-  "/lekcje/lekcja-10-wdrozenie-cloudflare-testy-i-odbior/",
+  "/lekcje/lekcja-3-spec-driven-development-prd/",
+  "/lekcje/lekcja-4-wycena-budzet-pert/",
+  "/lekcje/lekcja-5-zwinny-sprint-moscow/",
+  "/lekcje/lekcja-6-architektura-it-cloudflare-supabase/",
+  "/lekcje/lekcja-7-grafika-3d-multimedia-pipeline/",
+  "/lekcje/lekcja-8-ecommerce-marketing-funnels/",
+  "/lekcje/lekcja-9-obrona-scope-creep-psychologia/",
+  "/lekcje/lekcja-10-odbior-uat-deployment-sla/",
   "/kurs/project-manager/",
   "/kurs/project-manager/pmp/",
   "/kurs/project-manager/prince2/",

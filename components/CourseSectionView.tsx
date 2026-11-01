@@ -20,8 +20,10 @@ import {
   Cpu,
   Calculator,
   AlertTriangle,
+  Play,
+  X,
 } from "lucide-react";
-import type { CourseSection, CourseSubsection } from "@/lib/types";
+import type { CourseSection, CourseSubsection, YouTubeVideoRef } from "@/lib/types";
 import { useKurakSpeech } from "./KurakSpeechContext";
 import KurakAvatar from "./KurakAvatar";
 
@@ -33,6 +35,7 @@ export default function CourseSectionView({
   const [activeSubId, setActiveSubId] = useState<string>(
     section.subsections[0]?.id || ""
   );
+  const [activeVideo, setActiveVideo] = useState<YouTubeVideoRef | null>(null);
   const { speak, isSpeaking } = useKurakSpeech();
 
   const activeSub =
@@ -347,50 +350,166 @@ export default function CourseSectionView({
             </div>
           </div>
 
-          {/* Materiały Wideo na YouTube */}
+          {/* Materiały Wideo na YouTube (Zweryfikowane & Zintegrowany Odtwarzacz) */}
           {activeSub.youtubeVideos && activeSub.youtubeVideos.length > 0 && (
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between">
                 <h3 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-red-400">
                   <Youtube className="h-4 w-4" />
-                  <span>Rekomendowane materiały wideo na YouTube</span>
+                  <span>Zweryfikowane materiały wideo na YouTube</span>
                 </h3>
-                <span className="text-xs text-slate-500">Obejrzyj omówienie</span>
+                <span className="text-xs text-slate-400">Obejrzyj w aplikacji lub w YouTube</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {activeSub.youtubeVideos.map((video, idx) => (
-                  <a
-                    key={idx}
-                    href={video.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex flex-col justify-between rounded-2xl border border-slate-700 bg-slate-900/90 p-4 transition-all hover:border-red-500/70 hover:bg-slate-900 active:scale-98 shadow-md"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between gap-2 text-xs text-slate-400 mb-1.5">
-                        <span className="font-semibold text-red-400 flex items-center gap-1">
-                          <Youtube className="h-3.5 w-3.5" />
-                          {video.channel}
-                        </span>
-                        <span className="rounded bg-slate-800 px-2 py-0.5 font-mono text-slate-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {activeSub.youtubeVideos.map((video, idx) => {
+                  const videoId =
+                    video.videoId ||
+                    (video.url.includes("v=") ? video.url.split("v=")[1]?.split("&")[0] : null);
+                  const thumbUrl = videoId
+                    ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+                    : null;
+
+                  return (
+                    <div
+                      key={idx}
+                      className="group flex flex-col justify-between rounded-2xl border border-slate-700 bg-slate-900/90 overflow-hidden transition-all hover:border-red-500/70 shadow-lg"
+                    >
+                      {/* Miniaturka wideo z przyciskiem Play */}
+                      <div
+                        onClick={() => setActiveVideo(video)}
+                        className="relative aspect-video w-full bg-slate-950 cursor-pointer overflow-hidden"
+                      >
+                        {thumbUrl ? (
+                          <img
+                            src={thumbUrl}
+                            alt={video.title}
+                            className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="h-full w-full flex items-center justify-center bg-slate-800 text-slate-500">
+                            <Youtube className="h-12 w-12" />
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-white shadow-xl group-hover:scale-110 group-hover:bg-red-500 transition-transform">
+                            <Play className="h-6 w-6 ml-0.5 fill-current" />
+                          </div>
+                        </div>
+                        <span className="absolute bottom-2 right-2 rounded-md bg-black/80 px-2 py-0.5 font-mono text-xs font-bold text-white">
                           {video.durationEstimate}
                         </span>
                       </div>
-                      <h4 className="text-sm font-bold text-slate-100 group-hover:text-red-300 transition line-clamp-2">
-                        {video.title}
-                      </h4>
-                      <p className="mt-1.5 text-xs text-slate-400 line-clamp-2">
-                        {video.description}
-                      </p>
-                    </div>
 
-                    <div className="mt-3 flex items-center justify-between pt-2 border-t border-slate-800 text-xs font-semibold text-red-400 group-hover:underline">
-                      <span>Otwórz w YouTube</span>
-                      <ExternalLink className="h-3.5 w-3.5" />
+                      <div className="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center justify-between gap-2 text-xs text-slate-400 mb-1.5">
+                            <span className="font-semibold text-red-400 flex items-center gap-1">
+                              <Youtube className="h-3.5 w-3.5" />
+                              {video.channel}
+                            </span>
+                          </div>
+                          <h4 className="text-sm font-bold text-slate-100 group-hover:text-red-300 transition line-clamp-2">
+                            {video.title}
+                          </h4>
+                          <p className="mt-1.5 text-xs text-slate-400 line-clamp-2">
+                            {video.description}
+                          </p>
+                        </div>
+
+                        <div className="mt-4 flex items-center justify-between gap-2 pt-3 border-t border-slate-800 text-xs">
+                          <button
+                            type="button"
+                            onClick={() => setActiveVideo(video)}
+                            className="inline-flex items-center gap-1.5 rounded-lg bg-red-600/90 hover:bg-red-500 px-3 py-1.5 font-bold text-white transition active:scale-95"
+                          >
+                            <Play className="h-3.5 w-3.5 fill-current" />
+                            <span>Odtwórz w oknie</span>
+                          </button>
+
+                          <a
+                            href={video.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-slate-400 hover:text-red-400 transition font-medium"
+                          >
+                            <span>Otwórz na YouTube</span>
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </a>
+                        </div>
+                      </div>
                     </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Modal Odtwarzacza Wideo YouTube */}
+          {activeVideo && (
+            <div
+              role="dialog"
+              aria-modal="true"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-3 sm:p-6"
+              onClick={() => setActiveVideo(null)}
+            >
+              <div
+                className="relative w-full max-w-4xl bg-slate-900 rounded-2xl sm:rounded-3xl border border-slate-700 overflow-hidden shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-center justify-between p-3.5 sm:p-4 border-b border-slate-800 bg-slate-950">
+                  <div className="flex items-center gap-2 text-red-500 min-w-0 pr-2">
+                    <Youtube className="h-5 w-5 shrink-0" />
+                    <span className="font-bold text-white text-xs sm:text-sm truncate">
+                      {activeVideo.title}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setActiveVideo(null)}
+                    className="flex items-center gap-1 rounded-lg bg-slate-800 hover:bg-slate-700 px-2.5 py-1 text-xs font-semibold text-slate-200 transition shrink-0"
+                  >
+                    <X className="h-4 w-4" />
+                    <span>Zamknij</span>
+                  </button>
+                </div>
+
+                <div className="relative aspect-video w-full bg-black">
+                  {activeVideo.videoId ? (
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${activeVideo.videoId}?autoplay=1&rel=0`}
+                      title={activeVideo.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full border-0"
+                    />
+                  ) : (
+                    <iframe
+                      src={activeVideo.url}
+                      title={activeVideo.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full border-0"
+                    />
+                  )}
+                </div>
+
+                <div className="p-3.5 sm:p-4 bg-slate-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-400">
+                  <div className="space-y-0.5">
+                    <span className="text-white font-medium">Kanał: {activeVideo.channel}</span>
+                    <p className="line-clamp-1">{activeVideo.description}</p>
+                  </div>
+                  <a
+                    href={activeVideo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-red-400 hover:text-red-300 font-semibold shrink-0"
+                  >
+                    <span>Otwórz w nowej karcie YouTube</span>
+                    <ExternalLink className="h-3.5 w-3.5" />
                   </a>
-                ))}
+                </div>
               </div>
             </div>
           )}

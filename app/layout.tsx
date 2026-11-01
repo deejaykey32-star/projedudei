@@ -53,7 +53,7 @@ export default function RootLayout({
       <body className="bg-slate-900 font-sans text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-900">
         <KurakSpeechProvider>
           <PwaRegister />
-          <div className="mx-auto flex min-h-dvh w-full max-w-2xl flex-col px-4 pb-28 pt-6 sm:px-6">
+          <div className="mx-auto flex min-h-dvh w-full max-w-6xl flex-col px-3 sm:px-6 pb-28 pt-6">
             {children}
           </div>
           <KurakDock />

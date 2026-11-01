@@ -34,6 +34,30 @@ function processDir(currentDir) {
 
 processDir(outDir);
 
+// Przydatne aliasy bezpośrednie
+const aliases = [
+  { from: 'exam/index.html', to: 'egzamin.html' },
+  { from: 'simulator/index.html', to: 'symulator.html' },
+  { from: 'pobierz/index.html', to: 'downloads.html' },
+  { from: 'lekcje/index.html', to: 'lessons.html' },
+];
+
+for (const { from, to } of aliases) {
+  const src = path.join(outDir, from);
+  const dst = path.join(outDir, to);
+  if (fs.existsSync(src) && !fs.existsSync(dst)) {
+    fs.copyFileSync(src, dst);
+    generatedCount++;
+  }
+}
+
+// Upewnij się, że 404.html istnieje w out/
+const notFoundSrc = path.join(outDir, '_not-found', 'index.html');
+const notFoundDst = path.join(outDir, '404.html');
+if (fs.existsSync(notFoundSrc)) {
+  fs.copyFileSync(notFoundSrc, notFoundDst);
+}
+
 // Upewnij się, że _redirects istnieje w out/
 const redirectsSrc = path.resolve(__dirname, '..', 'public', '_redirects');
 const redirectsDst = path.resolve(outDir, '_redirects');
@@ -42,4 +66,3 @@ if (fs.existsSync(redirectsSrc)) {
 }
 
 console.log(`Pomyślnie utworzono ${generatedCount} plików .html w out dla Cloudflare Pages, eliminując ryzyko 404!`);
-

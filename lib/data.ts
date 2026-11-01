@@ -18,7 +18,29 @@ export function getAllCategories(): Category[] {
 }
 
 export function getCategoryById(id: string): Category | undefined {
-  return (questionsData.categories as Category[]).find((c) => c.id === id);
+  const clean = id.toLowerCase().trim();
+  const categories = questionsData.categories as Category[];
+  const direct = categories.find((c) => c.id.toLowerCase() === clean);
+  if (direct) return direct;
+
+  // Wyszukiwanie po numerze sekcji lub aliasie
+  if (clean === "1" || clean === "pm" || clean === "pmp" || clean === "project-management") {
+    return categories.find((c) => c.id === "project-manager");
+  }
+  if (clean === "2" || clean === "scrum" || clean === "psm" || clean === "csm") {
+    return categories.find((c) => c.id === "scrum-master");
+  }
+  if (clean === "3" || clean === "po" || clean === "pspo" || clean === "cspo") {
+    return categories.find((c) => c.id === "product-owner");
+  }
+  if (clean === "4" || clean === "prod-manager" || clean === "cpm" || clean === "pragmatic") {
+    return categories.find((c) => c.id === "product-manager");
+  }
+  if (clean === "5" || clean === "agile" || clean === "ba" || clean === "pmi-acp" || clean === "pmi-pba") {
+    return categories.find((c) => c.id === "agile-analysis");
+  }
+
+  return undefined;
 }
 
 export function getAllQuestions(): Question[] {
@@ -42,7 +64,28 @@ export function getAllCourseSections(): CourseSection[] {
 }
 
 export function getCourseSectionById(id: string): CourseSection | undefined {
-  return (curriculumData.sections as unknown as CourseSection[]).find((s) => s.id === id);
+  const clean = id.toLowerCase().trim();
+  const sections = curriculumData.sections as unknown as CourseSection[];
+  const direct = sections.find((s) => s.id.toLowerCase() === clean);
+  if (direct) return direct;
+
+  if (clean === "1" || clean === "pm" || clean === "project-management") {
+    return sections.find((s) => s.id === "project-manager");
+  }
+  if (clean === "2" || clean === "scrum") {
+    return sections.find((s) => s.id === "scrum-master");
+  }
+  if (clean === "3" || clean === "po") {
+    return sections.find((s) => s.id === "product-owner");
+  }
+  if (clean === "4" || clean === "prod-manager") {
+    return sections.find((s) => s.id === "product-manager");
+  }
+  if (clean === "5" || clean === "agile" || clean === "ba") {
+    return sections.find((s) => s.id === "agile-analysis");
+  }
+
+  return undefined;
 }
 
 export function getAllSubsections(): { section: CourseSection; subsection: CourseSubsection }[] {
@@ -90,9 +133,52 @@ export function getAllLessons(): Lesson[] {
 }
 
 export function getLessonById(id: string): Lesson | undefined {
-  return (lessonsData.lessons as unknown as Lesson[]).find(
-    (l) => l.id.toLowerCase() === id.toLowerCase() || String(l.number) === id
+  const clean = id.toLowerCase().trim();
+  const all = lessonsData.lessons as unknown as Lesson[];
+  
+  // 1. Dokładne dopasowanie ID lub numeru
+  const direct = all.find(
+    (l) =>
+      l.id.toLowerCase() === clean ||
+      String(l.number) === clean ||
+      `lekcja-${l.number}` === clean ||
+      `lesson-${l.number}` === clean
   );
+  if (direct) return direct;
+
+  // 2. Dopasowanie po słowach kluczowych
+  if (clean.includes("wywiad") || clean.includes("zakres") || clean.includes("interview") || clean.includes("klient")) {
+    return all.find((l) => l.number === 2);
+  }
+  if (clean.includes("spec") || clean.includes("prd") || clean.includes("driven")) {
+    return all.find((l) => l.number === 3);
+  }
+  if (clean.includes("wycena") || clean.includes("pert") || clean.includes("budzet") || clean.includes("estymacj")) {
+    return all.find((l) => l.number === 4);
+  }
+  if (clean.includes("sprint") || clean.includes("moscow") || clean.includes("zwinny")) {
+    return all.find((l) => l.number === 5);
+  }
+  if (clean.includes("architektur") || clean.includes("cloudflare") || clean.includes("supabase")) {
+    return all.find((l) => l.number === 6);
+  }
+  if (clean.includes("grafik") || clean.includes("multimedia") || clean.includes("3d")) {
+    return all.find((l) => l.number === 7);
+  }
+  if (clean.includes("ecommerce") || clean.includes("marketing") || clean.includes("funnel") || clean.includes("sklep")) {
+    return all.find((l) => l.number === 8);
+  }
+  if (clean.includes("scope-creep") || clean.includes("psycholog") || clean.includes("obrona")) {
+    return all.find((l) => l.number === 9);
+  }
+  if (clean.includes("odbior") || clean.includes("uat") || clean.includes("sla") || clean.includes("wdrozen")) {
+    return all.find((l) => l.number === 10);
+  }
+  if (clean.includes("era") || clean.includes("ai-pm") || clean.includes("wstep")) {
+    return all.find((l) => l.number === 1);
+  }
+
+  return undefined;
 }
 
 export function getLessonsOverview() {

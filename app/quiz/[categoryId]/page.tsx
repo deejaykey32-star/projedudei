@@ -4,9 +4,24 @@ import QuizEngine from "@/components/QuizEngine";
 
 export function generateStaticParams() {
   const categories = getAllCategories();
-  return categories.map((cat) => ({
-    categoryId: cat.id,
-  }));
+  const params: { categoryId: string }[] = [];
+
+  categories.forEach((cat) => {
+    params.push({ categoryId: cat.id });
+  });
+
+  // Dodatkowe numery i aliasy
+  params.push({ categoryId: "1" });
+  params.push({ categoryId: "2" });
+  params.push({ categoryId: "3" });
+  params.push({ categoryId: "4" });
+  params.push({ categoryId: "5" });
+  params.push({ categoryId: "pm" });
+  params.push({ categoryId: "scrum" });
+  params.push({ categoryId: "po" });
+  params.push({ categoryId: "agile" });
+
+  return params;
 }
 
 export default async function QuizPage({
