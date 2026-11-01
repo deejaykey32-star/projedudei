@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-const CURRENT_CACHE = "projedudei-v8";
-
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
@@ -17,34 +15,26 @@ export default function PwaRegister() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // 1. Natychmiast usuń wszystkie stare wersje cache klienta
-    if ("caches" in window) {
-      caches.keys().then((keys) => {
-        keys.forEach((key) => {
-          if (key !== CURRENT_CACHE) {
-            console.log("[PWA] Czyszczenie starego cache:", key);
-            caches.delete(key);
-          }
-        });
-      });
-    }
-
-    // 2. Rejestracja i automatyczna aktualizacja Service Workera
+    // Bezpieczna rejestracja Service Workera
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker
-          .register("/sw.js?v=8", { updateViaCache: "none" })
+          .register("/sw.js")
           .then((reg) => {
-            console.log("PWA ServiceWorker zarejestrowany:", reg.scope);
-            reg.update();
+            // Wymuś sprawdzenie czy jest dostępna nowa wersja
+            reg.update().catch(() => {});
+
+            if (reg.waiting) {
+              reg.waiting.postMessage({ type: "SKIP_WAITING" });
+            }
           })
           .catch((err) => {
-            console.log("PWA ServiceWorker błąd:", err);
+            console.warn("[PWA] Service Worker registration:", err);
           });
       });
     }
 
-    // 3. Sprawdź tryb standalone
+    // Wykrywanie trybu standalone PWA
     if (
       window.matchMedia("(display-mode: standalone)").matches ||
       (window.navigator as unknown as { standalone?: boolean }).standalone === true

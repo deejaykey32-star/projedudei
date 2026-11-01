@@ -1,5 +1,5 @@
-// Projedudei PWA Service Worker
-const CACHE_NAME = "projedudei-v8";
+// Projedudei PWA Service Worker - Bulletproof v9
+const CACHE_NAME = "projedudei-v9";
 
 const STATIC_ASSETS = [
   "/",
@@ -18,17 +18,19 @@ const STATIC_ASSETS = [
   "/pobierz/",
 ];
 
+// Instalacja i pobranie podstawowych zasobów do cache offline
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(STATIC_ASSETS).catch((err) => {
-        console.warn("[SW] Błąd pre-cache STATIC_ASSETS:", err);
+        console.warn("[SW] Błąd cache STATIC_ASSETS:", err);
       });
     })
   );
   self.skipWaiting();
 });
 
+// Aktywacja i bezwzględne usunięcie wszystkich starych cache
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
@@ -45,71 +47,20 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
+// Obsługa żądań: Zawsze najpierw sieć, z bezpiecznym fallbackiem offline
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const url = new URL(event.request.url);
 
-  // Nigdy nie przechwytuj ani nie cache'uj ciężkich plików pobierania
-  if (url.pathname.startsWith("/downloads/")) {
-    return;
-  }
+  // Ignoruj inne domeny oraz duże pliki instalacyjne z /downloads/
+  if (url.origin !== self.location.origin) return;
+  if (url.pathname.startsWith("/downloads/")) return;
 
-  const isNavigation =
-    event.request.mode === "navigate" ||
-    (event.request.headers.get("accept") &&
-      event.request.headers.get("accept").includes("text/html"));
-
-  const isDataOrRsc =
-    url.pathname.endsWith(".txt") ||
-    url.pathname.includes("/_next/data/") ||
-    url.searchParams.has("_rsc");
-
-  // Strategia NETWORK-FIRST dla żądań HTML, RSC oraz .txt
-  if (isNavigation || isDataOrRsc) {
-    event.respondWith(
-      fetch(event.request)
-        .then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const copy = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, copy);
-            });
-          }
-          return networkResponse;
-        })
-        .catch(() => {
-          // Fallback offline wyłącznie jeśli zasób w cache istnieje i ma status 200
-          return caches.match(event.request).then((cached) => {
-            if (cached && cached.status === 200) return cached;
-            if (isNavigation) {
-              return caches.match("/lekcje/") || caches.match("/");
-            }
-            return new Response("", { status: 408, statusText: "Offline" });
-          });
-        })
-    );
-    return;
-  }
-
-  // Strategia CACHE-FIRST dla statycznych assetów (_next/static, ikony)
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse && cachedResponse.status === 200) {
-        // Rewalidacja w tle
-        fetch(event.request)
-          .then((networkResponse) => {
-            if (networkResponse && networkResponse.status === 200) {
-              caches.open(CACHE_NAME).then((cache) => {
-                cache.put(event.request, networkResponse);
-              });
-            }
-          })
-          .catch(() => {});
-        return cachedResponse;
-      }
-
-      return fetch(event.request).then((networkResponse) => {
+    fetch(event.request)
+      .then((networkResponse) => {
+        // Jeśli sieć odpowiedziała poprawnie (status 200), opcjonalnie zaktualizuj cache
         if (networkResponse && networkResponse.status === 200) {
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
@@ -117,7 +68,25 @@ self.addEventListener("fetch", (event) => {
           });
         }
         return networkResponse;
-      });
-    })
+      })
+      .catch(async () => {
+        // Fallback TYLKO w przypadku całkowitego braku sieci (offline)
+        const cached = await caches.match(event.request);
+        if (cached) return cached;
+
+        // Jeśli to była nawigacja po stronie, spróbuj zwrócić stronę główną lub lekcje z cache
+        if (event.request.mode === "navigate") {
+          const home = await caches.match("/");
+          if (home) return home;
+          const lekcje = await caches.match("/lekcje/");
+          if (lekcje) return lekcje;
+        }
+
+        // Zawsze zwróć poprawny obiekt Response, NIGDY undefined
+        return new Response("Aplikacja Projedudei jest w trybie offline.", {
+          status: 503,
+          headers: { "Content-Type": "text/plain; charset=utf-8" },
+        });
+      })
   );
 });
